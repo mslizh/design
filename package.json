@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fluentui/react-icons": "^2.0.200",
+    "@mui/material": "^5.12.1",
     "@plasmicapp/cli": "^0.1.260",
     "@plasmicapp/host": "^1.0.126",
     "@plasmicapp/react-web": "^0.2.195",

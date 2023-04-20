@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "public-files",
@@ -56,6 +56,101 @@
           "id": "mYGlLbIkFyE55",
           "name": "Fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
+        },
+        {
+          "id": "YXhC3AiFHN",
+          "name": "Box",
+          "componentImportPath": "@mui/material/Box"
+        },
+        {
+          "id": "bCEHFnOP4c",
+          "name": "Container",
+          "componentImportPath": "@mui/material/Container"
+        },
+        {
+          "id": "OHPtLicOEy",
+          "name": "Divider",
+          "componentImportPath": "@mui/material/Divider"
+        },
+        {
+          "id": "XygyumWo61",
+          "name": "Grid",
+          "componentImportPath": "@mui/material/Grid"
+        },
+        {
+          "id": "GbK8hKFZrX",
+          "name": "FileCard",
+          "componentImportPath": "@/components/FileCard"
+        },
+        {
+          "id": "4Bbu5mPezUL",
+          "name": "FileGrid",
+          "componentImportPath": "@/components/FileGrid"
+        },
+        {
+          "id": "Cyxgs4Gxbt5",
+          "name": "FileList",
+          "componentImportPath": "@/components/FileList"
+        },
+        {
+          "id": "P-tCFiyIt3t",
+          "name": "FileListItem",
+          "componentImportPath": "@/components/FileListItem"
+        },
+        {
+          "id": "HXJ06guWrVI",
+          "name": "FileUploader",
+          "componentImportPath": "@/components/FileUploader"
+        },
+        {
+          "id": "K-4mZ5X0Et2",
+          "name": "Icon",
+          "componentImportPath": "@/components/Icon"
+        },
+        {
+          "id": "qPyf2BvmO1n",
+          "name": "List",
+          "componentImportPath": "@mui/material/List"
+        },
+        {
+          "id": "aB9WZ1p1Dc5",
+          "name": "ListItem",
+          "componentImportPath": "@mui/material/ListItem"
+        },
+        {
+          "id": "VJ3ifWPEcIJ",
+          "name": "ListItemAvatar",
+          "componentImportPath": "@mui/material/ListItemAvatar"
+        },
+        {
+          "id": "iHy3Erb07Jt",
+          "name": "ListItemButton",
+          "componentImportPath": "@mui/material/ListItemButton"
+        },
+        {
+          "id": "JrtN49VL5v_",
+          "name": "ListItemIcon",
+          "componentImportPath": "@mui/material/ListItemIcon"
+        },
+        {
+          "id": "aj2_DNmPd3t",
+          "name": "ListItemText",
+          "componentImportPath": "@mui/material/ListItemText"
+        },
+        {
+          "id": "prtu9q4oOxj",
+          "name": "ListSubheader",
+          "componentImportPath": "@mui/material/ListSubheader"
+        },
+        {
+          "id": "JArHThqJag5",
+          "name": "Stack",
+          "componentImportPath": "@mui/material/Stack"
+        },
+        {
+          "id": "qyApz5kIcWD",
+          "name": "Typography",
+          "componentImportPath": "@mui/material/Typography"
         }
       ]
     }
