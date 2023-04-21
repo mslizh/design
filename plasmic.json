@@ -60,22 +60,22 @@
         {
           "id": "YXhC3AiFHN",
           "name": "Box",
-          "componentImportPath": "@mui/material/Box"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "bCEHFnOP4c",
           "name": "Container",
-          "componentImportPath": "@mui/material/Container"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "OHPtLicOEy",
           "name": "Divider",
-          "componentImportPath": "@mui/material/Divider"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "XygyumWo61",
           "name": "Grid",
-          "componentImportPath": "@mui/material/Grid"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "GbK8hKFZrX",
@@ -110,47 +110,47 @@
         {
           "id": "qPyf2BvmO1n",
           "name": "List",
-          "componentImportPath": "@mui/material/List"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "aB9WZ1p1Dc5",
           "name": "ListItem",
-          "componentImportPath": "@mui/material/ListItem"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "VJ3ifWPEcIJ",
           "name": "ListItemAvatar",
-          "componentImportPath": "@mui/material/ListItemAvatar"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "iHy3Erb07Jt",
           "name": "ListItemButton",
-          "componentImportPath": "@mui/material/ListItemButton"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "JrtN49VL5v_",
           "name": "ListItemIcon",
-          "componentImportPath": "@mui/material/ListItemIcon"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "aj2_DNmPd3t",
           "name": "ListItemText",
-          "componentImportPath": "@mui/material/ListItemText"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "prtu9q4oOxj",
           "name": "ListSubheader",
-          "componentImportPath": "@mui/material/ListSubheader"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "JArHThqJag5",
           "name": "Stack",
-          "componentImportPath": "@mui/material/Stack"
+          "componentImportPath": "@mui/material"
         },
         {
           "id": "qyApz5kIcWD",
           "name": "Typography",
-          "componentImportPath": "@mui/material/Typography"
+          "componentImportPath": "@mui/material"
         }
       ]
     }

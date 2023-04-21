@@ -18,7 +18,6 @@ import Typography from "@mui/material/Typography";
 
 import { FileUploader } from "@/components/FileUploader";
 import { FileCard } from "@/components/FileCard";
-import { CssBaseline } from "@mui/material";
 import { FileGrid } from "@/components/FileGrid";
 import { FileList } from "@/components/FileList";
 import { FileListItem } from "@/components/FileListItem";
@@ -30,7 +29,7 @@ registerComponent(Box, {
     children: "slot",
     sx: "object",
   },
-  importPath: "@mui/material/Box",
+  importPath: "@mui/material",
 });
 
 registerComponent(Container, {
@@ -45,7 +44,7 @@ registerComponent(Container, {
     },
     sx: "object",
   },
-  importPath: "@mui/material/Container",
+  importPath: "@mui/material",
 });
 
 registerComponent(Divider, {
@@ -67,7 +66,7 @@ registerComponent(Divider, {
     },
     sx: "object",
   },
-  importPath: "@mui/material/Divider",
+  importPath: "@mui/material",
 });
 
 registerComponent(Grid, {
@@ -99,7 +98,7 @@ registerComponent(Grid, {
     xl: "number",
     sx: "object",
   },
-  importPath: "@mui/material/Grid",
+  importPath: "@mui/material",
 });
 
 registerComponent(FileCard, {
@@ -169,7 +168,7 @@ registerComponent(List, {
     subheader: "slot",
     sx: "object",
   },
-  importPath: "@mui/material/List",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListItem, {
@@ -178,7 +177,7 @@ registerComponent(ListItem, {
     children: "slot",
     disablePadding: "boolean",
   },
-  importPath: "@mui/material/ListItem",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListItemAvatar, {
@@ -187,7 +186,7 @@ registerComponent(ListItemAvatar, {
     children: "slot",
     sx: "object",
   },
-  importPath: "@mui/material/ListItemAvatar",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListItemButton, {
@@ -206,7 +205,7 @@ registerComponent(ListItemButton, {
     selected: "boolean",
     sx: "object",
   },
-  importPath: "@mui/material/ListItemButton",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListItemIcon, {
@@ -215,7 +214,7 @@ registerComponent(ListItemIcon, {
     children: "slot",
     sx: "object",
   },
-  importPath: "@mui/material/ListItemIcon",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListItemText, {
@@ -226,7 +225,7 @@ registerComponent(ListItemText, {
     secondary: "string",
     sx: "object",
   },
-  importPath: "@mui/material/ListItemText",
+  importPath: "@mui/material",
 });
 
 registerComponent(ListSubheader, {
@@ -239,7 +238,7 @@ registerComponent(ListSubheader, {
     inset: "boolean",
     sx: "object",
   },
-  importPath: "@mui/material/ListSubheader",
+  importPath: "@mui/material",
 });
 
 registerComponent(Stack, {
@@ -257,7 +256,7 @@ registerComponent(Stack, {
     spacing: "number",
     sx: "object",
   },
-  importPath: "@mui/material/Stack",
+  importPath: "@mui/material",
 });
 
 registerComponent(Typography, {
@@ -294,7 +293,7 @@ registerComponent(Typography, {
     },
     sx: "object",
   },
-  importPath: "@mui/material/Typography",
+  importPath: "@mui/material",
 });
 
 export default function PlasmicHost() {

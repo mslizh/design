@@ -1,6 +1,6 @@
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Image from "next/image";
+import { EmptyImage } from "@/components/Empty";
 
 interface EmptyProps {
   img?: string;
@@ -12,7 +12,7 @@ export function Empty(props: EmptyProps) {
 
   return (
     <Stack alignItems="center" spacing={2} p={4} overflow="hidden">
-      <Image src="/empty.svg" alt="empty" width={256} height={68} />
+      <EmptyImage />
       <Typography
         variant="body2"
         color="text.secondary"

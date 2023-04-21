@@ -10,6 +10,9 @@ export default function useTheme() {
       createTheme({
         palette: {
           mode: prefersDarkMode ? "dark" : "light",
+          background: {
+            default: "#F9FAFB",
+          },
         },
         components: {
           MuiCard: {
