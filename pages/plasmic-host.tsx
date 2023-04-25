@@ -1,6 +1,6 @@
 import * as React from "react";
-import Script from "next/script";
 import { PlasmicCanvasHost, registerComponent } from "@plasmicapp/host";
+import { getTheme, registerColors } from "@/styles/theme";
 
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
@@ -22,6 +22,8 @@ import { FileGrid } from "@/components/FileGrid";
 import { FileList } from "@/components/FileList";
 import { FileListItem } from "@/components/FileListItem";
 import { Icon } from "@/components/Icon";
+
+registerColors(getTheme());
 
 registerComponent(Box, {
   name: "Box",

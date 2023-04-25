@@ -36,8 +36,8 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { Container } from "@mui/material"; // plasmic-import: bCEHFnOP4c/codeComponent
 import { FileUploader } from "@/components/FileUploader"; // plasmic-import: HXJ06guWrVI/codeComponent
+import { Typography } from "@mui/material"; // plasmic-import: qyApz5kIcWD/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -55,8 +55,8 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  container?: p.Flex<typeof Container>;
   fileUploader?: p.Flex<typeof FileUploader>;
+  typography?: p.Flex<typeof Typography>;
 };
 
 export interface DefaultHomepageProps {}
@@ -123,19 +123,19 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <Container
-            data-plasmic-name={"container"}
-            data-plasmic-override={overrides.container}
-            className={classNames("__wab_instance", sty.container)}
-            disableGutters={true}
-            maxWidth={"lg" as const}
-          >
-            <FileUploader
-              data-plasmic-name={"fileUploader"}
-              data-plasmic-override={overrides.fileUploader}
-              className={classNames("__wab_instance", sty.fileUploader)}
-            />
-          </Container>
+          <FileUploader
+            data-plasmic-name={"fileUploader"}
+            data-plasmic-override={overrides.fileUploader}
+            className={classNames("__wab_instance", sty.fileUploader)}
+          />
+
+          <Typography
+            data-plasmic-name={"typography"}
+            data-plasmic-override={overrides.typography}
+            children={"Some text" as const}
+            className={classNames("__wab_instance", sty.typography)}
+            sx={{ color: "primary.main" }}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -143,17 +143,17 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "container", "fileUploader"],
-  container: ["container", "fileUploader"],
-  fileUploader: ["fileUploader"]
+  root: ["root", "fileUploader", "typography"],
+  fileUploader: ["fileUploader"],
+  typography: ["typography"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  container: typeof Container;
   fileUploader: typeof FileUploader;
+  typography: typeof Typography;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -216,8 +216,8 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    container: makeNodeComponent("container"),
     fileUploader: makeNodeComponent("fileUploader"),
+    typography: makeNodeComponent("typography"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

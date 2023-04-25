@@ -1,12 +1,13 @@
-import "../styles/globals.css";
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import Head from "next/head";
-import useTheme from "@/styles/useTheme";
-import { ThemeProvider } from "@mui/material/styles";
-import { CssBaseline } from "@mui/material";
+import { ThemeProvider, createTheme } from "@mui/material";
+import { getTheme } from "@/styles/theme";
+import CssBaseline from "@mui/material/CssBaseline";
 
 function MyApp({ Component, pageProps }) {
-  const theme = useTheme();
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const theme = getTheme(prefersDarkMode ? "dark" : "light");
 
   return (
     <ThemeProvider theme={theme}>
