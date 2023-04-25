@@ -1,6 +1,7 @@
 import Grid from "@mui/material/Grid";
 import { Empty } from "@/components/Empty";
 import { FileCard } from "@/components/FileCard";
+import { registerComponent } from "@plasmicapp/host";
 
 interface FileGridProps {
   files: File[] | undefined;
@@ -19,4 +20,12 @@ export function FileGrid(props: FileGridProps): JSX.Element {
   ) : (
     <Empty message="Нет файлов" />
   );
+}
+
+export function registerFileGrid() {
+  registerComponent(FileGrid, {
+    name: "FileGrid",
+    props: {},
+    importPath: "@/components/FileGrid",
+  });
 }

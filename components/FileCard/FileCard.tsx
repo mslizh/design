@@ -4,6 +4,7 @@ import Card from "@mui/material/Card";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardContent from "@mui/material/CardContent";
 import { Divider } from "@mui/material";
+import { registerComponent } from "@plasmicapp/host";
 
 export interface FileCardProps {
   file: File;
@@ -28,4 +29,17 @@ export function FileCard(props: FileCardProps) {
       </CardActionArea>
     </Card>
   );
+}
+
+export function registerFileCard() {
+  registerComponent(FileCard, {
+    name: "FileCard",
+    props: {
+      type: "string",
+      name: "string",
+      lastModified: "number",
+      webkitRelativePath: "string",
+    },
+    importPath: "@/components/FileCard",
+  });
 }

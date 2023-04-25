@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { Icon } from "@/components/Icon";
 import { Box } from "@mui/material";
+import { registerComponent } from "@plasmicapp/host";
 
 interface UploadProps {
   title?: string;
@@ -43,4 +44,15 @@ export function Upload(props: UploadProps) {
       <input hidden multiple type="file" onChange={onChange} />
     </Button>
   );
+}
+
+export function registerUpload() {
+  registerComponent(Upload, {
+    name: "Upload",
+    props: {
+      title: "string",
+      caption: "string",
+    },
+    importPath: "@/components/Upload",
+  });
 }

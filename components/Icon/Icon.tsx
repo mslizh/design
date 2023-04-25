@@ -1,4 +1,5 @@
 import * as FluentIcon from "@fluentui/react-icons";
+import { registerComponent } from "@plasmicapp/host";
 
 type IconName = keyof typeof FluentIcon;
 type IconComponent = React.FunctionComponent<IconComponentProps>;
@@ -17,4 +18,17 @@ export function Icon(props: IconProps) {
   return <IconRoot />;
 }
 
-export default Icon;
+export function registerIcon() {
+  registerComponent(Icon, {
+    name: "Icon",
+    props: {
+      name: {
+        type: "string",
+        defaultValue: "AddRegular",
+        description:
+          "Найти название иконки можно на https://github.com/microsoft/fluentui-system-icons/blob/main/icons_regular.md",
+      },
+    },
+    importPath: "@/components/Icon",
+  });
+}

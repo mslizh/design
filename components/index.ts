@@ -1,0 +1,41 @@
+import { registerBox } from "@/components/Box";
+import { registerContainer } from "@/components/Container";
+import { registerDivider } from "@/components/Divider";
+import { registerFileUploader } from "@/components/FileUploader";
+import { registerFileCard } from "@/components/FileCard";
+import { registerFileGrid } from "@/components/FileGrid";
+import { registerFileList } from "@/components/FileList";
+import { registerFileListItem } from "@/components/FileListItem";
+import { registerGrid } from "@/components/Grid";
+import { registerIcon } from "@/components/Icon";
+import { registerList } from "@/components/List";
+import { registerListItem } from "@/components/ListItem";
+import { registerListItemAvatar } from "@/components/ListItemAvatar";
+import { registerListItemButton } from "@/components/ListItemButton";
+import { registerListItemIcon } from "@/components/ListItemIcon";
+import { registerListItemText } from "@/components/ListItemText";
+import { registerStack } from "@/components/Stack";
+import { registerTypography } from "@/components/Typography";
+import { registerUpload } from "@/components/Upload";
+
+export function registerComponents() {
+  registerBox();
+  registerContainer();
+  registerDivider();
+  registerFileCard();
+  registerFileGrid();
+  registerFileList();
+  registerFileListItem();
+  registerFileUploader();
+  registerGrid();
+  registerIcon();
+  registerList();
+  registerListItem();
+  registerListItemAvatar();
+  registerListItemButton();
+  registerListItemIcon();
+  registerListItemText();
+  registerStack();
+  registerTypography();
+  registerUpload();
+}
