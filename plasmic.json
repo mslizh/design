@@ -40,6 +40,20 @@
           "cssFilePath": "plasmic/design_system/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "cw8hzszpYgJ",
+          "name": "Button",
+          "type": "managed",
+          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
+          "renderModuleFilePath": "plasmic/design_system/PlasmicButton.tsx",
+          "importSpec": {
+            "modulePath": "Button.tsx"
+          },
+          "cssFilePath": "plasmic/design_system/PlasmicButton.module.css",
+          "scheme": "blackbox",
+          "componentType": "component",
+          "plumeType": "button"
         }
       ],
       "icons": [],
@@ -138,11 +152,6 @@
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "prtu9q4oOxj",
-          "name": "ListSubheader",
-          "componentImportPath": "@mui/material"
-        },
-        {
           "id": "JArHThqJag5",
           "name": "Stack",
           "componentImportPath": "@mui/material"
@@ -151,6 +160,16 @@
           "id": "qyApz5kIcWD",
           "name": "Typography",
           "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "22UEph06hY",
+          "name": "Upload",
+          "componentImportPath": "@/components/Upload"
+        },
+        {
+          "id": "nhftCVhQNA",
+          "name": "WithToast",
+          "componentImportPath": "@/components/Toaster"
         }
       ]
     }
@@ -169,6 +188,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.261",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.261/dist/plasmic.schema.json"
+  "cliVersion": "0.1.262",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.262/dist/plasmic.schema.json"
 }

@@ -5,7 +5,7 @@
   height: 100%;
   align-content: flex-start;
   justify-items: center;
-  background: #ffffff;
+  background: var(--token-mmSXowfvOU7e);
   min-width: 0;
   min-height: 0;
   grid-template-columns:
@@ -20,17 +20,22 @@
 :where(.root > *) {
   grid-column: 4;
 }
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 600px) {
   :where(.root > *) {
     grid-column: 4;
   }
 }
-.fileUploader:global(.__wab_instance) {
+.withToast:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
 }
-.typography:global(.__wab_instance) {
+.listItemButton:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.listItemText:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;

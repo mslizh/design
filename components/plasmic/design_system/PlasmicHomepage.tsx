@@ -36,8 +36,9 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { FileUploader } from "@/components/FileUploader"; // plasmic-import: HXJ06guWrVI/codeComponent
-import { Typography } from "@mui/material"; // plasmic-import: qyApz5kIcWD/codeComponent
+import { WithToast } from "@/components/Toaster"; // plasmic-import: nhftCVhQNA/codeComponent
+import { ListItemButton } from "@mui/material"; // plasmic-import: iHy3Erb07Jt/codeComponent
+import { ListItemText } from "@mui/material"; // plasmic-import: aj2_DNmPd3t/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -55,8 +56,9 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  fileUploader?: p.Flex<typeof FileUploader>;
-  typography?: p.Flex<typeof Typography>;
+  withToast?: p.Flex<typeof WithToast>;
+  listItemButton?: p.Flex<typeof ListItemButton>;
+  listItemText?: p.Flex<typeof ListItemText>;
 };
 
 export interface DefaultHomepageProps {}
@@ -123,19 +125,25 @@ function PlasmicHomepage__RenderFunc(props: {
             sty.root
           )}
         >
-          <FileUploader
-            data-plasmic-name={"fileUploader"}
-            data-plasmic-override={overrides.fileUploader}
-            className={classNames("__wab_instance", sty.fileUploader)}
-          />
-
-          <Typography
-            data-plasmic-name={"typography"}
-            data-plasmic-override={overrides.typography}
-            children={"Some text" as const}
-            className={classNames("__wab_instance", sty.typography)}
-            sx={{ color: "primary.main" }}
-          />
+          <WithToast
+            data-plasmic-name={"withToast"}
+            data-plasmic-override={overrides.withToast}
+            className={classNames("__wab_instance", sty.withToast)}
+            message={"Hello" as const}
+          >
+            <ListItemButton
+              data-plasmic-name={"listItemButton"}
+              data-plasmic-override={overrides.listItemButton}
+              className={classNames("__wab_instance", sty.listItemButton)}
+            >
+              <ListItemText
+                data-plasmic-name={"listItemText"}
+                data-plasmic-override={overrides.listItemText}
+                className={classNames("__wab_instance", sty.listItemText)}
+                primary={"Some title" as const}
+              />
+            </ListItemButton>
+          </WithToast>
         </div>
       </div>
     </React.Fragment>
@@ -143,17 +151,19 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "fileUploader", "typography"],
-  fileUploader: ["fileUploader"],
-  typography: ["typography"]
+  root: ["root", "withToast", "listItemButton", "listItemText"],
+  withToast: ["withToast", "listItemButton", "listItemText"],
+  listItemButton: ["listItemButton", "listItemText"],
+  listItemText: ["listItemText"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  fileUploader: typeof FileUploader;
-  typography: typeof Typography;
+  withToast: typeof WithToast;
+  listItemButton: typeof ListItemButton;
+  listItemText: typeof ListItemText;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -216,8 +226,9 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    fileUploader: makeNodeComponent("fileUploader"),
-    typography: makeNodeComponent("typography"),
+    withToast: makeNodeComponent("withToast"),
+    listItemButton: makeNodeComponent("listItemButton"),
+    listItemText: makeNodeComponent("listItemText"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

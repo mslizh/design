@@ -6,7 +6,7 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 
-export type ScreenValue = "mobileOnly";
+export type ScreenValue = "sm" | "md" | "lg" | "xl";
 export const ScreenContext = React.createContext<ScreenValue[] | undefined>(
   "PLEASE_RENDER_INSIDE_PROVIDER" as any
 );
@@ -24,7 +24,10 @@ export function ScreenVariantProvider(props: React.PropsWithChildren) {
 }
 
 export const useScreenVariants = p.createUseScreenVariants(true, {
-  mobileOnly: "(min-width:0px) and (max-width:768px)",
+  sm: "(min-width:0px) and (max-width:600px)",
+  md: "(max-width:960px)",
+  lg: "(max-width:1280px)",
+  xl: "(max-width:1536px)",
 });
 
 export default ScreenContext;

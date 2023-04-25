@@ -17,6 +17,7 @@ import { registerListItemText } from "@/components/ListItemText";
 import { registerStack } from "@/components/Stack";
 import { registerTypography } from "@/components/Typography";
 import { registerUpload } from "@/components/Upload";
+import { registerWithToast } from "@/components/Toaster";
 
 export function registerComponents() {
   registerBox();
@@ -38,4 +39,5 @@ export function registerComponents() {
   registerStack();
   registerTypography();
   registerUpload();
+  registerWithToast();
 }

@@ -1,9 +1,11 @@
+import React from "react";
 import { PlasmicRootProvider } from "@plasmicapp/react-web";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import Head from "next/head";
-import { ThemeProvider, createTheme } from "@mui/material";
-import { getTheme } from "@/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import CssBaseline from "@mui/material/CssBaseline";
+import { getTheme } from "@/styles";
+import { ThemeProvider } from "@mui/material";
+import { Toaster } from "sonner";
 
 function MyApp({ Component, pageProps }) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -12,6 +14,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <PlasmicRootProvider Head={Head}>
+        <Toaster closeButton />
         <Component {...pageProps} />
         <CssBaseline />
       </PlasmicRootProvider>

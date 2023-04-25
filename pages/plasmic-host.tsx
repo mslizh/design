@@ -1,3 +1,4 @@
+import React from "react";
 import { PlasmicCanvasHost } from "@plasmicapp/host";
 import { getTheme, registerColors } from "@/styles";
 import { registerComponents } from "@/components";
