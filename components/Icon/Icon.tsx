@@ -6,6 +6,7 @@ type IconComponent = React.FunctionComponent<IconComponentProps>;
 
 interface IconProps {
   name: IconName;
+  className?: string;
 }
 
 interface IconComponentProps extends React.SVGAttributes<SVGElement> {
@@ -13,9 +14,9 @@ interface IconComponentProps extends React.SVGAttributes<SVGElement> {
 }
 
 export function Icon(props: IconProps) {
-  const { name } = props;
+  const { name, className } = props;
   const IconRoot = FluentIcon[name] as IconComponent;
-  return <IconRoot />;
+  return <IconRoot className={className} />;
 }
 
 export function registerIcon() {

@@ -1,4 +1,3 @@
-import React from "react";
 import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
 import get from "lodash/get";
@@ -11,6 +10,9 @@ export function getTheme(mode?: "light" | "dark") {
         light: "#FDBA74",
         dark: "#EA580C",
         contrastText: "#FFFFFF",
+      },
+      secondary: {
+        main: "#333333",
       },
     },
     components: {
