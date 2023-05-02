@@ -5,7 +5,10 @@ export function registerDivider() {
   registerComponent(Divider, {
     name: "Divider",
     props: {
-      children: "slot",
+      children: {
+        type: "slot",
+        hidePlaceholder: true,
+      },
       light: "boolean",
       orientation: {
         type: "choice",

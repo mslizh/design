@@ -14,7 +14,7 @@ interface IconComponentProps extends React.SVGAttributes<SVGElement> {
 }
 
 export function Icon(props: IconProps) {
-  const { name, className } = props;
+  const { name = "AddRegular", className } = props;
   const IconRoot = FluentIcon[name] as IconComponent;
   return <IconRoot className={className} />;
 }

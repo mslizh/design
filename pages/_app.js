@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <PlasmicRootProvider Head={Head}>
-        <Toaster closeButton />
+        <Toaster closeButton theme={prefersDarkMode ? "dark" : "light"} />
         <Scheduler events={events} />
         <Component {...pageProps} />
         <CssBaseline />

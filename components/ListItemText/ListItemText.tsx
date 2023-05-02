@@ -6,7 +6,10 @@ export function registerListItemText() {
     name: "ListItemText",
     props: {
       inset: "boolean",
-      primary: "string",
+      primary: {
+        type: "string",
+        defaultValue: "Some text…",
+      },
       secondary: "string",
       sx: "object",
     },
