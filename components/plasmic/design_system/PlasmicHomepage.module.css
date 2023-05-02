@@ -1,5 +1,5 @@
 .root {
-  display: grid;
+  display: plasmic-content-layout;
   position: relative;
   width: 100%;
   height: 100%;
@@ -20,23 +20,131 @@
 :where(.root > *) {
   grid-column: 4;
 }
+@media (max-width: 1536px) {
+  :where(.root > *) {
+    grid-column: 4;
+  }
+}
+@media (max-width: 1280px) {
+  :where(.root > *) {
+    grid-column: 4;
+  }
+}
+@media (max-width: 960px) {
+  :where(.root > *) {
+    grid-column: 4;
+  }
+}
 @media (min-width: 0px) and (max-width: 600px) {
   :where(.root > *) {
     grid-column: 4;
   }
+}
+.freeBox__rvk0H {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  min-height: 0;
+  padding: 0px;
+}
+.freeBox__xd5Z {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  min-height: 0;
+  padding: 0px;
+}
+.list__qJcU6:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+  min-height: 0;
 }
 .withToast:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
 }
-.listItemButton:global(.__wab_instance) {
+.listItem__xqeBw:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  width: 320px;
+}
+.listItemButton__kVfxb:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
 }
-.listItemText:global(.__wab_instance) {
+.listItemIcon__dWwK:global(.__wab_instance) {
   max-width: 100%;
   object-fit: cover;
   position: relative;
+}
+.icon__yfqtw:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.listItemText__iuJzW:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.list__crUPf:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.listItem__aTyAc:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  width: 320px;
+}
+.listItemButton__chxVe:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.listItemIcon__vylnb:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.icon__amgrN:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.listItemText__p8LKj:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.divider:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.scheduler:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
 }

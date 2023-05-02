@@ -5,6 +5,7 @@ import get from "lodash/get";
 export function getTheme(mode?: "light" | "dark") {
   const theme = createTheme({
     palette: {
+      mode: mode,
       primary: {
         main: "#F97316",
         light: "#FDBA74",
@@ -12,8 +13,9 @@ export function getTheme(mode?: "light" | "dark") {
         contrastText: "#FFFFFF",
       },
       secondary: {
-        main: "#333333",
+        main: "#333",
       },
+      divider: "#E5E7EB",
     },
     components: {
       MuiCard: {
@@ -21,41 +23,56 @@ export function getTheme(mode?: "light" | "dark") {
           variant: "outlined" as const,
         },
       },
-      MuiListItemIcon: {},
+      MuiListItemIcon: {
+        styleOverrides: {
+          root: {
+            minWidth: "36px",
+          },
+        },
+      },
     },
   });
 
   return theme;
 }
 
-export function registerColors(theme: Theme) {
+export function registerTokens(theme: Theme) {
   const palette = theme.palette;
   Object.keys(palette).map((key) => {
-    registerColorFromPalette(palette, key);
+    registerTokenFromPalette(palette, key);
   });
 }
 
-function registerColorFromPalette(palette: PaletteOptions, key: string) {
-  const color = get(palette, key); // Object or string
+function registerTokenFromPalette(palette: PaletteOptions, key: string) {
+  const token = get(palette, key); // Object or string
 
-  if (color !== undefined && key !== "mode") {
-    if (typeof color === "string") {
+  if (token !== undefined && key !== "mode") {
+    if (typeof token === "string") {
       registerToken({
         name: `${key}`,
         displayName: `${key}`,
-        value: color,
+        value: token,
         type: "color",
       });
     }
 
-    if (typeof color === "object") {
-      Object.keys(color).map((value) => {
-        if (typeof color[value] === "string") {
+    if (typeof token === "object") {
+      Object.keys(token).map((value) => {
+        if (typeof token[value] === "string") {
           registerToken({
             name: `${key}.${value}`,
             displayName: `${key}.${value}`,
-            value: color[value],
+            value: token[value],
             type: "color",
+          });
+        }
+
+        if (typeof token[value] === "number") {
+          registerToken({
+            name: `${value}`,
+            displayName: `${value}`,
+            value: `${token[value] * 100}%`,
+            type: "opacity",
           });
         }
       });

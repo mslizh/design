@@ -8,7 +8,7 @@ export function registerList() {
       children: "slot",
       disablePadding: "boolean",
       dense: "boolean",
-      subheader: "slot",
+      showSubheader: "boolean",
       sx: "object",
     },
     importPath: "@mui/material",

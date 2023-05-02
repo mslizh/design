@@ -40,20 +40,6 @@
           "cssFilePath": "plasmic/design_system/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
-        },
-        {
-          "id": "cw8hzszpYgJ",
-          "name": "Button",
-          "type": "managed",
-          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
-          "renderModuleFilePath": "plasmic/design_system/PlasmicButton.tsx",
-          "importSpec": {
-            "modulePath": "Button.tsx"
-          },
-          "cssFilePath": "plasmic/design_system/PlasmicButton.module.css",
-          "scheme": "blackbox",
-          "componentType": "component",
-          "plumeType": "button"
         }
       ],
       "icons": [],
@@ -72,23 +58,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         },
         {
-          "id": "YXhC3AiFHN",
-          "name": "Box",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "bCEHFnOP4c",
-          "name": "Container",
-          "componentImportPath": "@mui/material"
-        },
-        {
           "id": "OHPtLicOEy",
           "name": "Divider",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "XygyumWo61",
-          "name": "Grid",
           "componentImportPath": "@mui/material"
         },
         {
@@ -152,11 +123,6 @@
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "JArHThqJag5",
-          "name": "Stack",
-          "componentImportPath": "@mui/material"
-        },
-        {
           "id": "qyApz5kIcWD",
           "name": "Typography",
           "componentImportPath": "@mui/material"
@@ -170,6 +136,66 @@
           "id": "nhftCVhQNA",
           "name": "WithToast",
           "componentImportPath": "@/components/Toaster"
+        },
+        {
+          "id": "3Kt6jTcdD4",
+          "name": "Scheduler",
+          "componentImportPath": "@/components/Scheduler"
+        },
+        {
+          "id": "WmgiXRoFGt",
+          "name": "Drawer",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "9lv9XtgKya",
+          "name": "ButtonGroup",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "f36r7srTwQ",
+          "name": "Card",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "-C5TMn73yZ",
+          "name": "CardActionArea",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "qO5068cFew",
+          "name": "CardActions",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "U6eSWEdR7R",
+          "name": "CardContent",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "YPUduUPbUH_",
+          "name": "CardHeader",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "sE47YhPB7IW",
+          "name": "CardMedia",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "QHQyk5MJgoR",
+          "name": "IconButton",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "bbcMKy53wsa",
+          "name": "ToggleButton",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "-Cbzz5nVJvn",
+          "name": "ToggleButtonGroup",
+          "componentImportPath": "@mui/material"
         }
       ]
     }
@@ -188,6 +214,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.262",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.262/dist/plasmic.schema.json"
+  "cliVersion": "0.1.270",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.270/dist/plasmic.schema.json"
 }

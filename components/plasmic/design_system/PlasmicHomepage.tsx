@@ -21,6 +21,12 @@ import * as p from "@plasmicapp/react-web";
 import * as ph from "@plasmicapp/react-web/lib/host";
 
 import {
+  usePlasmicDataConfig,
+  executePlasmicDataOp,
+  useDependencyAwareQuery
+} from "@plasmicapp/react-web/lib/data-sources";
+
+import {
   hasVariant,
   classNames,
   wrapWithClassName,
@@ -36,9 +42,16 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { List } from "@mui/material"; // plasmic-import: qPyf2BvmO1n/codeComponent
 import { WithToast } from "@/components/Toaster"; // plasmic-import: nhftCVhQNA/codeComponent
+import { ListItem } from "@mui/material"; // plasmic-import: aB9WZ1p1Dc5/codeComponent
 import { ListItemButton } from "@mui/material"; // plasmic-import: iHy3Erb07Jt/codeComponent
+import { ListItemIcon } from "@mui/material"; // plasmic-import: JrtN49VL5v_/codeComponent
+import { Icon } from "@/components/Icon"; // plasmic-import: K-4mZ5X0Et2/codeComponent
 import { ListItemText } from "@mui/material"; // plasmic-import: aj2_DNmPd3t/codeComponent
+import { Divider } from "@mui/material"; // plasmic-import: OHPtLicOEy/codeComponent
+import { Scheduler } from "@/components/Scheduler"; // plasmic-import: 3Kt6jTcdD4/codeComponent
+import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: mYGlLbIkFyE55/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
@@ -57,8 +70,8 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   withToast?: p.Flex<typeof WithToast>;
-  listItemButton?: p.Flex<typeof ListItemButton>;
-  listItemText?: p.Flex<typeof ListItemText>;
+  divider?: p.Flex<typeof Divider>;
+  scheduler?: p.Flex<typeof Scheduler>;
 };
 
 export interface DefaultHomepageProps {}
@@ -100,6 +113,20 @@ function PlasmicHomepage__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
   const [$queries, setDollarQueries] = React.useState({});
 
+  useDependencyAwareQuery({
+    name: "menuItems",
+    getDataOp: () => ({
+      sourceId: "wKVMb2JWd9S48BYLES4Hzd",
+      opId: "2074e256218920375950d10d8e61418bb4e939ea69a57a5748a376a8bf39411a4cd091d3d604d52f80bee232c7163eb96561423cbea4b115ad4cdb2b6bda9680fed3119d1a50675bb4008acad29561399f67cb",
+      userArgs: {},
+      cacheKey: "plasmic.$.fQ-KMpWHu.$.",
+      invalidatedKeys: ["plasmic_refresh_all"],
+      roleId: null
+    }),
+    $queries,
+    setDollarQueries
+  });
+
   return (
     <React.Fragment>
       <Head></Head>
@@ -111,50 +138,225 @@ function PlasmicHomepage__RenderFunc(props: {
       `}</style>
 
       <div className={projectcss.plasmic_page_wrapper}>
-        <div
-          data-plasmic-name={"root"}
-          data-plasmic-override={overrides.root}
-          data-plasmic-root={true}
-          data-plasmic-for-node={forNode}
-          className={classNames(
-            projectcss.all,
-            projectcss.root_reset,
-            projectcss.plasmic_default_styles,
-            projectcss.plasmic_mixins,
-            projectcss.plasmic_tokens,
-            sty.root
-          )}
-        >
-          <WithToast
-            data-plasmic-name={"withToast"}
-            data-plasmic-override={overrides.withToast}
-            className={classNames("__wab_instance", sty.withToast)}
-            message={"Hello" as const}
+        {true ? (
+          <div
+            data-plasmic-name={"root"}
+            data-plasmic-override={overrides.root}
+            data-plasmic-root={true}
+            data-plasmic-for-node={forNode}
+            className={classNames(
+              projectcss.all,
+              projectcss.root_reset,
+              projectcss.plasmic_default_styles,
+              projectcss.plasmic_mixins,
+              projectcss.plasmic_tokens,
+              sty.root
+            )}
           >
-            <ListItemButton
-              data-plasmic-name={"listItemButton"}
-              data-plasmic-override={overrides.listItemButton}
-              className={classNames("__wab_instance", sty.listItemButton)}
-            >
-              <ListItemText
-                data-plasmic-name={"listItemText"}
-                data-plasmic-override={overrides.listItemText}
-                className={classNames("__wab_instance", sty.listItemText)}
-                primary={"Some title" as const}
-              />
-            </ListItemButton>
-          </WithToast>
-        </div>
+            {true ? (
+              <div className={classNames(projectcss.all, sty.freeBox__rvk0H)}>
+                {true ? (
+                  <div
+                    className={classNames(projectcss.all, sty.freeBox__xd5Z)}
+                  >
+                    <List
+                      className={classNames("__wab_instance", sty.list__qJcU6)}
+                    >
+                      <WithToast
+                        data-plasmic-name={"withToast"}
+                        data-plasmic-override={overrides.withToast}
+                        className={classNames("__wab_instance", sty.withToast)}
+                        message={"Hello" as const}
+                      >
+                        {(
+                          (() => {
+                            try {
+                              return $queries.menuItems.data;
+                            } catch (e) {
+                              if (e instanceof TypeError) {
+                                return [];
+                              }
+                              throw e;
+                            }
+                          })() ?? []
+                        ).map((currentItem, currentIndex) => (
+                          <ListItem
+                            className={classNames(
+                              "__wab_instance",
+                              sty.listItem__xqeBw
+                            )}
+                            disablePadding={true}
+                            key={currentIndex}
+                          >
+                            <ListItemButton
+                              className={classNames(
+                                "__wab_instance",
+                                sty.listItemButton__kVfxb
+                              )}
+                              selected={(() => {
+                                try {
+                                  return currentIndex === 0;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return undefined;
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            >
+                              <ListItemIcon
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.listItemIcon__dWwK
+                                )}
+                              >
+                                <Icon
+                                  className={classNames(
+                                    "__wab_instance",
+                                    sty.icon__yfqtw
+                                  )}
+                                  name={(() => {
+                                    try {
+                                      return `${currentItem.icon}20Regular`;
+                                    } catch (e) {
+                                      if (e instanceof TypeError) {
+                                        return "LocationRegular";
+                                      }
+                                      throw e;
+                                    }
+                                  })()}
+                                />
+                              </ListItemIcon>
+                              <ListItemText
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.listItemText__iuJzW
+                                )}
+                                primary={(() => {
+                                  try {
+                                    return currentItem.title;
+                                  } catch (e) {
+                                    if (e instanceof TypeError) {
+                                      return "Menu Item";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            </ListItemButton>
+                          </ListItem>
+                        ))}
+                      </WithToast>
+                    </List>
+                    <List
+                      className={classNames("__wab_instance", sty.list__crUPf)}
+                    >
+                      {(
+                        (() => {
+                          try {
+                            return [
+                              {
+                                title: "Настройки",
+                                icon: "Settings20Regular"
+                              },
+                              {
+                                title: "Помощь",
+                                icon: "QuestionCircle20Regular"
+                              }
+                            ];
+                          } catch (e) {
+                            if (e instanceof TypeError) {
+                              return [];
+                            }
+                            throw e;
+                          }
+                        })() ?? []
+                      ).map((currentItem, currentIndex) => (
+                        <ListItem
+                          className={classNames(
+                            "__wab_instance",
+                            sty.listItem__aTyAc
+                          )}
+                          disablePadding={true}
+                          key={currentIndex}
+                        >
+                          <ListItemButton
+                            className={classNames(
+                              "__wab_instance",
+                              sty.listItemButton__chxVe
+                            )}
+                          >
+                            <ListItemIcon
+                              className={classNames(
+                                "__wab_instance",
+                                sty.listItemIcon__vylnb
+                              )}
+                            >
+                              <Icon
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.icon__amgrN
+                                )}
+                                name={(() => {
+                                  try {
+                                    return currentItem.icon;
+                                  } catch (e) {
+                                    if (e instanceof TypeError) {
+                                      return "LocationRegular";
+                                    }
+                                    throw e;
+                                  }
+                                })()}
+                              />
+                            </ListItemIcon>
+                            <ListItemText
+                              className={classNames(
+                                "__wab_instance",
+                                sty.listItemText__p8LKj
+                              )}
+                              primary={(() => {
+                                try {
+                                  return currentItem.title;
+                                } catch (e) {
+                                  if (e instanceof TypeError) {
+                                    return "Some text…";
+                                  }
+                                  throw e;
+                                }
+                              })()}
+                            />
+                          </ListItemButton>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </div>
+                ) : null}
+                <Divider
+                  data-plasmic-name={"divider"}
+                  data-plasmic-override={overrides.divider}
+                  className={classNames("__wab_instance", sty.divider)}
+                  orientation={"vertical" as const}
+                />
+
+                <Scheduler
+                  data-plasmic-name={"scheduler"}
+                  data-plasmic-override={overrides.scheduler}
+                  className={classNames("__wab_instance", sty.scheduler)}
+                />
+              </div>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "withToast", "listItemButton", "listItemText"],
-  withToast: ["withToast", "listItemButton", "listItemText"],
-  listItemButton: ["listItemButton", "listItemText"],
-  listItemText: ["listItemText"]
+  root: ["root", "withToast", "divider", "scheduler"],
+  withToast: ["withToast"],
+  divider: ["divider"],
+  scheduler: ["scheduler"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -162,8 +364,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   withToast: typeof WithToast;
-  listItemButton: typeof ListItemButton;
-  listItemText: typeof ListItemText;
+  divider: typeof Divider;
+  scheduler: typeof Scheduler;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -227,8 +429,8 @@ export const PlasmicHomepage = Object.assign(
   {
     // Helper components rendering sub-elements
     withToast: makeNodeComponent("withToast"),
-    listItemButton: makeNodeComponent("listItemButton"),
-    listItemText: makeNodeComponent("listItemText"),
+    divider: makeNodeComponent("divider"),
+    scheduler: makeNodeComponent("scheduler"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
