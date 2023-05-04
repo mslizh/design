@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { registerComponent } from "@plasmicapp/host";
 import "dhtmlx-scheduler/codebase/dhtmlxscheduler.css";
+import "./Scheduler.module.css";
 
 interface SchedulerProps {
   events: Event[];
