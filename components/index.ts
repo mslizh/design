@@ -29,6 +29,7 @@ import { registerButtonGroup } from "./ButtonGroup";
 import { registerButton } from "./Button";
 import { registerTextField } from "./TextField";
 import { registerInputBase } from "./InputBase";
+import { registerCheckbox } from "./Checkbox";
 
 export function registerComponents() {
   registerButton();
@@ -39,6 +40,7 @@ export function registerComponents() {
   registerCardContent();
   registerCardHeader();
   registerCardMedia();
+  registerCheckbox();
   registerDivider();
   registerDrawer();
   registerFileCard();

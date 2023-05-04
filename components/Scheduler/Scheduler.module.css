@@ -1,0 +1,6 @@
+.dhx_cal_event .dhx_body,
+.dhx_cal_event .dhx_footer,
+.dhx_cal_event .dhx_header,
+.dhx_cal_event .dhx_title {
+  background-color: red;
+}
