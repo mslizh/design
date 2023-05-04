@@ -30,6 +30,7 @@ import { registerButton } from "./Button";
 import { registerTextField } from "./TextField";
 import { registerInputBase } from "./InputBase";
 import { registerCheckbox } from "./Checkbox";
+import { registerPaper } from "./Paper";
 
 export function registerComponents() {
   registerButton();
@@ -57,6 +58,7 @@ export function registerComponents() {
   registerListItemButton();
   registerListItemIcon();
   registerListItemText();
+  registerPaper();
   registerScheduler();
   registerTextField();
   registerToggleButton();
