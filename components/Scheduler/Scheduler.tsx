@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { registerComponent } from "@plasmicapp/host";
-import "dhtmlx-scheduler/codebase/dhtmlxscheduler.css";
-import "./Scheduler.module.css";
+import "dhtmlx-scheduler/codebase/dhtmlxscheduler_material.css";
 
 interface SchedulerProps {
   events: Event[];
@@ -23,6 +22,7 @@ export function Scheduler(props: SchedulerProps) {
     async function loadScheduler() {
       const { scheduler } = await import("dhtmlx-scheduler");
       if (schedulerContainer.current) {
+        scheduler.skin = "material";
         scheduler.config.header = [
           "day",
           "week",
