@@ -33,6 +33,7 @@ export function registerTypography() {
           "button",
           "caption",
         ],
+        defaultValue: "inherit",
       },
       sx: "object",
     },

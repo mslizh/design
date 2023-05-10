@@ -31,8 +31,13 @@ import { registerTextField } from "./TextField";
 import { registerInputBase } from "./InputBase";
 import { registerCheckbox } from "./Checkbox";
 import { registerPaper } from "./Paper";
+import { registerGrid } from "./Grid";
+import { registerContainer } from "./Container";
+import { registerStack } from "./Stack";
+import { registerBox } from "./Box";
 
 export function registerComponents() {
+  registerBox(styleProps);
   registerButton();
   registerButtonGroup();
   registerCard();
@@ -42,6 +47,7 @@ export function registerComponents() {
   registerCardHeader();
   registerCardMedia();
   registerCheckbox();
+  registerContainer(styleProps);
   registerDivider();
   registerDrawer();
   registerFileCard();
@@ -49,6 +55,7 @@ export function registerComponents() {
   registerFileList();
   registerFileListItem();
   registerFileUploader();
+  registerGrid(styleProps);
   registerIcon();
   registerIconButton();
   registerInputBase();
@@ -58,8 +65,9 @@ export function registerComponents() {
   registerListItemButton();
   registerListItemIcon();
   registerListItemText();
-  registerPaper();
+  registerPaper(styleProps);
   registerScheduler();
+  registerStack(styleProps);
   registerTextField();
   registerToggleButton();
   registerToggleButtonGroup();
@@ -67,3 +75,25 @@ export function registerComponents() {
   registerUpload();
   registerWithToast();
 }
+
+const styleNumberProp = {
+  type: "number",
+  advanced: true,
+};
+
+export const styleProps = {
+  padding: styleNumberProp,
+  paddingX: styleNumberProp,
+  paddingY: styleNumberProp,
+  paddingTop: styleNumberProp,
+  paddingBottom: styleNumberProp,
+  paddingLeft: styleNumberProp,
+  paddingRight: styleNumberProp,
+  margin: styleNumberProp,
+  marginX: styleNumberProp,
+  marginY: styleNumberProp,
+  marginTop: styleNumberProp,
+  marginBottom: styleNumberProp,
+  marginLeft: styleNumberProp,
+  marginRight: styleNumberProp,
+};
