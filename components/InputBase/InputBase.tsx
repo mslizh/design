@@ -1,6 +1,5 @@
 import InputBase from "@mui/material/InputBase";
 import { registerComponent } from "@plasmicapp/host";
-import "./InputBase.module.css";
 
 export function registerInputBase() {
   registerComponent(InputBase, {
@@ -64,7 +63,7 @@ export function registerInputBase() {
         argTypes: [],
       },
       type: "string",
-      classes: "object",
+      sx: "object",
     },
     importPath: "@mui/material",
   });

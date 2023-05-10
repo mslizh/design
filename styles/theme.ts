@@ -164,6 +164,13 @@ export function getTheme(mode?: "light" | "dark") {
           },
         },
       },
+      MuiInputBase: {
+        styleOverrides: {
+          input: {
+            textAlign: "inherit",
+          },
+        },
+      },
     },
   });
 
