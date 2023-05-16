@@ -10,7 +10,10 @@ export function registerStack(styleProps: any) {
         type: "choice",
         options: ["row", "row-reverse", "column", "column-reverse"],
       },
-      spacing: "number",
+      spacing: {
+        type: "number",
+        helpText: "Базовое значение 8px.",
+      },
       divider: {
         type: "slot",
         hidePlaceholder: true,

@@ -1,7 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { registerComponent } from "@plasmicapp/host";
 
-export function registerTypography() {
+export function registerTypography(styleProps: any) {
   registerComponent(Typography, {
     name: "Typography",
     props: {
@@ -36,6 +36,7 @@ export function registerTypography() {
         defaultValue: "inherit",
       },
       sx: "object",
+      ...styleProps,
     },
     importPath: "@mui/material",
   });

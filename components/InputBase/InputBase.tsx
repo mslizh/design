@@ -60,11 +60,43 @@ export function registerInputBase() {
       },
       onChange: {
         type: "eventHandler",
-        argTypes: [],
+        argTypes: [
+          {
+            name: "value",
+            type: "string",
+          },
+        ],
       },
       type: "string",
       sx: "object",
     },
+    states: {
+      value: {
+        type: "writable",
+        variableType: "text",
+        valueProp: "value",
+        onChangeProp: "onChange",
+      },
+    },
+    componentHelpers: {
+      helpers: inputHelpers,
+      importName: "inputHelpers",
+      importPath: "@/components/InputBase",
+    },
     importPath: "@mui/material",
   });
 }
+
+export const inputHelpers = {
+  states: {
+    value: {
+      onChangeArgsToValue: (
+        e: Parameters<
+          NonNullable<React.ComponentProps<typeof InputBase>["onChange"]>
+        >[0]
+      ) => {
+        return e.target.value;
+      },
+    },
+  },
+};

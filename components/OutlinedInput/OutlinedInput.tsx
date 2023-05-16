@@ -1,10 +1,19 @@
-import TextField from "@mui/material/TextField";
+import { OutlinedInput } from "@mui/material";
 import { registerComponent } from "@plasmicapp/host";
+import { inputHelpers } from "../InputBase";
 
-export function registerTextField() {
-  registerComponent(TextField, {
-    name: "TextField",
+export function registerOutlinedInput() {
+  registerComponent(OutlinedInput, {
+    name: "OutlinedInput",
     props: {
+      startAdornment: {
+        type: "slot",
+        hidePlaceholder: true,
+      },
+      endAdornment: {
+        type: "slot",
+        hidePlaceholder: true,
+      },
       value: "string",
       label: "string",
       helperText: "string",
@@ -14,7 +23,10 @@ export function registerTextField() {
       disabled: "boolean",
       error: "boolean",
       multiline: "boolean",
-      rows: "number",
+      rows: {
+        type: "number",
+        hidden: (props) => !props.multiline,
+      },
       maxRows: {
         type: "number",
         hidden: (props) => !props.multiline,
@@ -56,6 +68,20 @@ export function registerTextField() {
         argTypes: [],
       },
       type: "string",
+      sx: "object",
+    },
+    states: {
+      value: {
+        type: "writable",
+        variableType: "text",
+        valueProp: "value",
+        onChangeProp: "onChange",
+      },
+    },
+    componentHelpers: {
+      helpers: inputHelpers,
+      importName: "inputHelpers",
+      importPath: "@/components/InputBase",
     },
     importPath: "@mui/material",
   });

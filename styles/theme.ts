@@ -144,7 +144,8 @@ export function getTheme(mode?: "light" | "dark") {
         letterSpacing: -0.1,
       },
       button: {
-        lineHeight: "20px",
+        fontSize: "1rem",
+        lineHeight: "24px",
         textTransform: "none",
       },
       caption: {
@@ -152,6 +153,21 @@ export function getTheme(mode?: "light" | "dark") {
       },
     },
     components: {
+      MuiOutlinedInput: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            "&.MuiOutlinedInput-notchedOutline :hover": {
+              borderColor: theme.palette.divider,
+            },
+          }),
+          notchedOutline: ({ theme }) => ({
+            borderColor: theme.palette.divider,
+          }),
+        },
+        defaultProps: {
+          size: "small",
+        },
+      },
       MuiCard: {
         defaultProps: {
           variant: "outlined" as const,
