@@ -30,6 +30,10 @@ export function registerToggleButton() {
         type: "eventHandler",
         argTypes: [],
       },
+      onChange: {
+        type: "eventHandler",
+        argTypes: [],
+      },
     },
     importPath: "@mui/material",
   });

@@ -34,6 +34,10 @@ export function registerToggleButtonGroup() {
         helpText:
           "If true, only allow one of the child ToggleButton values to be selected.",
       },
+      onChange: {
+        type: "eventHandler",
+        argTypes: [],
+      },
     },
     importPath: "@mui/material",
   });
