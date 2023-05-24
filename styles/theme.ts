@@ -187,6 +187,18 @@ export function getTheme(mode?: "light" | "dark") {
           },
         },
       },
+      MuiTooltip: {
+        styleOverrides: {
+          tooltip: ({ theme }) => ({
+            backgroundColor: theme.palette.background.paper,
+            boxShadow: theme.shadows[6],
+            color: theme.palette.text.secondary,
+            padding: theme.spacing(1, 1.5),
+            border: `1px solid ${theme.palette.divider}`,
+            ...theme.typography.caption
+          })
+        },
+      },
     },
   });
 

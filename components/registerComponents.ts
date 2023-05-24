@@ -37,6 +37,7 @@ import { registerToggleButton } from "./ToggleButton";
 import { registerToggleButtonGroup } from "./ToggleButtonGroup";
 import { registerUpload } from "./Upload";
 import { registerWithToast } from "./Toaster";
+import { registerTooltip } from "./Tooltip";
 
 export function registerComponents() {
   registerBadge();
@@ -75,6 +76,7 @@ export function registerComponents() {
   registerStack(styleProps);
   registerToggleButton();
   registerToggleButtonGroup();
+  registerTooltip();
   registerTypography(styleProps);
   registerUpload();
   registerWithToast();
