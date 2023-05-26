@@ -7,7 +7,7 @@ export function getTheme(mode?: "light" | "dark") {
     palette: {
       mode: mode,
       common: {
-        black: "rgba(17, 24, 39)",
+        black: "rgba(17, 24, 39)"
       },
       primary: {
         main: "rgba(249, 115, 22)",
@@ -63,8 +63,9 @@ export function getTheme(mode?: "light" | "dark") {
         focus: "rgba(17, 24, 39, 0.12)",
       },
     },
+    spacing: 4,
     shape: {
-      borderRadius: 5,
+      borderRadius: 4,
     },
     shadows: [
       "none", // 0
@@ -144,7 +145,7 @@ export function getTheme(mode?: "light" | "dark") {
         letterSpacing: -0.1,
       },
       button: {
-        fontSize: "1rem",
+        fontSize: "1.25rem",
         lineHeight: "24px",
         textTransform: "none",
       },
@@ -193,12 +194,46 @@ export function getTheme(mode?: "light" | "dark") {
             backgroundColor: theme.palette.background.paper,
             boxShadow: theme.shadows[6],
             color: theme.palette.text.secondary,
-            padding: theme.spacing(1, 1.5),
+            padding: theme.spacing(2, 3),
             border: `1px solid ${theme.palette.divider}`,
             ...theme.typography.caption
           })
         },
       },
+      MuiIconButton: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            padding: theme.spacing(1.5),
+            fontSize: theme.typography.button.fontSize,
+            borderRadius: theme.shape.borderRadius
+          })
+        }
+      },
+      MuiAppBar: {
+        defaultProps: {
+          square: true,
+          variant: "outlined" as const,
+          color: "inherit"
+        },
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderWidth: "0px",
+          })
+        }
+      },
+      MuiToolbar: {
+        defaultProps: {
+          disableGutters: true,
+        },
+        styleOverrides: {
+          root: ({ theme }) => ({
+            padding: theme.spacing(2, 2),
+            [theme.breakpoints.up('md')]: {
+              minHeight: "unset"
+            }
+          })
+        }
+      }
     },
   });
 

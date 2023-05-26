@@ -15,6 +15,7 @@ export function registerTypography(styleProps: any) {
       },
       gutterBottom: "boolean",
       noWrap: "boolean",
+      paragraph: "boolean",
       variant: {
         type: "choice",
         options: [
