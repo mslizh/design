@@ -38,8 +38,11 @@ import { registerToggleButtonGroup } from "./ToggleButtonGroup";
 import { registerUpload } from "./Upload";
 import { registerWithToast } from "./Toaster";
 import { registerTooltip } from "./Tooltip";
+import { registerAppBar } from "./AppBar";
+import { registerToolbar } from "./Toolbar";
 
 export function registerComponents() {
+  registerAppBar(styleProps);
   registerBadge();
   registerBox(styleProps);
   registerButton();
@@ -76,6 +79,7 @@ export function registerComponents() {
   registerStack(styleProps);
   registerToggleButton();
   registerToggleButtonGroup();
+  registerToolbar(styleProps);
   registerTooltip();
   registerTypography(styleProps);
   registerUpload();

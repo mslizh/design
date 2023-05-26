@@ -1,13 +1,13 @@
 import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
-import get from "lodash/get";
+import { get } from "lodash";
 
 export function getTheme(mode?: "light" | "dark") {
   const theme = createTheme({
     palette: {
       mode: mode,
       common: {
-        black: "rgba(17, 24, 39)",
+        black: "rgba(17, 24, 39)"
       },
       primary: {
         main: "rgba(249, 115, 22)",
@@ -62,9 +62,6 @@ export function getTheme(mode?: "light" | "dark") {
         disabledBackground: "rgba(17, 24, 39, 0.12)",
         focus: "rgba(17, 24, 39, 0.12)",
       },
-    },
-    shape: {
-      borderRadius: 5,
     },
     shadows: [
       "none", // 0
@@ -128,6 +125,7 @@ export function getTheme(mode?: "light" | "dark") {
       },
       subtitle1: {
         fontWeight: 600,
+        fontSize: "0.875rem",
         lineHeight: "24px",
         letterSpacing: -0.2,
       },
@@ -137,6 +135,8 @@ export function getTheme(mode?: "light" | "dark") {
         letterSpacing: -0.2,
       },
       body1: {
+        fontSize: "0.875rem",
+        lineHeight: "1.25rem",
         letterSpacing: -0.2,
       },
       body2: {
@@ -144,7 +144,6 @@ export function getTheme(mode?: "light" | "dark") {
         letterSpacing: -0.1,
       },
       button: {
-        fontSize: "1rem",
         lineHeight: "24px",
         textTransform: "none",
       },
@@ -153,6 +152,25 @@ export function getTheme(mode?: "light" | "dark") {
       },
     },
     components: {
+      MuiAppBar: {
+        defaultProps: {
+          square: true,
+          variant: "outlined" as const,
+          color: "inherit"
+        },
+        styleOverrides: {
+          root: ({ theme }) => ({
+            borderWidth: "0px",
+          })
+        }
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            width: "inherit"
+          }
+        }
+      },
       MuiOutlinedInput: {
         styleOverrides: {
           root: ({ theme }) => ({
@@ -176,8 +194,9 @@ export function getTheme(mode?: "light" | "dark") {
       MuiListItemIcon: {
         styleOverrides: {
           root: {
+            fontSize: "20px",
             minWidth: "36px",
-          },
+          }
         },
       },
       MuiInputBase: {
@@ -199,6 +218,31 @@ export function getTheme(mode?: "light" | "dark") {
           })
         },
       },
+      MuiIconButton: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            padding: theme.spacing(0.75),
+            fontSize: theme.typography.button.fontSize,
+            borderRadius: theme.shape.borderRadius
+          })
+        }
+      },
+      MuiToolbar: {
+        styleOverrides: {
+          root: ({ theme }) => ({
+            gap: theme.spacing(2),
+            [theme.breakpoints.up("xs")]: {
+              minHeight: theme.spacing(6),
+            }   
+          }),
+          gutters: ({ theme}) => ({
+            [theme.breakpoints.up("xs")]: {
+              paddingLeft: theme.spacing(2),
+              paddingRight: theme.spacing(2),
+            }
+          }),
+        }
+      }
     },
   });
 
