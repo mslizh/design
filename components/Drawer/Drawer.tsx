@@ -17,6 +17,7 @@ export function registerDrawer() {
         type: "choice",
         options: ["permanent", "persistent", "temporary"],
       },
+      sx: "object"
     },
     importPath: "@mui/material",
   });
