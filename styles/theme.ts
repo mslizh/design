@@ -1,5 +1,6 @@
 import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
+import { get } from "lodash";
 
 export function getTheme(mode?: "light" | "dark") {
   const theme = createTheme({
