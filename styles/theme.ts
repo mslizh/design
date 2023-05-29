@@ -221,16 +221,29 @@ export function getTheme(mode?: "light" | "dark") {
       MuiIconButton: {
         styleOverrides: {
           root: ({ theme }) => ({
-            padding: theme.spacing(0.75),
-            fontSize: theme.typography.button.fontSize,
             borderRadius: theme.shape.borderRadius
+          }),
+          sizeSmall: ({ theme }) => ({
+            padding: theme.spacing(0.25),
+          }),
+          sizeMedium: ({ theme }) => ({
+            padding: theme.spacing(0.75),
+          }),
+          sizeLarge: ({ theme }) => ({
+            padding: theme.spacing(1.25),
+          }),
+          edgeStart: ({ theme }) => ({
+            marginLeft: theme.spacing(-1),
+          }),
+          edgeEnd: ({ theme }) => ({
+            marginRight: theme.spacing(-1),
           })
         }
       },
       MuiToolbar: {
         styleOverrides: {
           root: ({ theme }) => ({
-            gap: theme.spacing(2),
+            gap: theme.spacing(1),
             [theme.breakpoints.up("xs")]: {
               minHeight: theme.spacing(6),
             }   
