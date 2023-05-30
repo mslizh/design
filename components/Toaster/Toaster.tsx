@@ -5,40 +5,90 @@ import { Icon } from "../Icon";
 
 interface Toast {
   children?: JSX.Element;
-  message?: string;
+  title?: string;
+  description?: string;
+  variant?: "default" | "success" | "error" | "promise";
+  loadingTitle?: string;
+  successTitle?: string;
+  errorTitle?: string;
 }
 
-export function WithToast(props: Toast) {
-  const { children, message } = props;
+export function Toaster(props: Toast) {
+  const {
+    children,
+    title,
+    description,
+    variant,
+    loadingTitle,
+    successTitle,
+    errorTitle,
+  } = props;
+  const promise = () => new Promise((resolve) => setTimeout(resolve, 3000));
 
   return (
     <div
-      onClick={() =>
-        toast.error(message, {
-          description:
-            "export function WithToast(props: Toast) { export function WithToast(props: Toast) { export function WithToast(props: Toast) { export function WithToast(props: Toast) {",
-          icon: <Icon name="ErrorCircle20Filled" />,
-          duration: Infinity,
-          className: "test",
-          style: {
-            alignItems: "start",
-          },
-        })
-      }
+      onClick={() => {
+        if (variant === "default") {
+          toast.message(title, {
+            description: description,
+          });
+        }
+        if (variant === "success") {
+          toast.success(title, {
+            description: description,
+          });
+        }
+        if (variant === "error") {
+          toast.error(title, {
+            description: description,
+          });
+        }
+        if (variant === "promise") {
+          toast.promise(promise, {
+            loading: loadingTitle,
+            success: successTitle,
+            error: errorTitle,
+          });
+        }
+      }}
     >
       {children}
     </div>
   );
 }
 
-export function registerWithToast() {
-  registerComponent(WithToast, {
-    name: "WithToast",
+export function registerToaster() {
+  registerComponent(Toaster, {
+    name: "Toaster",
     isAttachment: true,
     styleSections: false,
     props: {
       children: "slot",
-      message: "string",
+      variant: {
+        type: "choice",
+        options: ["default", "success", "error", "promise"],
+        defaultValue: "default",
+      },
+      title: {
+        type: "string",
+        hidden: (props) => props.variant === "promise",
+      },
+      description: {
+        type: "string",
+        hidden: (props) => props.variant === "promise",
+      },
+      loadingTitle: {
+        type: "string",
+        hidden: (props) => !(props.variant === "promise"),
+      },
+      successTitle: {
+        type: "string",
+        hidden: (props) => !(props.variant === "promise"),
+      },
+      errorTitle: {
+        type: "string",
+        hidden: (props) => !(props.variant === "promise"),
+      },
     },
     importPath: "@/components/Toaster",
   });

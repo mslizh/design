@@ -6,7 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { getTheme } from "@/styles/theme";
 import { ThemeProvider } from "@mui/material";
 import { Toaster } from "sonner";
-import { Scheduler } from "@/components/Scheduler";
+import styles from "../components/Toaster/Toaster.module.css";
 
 const events = [
   {
@@ -24,9 +24,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <PlasmicRootProvider Head={Head}>
-        <Toaster closeButton theme={prefersDarkMode ? "dark" : "light"} />
-        <Scheduler events={events} />
         <Component {...pageProps} />
+        <Toaster closeButton toastOptions={{className: styles.toast}}/>
         <CssBaseline />
       </PlasmicRootProvider>
     </ThemeProvider>

@@ -34,7 +34,7 @@ import { registerTypography } from "@/components/Typography";
 import { registerToggleButton } from "@/components/ToggleButton";
 import { registerToggleButtonGroup } from "@/components/ToggleButtonGroup";
 import { registerUpload } from "@/components/Upload";
-import { registerWithToast } from "@/components/Toaster";
+import { registerToaster } from "@/components/Toaster";
 import { registerTooltip } from "@/components/Tooltip";
 import { registerToolbar } from "@/components/Toolbar";
 
@@ -77,7 +77,7 @@ export function registerAll() {
    registerTooltip();
    registerTypography(styleProps);
    registerUpload();
-   registerWithToast();
+   registerToaster();
 }
 
 const styleNumberProp = {
