@@ -11,6 +11,7 @@ interface Toast {
   loadingTitle?: string;
   successTitle?: string;
   errorTitle?: string;
+  promiseResult?: string;
 }
 
 export function Toaster(props: Toast) {
@@ -22,8 +23,12 @@ export function Toaster(props: Toast) {
     loadingTitle,
     successTitle,
     errorTitle,
+    promiseResult,
   } = props;
-  const promise = () => new Promise((resolve) => setTimeout(resolve, 3000));
+  const promiseResolve = () =>
+    new Promise((resolve) => setTimeout(resolve, 3000));
+  const promiseReject = () =>
+    new Promise((resolve, reject) => setTimeout(reject, 3000));
 
   return (
     <div
@@ -43,8 +48,15 @@ export function Toaster(props: Toast) {
             description: description,
           });
         }
-        if (variant === "promise") {
-          toast.promise(promise, {
+        if (variant === "promise" && promiseResult === "resolve") {
+          toast.promise(promiseResolve, {
+            loading: loadingTitle,
+            success: successTitle,
+            error: errorTitle,
+          });
+        }
+        if (variant === "promise" && promiseResult === "reject") {
+          toast.promise(promiseReject, {
             loading: loadingTitle,
             success: successTitle,
             error: errorTitle,
@@ -87,6 +99,12 @@ export function registerToaster() {
       },
       errorTitle: {
         type: "string",
+        hidden: (props) => !(props.variant === "promise"),
+      },
+      promiseResult: {
+        type: "choice",
+        options: ["resolve", "reject"],
+        defaultValue: "resolve",
         hidden: (props) => !(props.variant === "promise"),
       },
     },
