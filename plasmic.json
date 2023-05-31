@@ -40,161 +40,353 @@
           "cssFilePath": "plasmic/design_system/PlasmicHomepage.module.css",
           "scheme": "blackbox",
           "componentType": "page"
+        },
+        {
+          "id": "QoAbXKeHub",
+          "name": "Drawing2D",
+          "type": "managed",
+          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
+          "renderModuleFilePath": "plasmic/design_system/PlasmicDrawing2D.tsx",
+          "importSpec": {
+            "modulePath": "../pages/drawing2d.tsx"
+          },
+          "cssFilePath": "plasmic/design_system/PlasmicDrawing2D.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "aeD2-GWVxm",
+          "name": "AppBar",
+          "type": "managed",
+          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
+          "renderModuleFilePath": "plasmic/design_system/PlasmicAppBar.tsx",
+          "importSpec": {
+            "modulePath": "../pages/app-bar.tsx"
+          },
+          "cssFilePath": "plasmic/design_system/PlasmicAppBar.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "S5KYVe8a0M",
+          "name": "Hotkey",
+          "type": "managed",
+          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
+          "renderModuleFilePath": "plasmic/design_system/PlasmicHotkey.tsx",
+          "importSpec": {
+            "modulePath": "Hotkey.tsx"
+          },
+          "cssFilePath": "plasmic/design_system/PlasmicHotkey.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "aDgYNbjSiH",
+          "name": "Progress",
+          "type": "managed",
+          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
+          "renderModuleFilePath": "plasmic/design_system/PlasmicProgress.tsx",
+          "importSpec": {
+            "modulePath": "../pages/progress.tsx"
+          },
+          "cssFilePath": "plasmic/design_system/PlasmicProgress.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [],
-      "images": [],
+      "images": [
+        {
+          "id": "z8udXicTr",
+          "name": "image 1.png",
+          "filePath": "../public/plasmic/design_system/images/image1Png.png"
+        }
+      ],
       "indirect": false,
       "globalContextsFilePath": "",
       "codeComponents": [
         {
           "id": "DKRTJRre9XL3g",
           "name": "PlasmicHead",
+          "displayName": "hostless-plasmic-head",
           "componentImportPath": "@plasmicapp/react-web"
         },
         {
           "id": "mYGlLbIkFyE55",
           "name": "Fetcher",
+          "displayName": "plasmic-data-source-fetcher",
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         },
         {
-          "id": "OHPtLicOEy",
-          "name": "Divider",
+          "id": "pOiLquXblj",
+          "name": "Button",
+          "displayName": "Button",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "GbK8hKFZrX",
+          "id": "Rh-BggiRc4",
+          "name": "ButtonGroup",
+          "displayName": "ButtonGroup",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "H1CjMwI03H",
+          "name": "Card",
+          "displayName": "Card",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "urFC_bfJHy",
+          "name": "CardActionArea",
+          "displayName": "CardActionArea",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "n5ir_LpRde",
+          "name": "CardActions",
+          "displayName": "CardActions",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "vxkuT-3xUaS",
+          "name": "CardContent",
+          "displayName": "CardContent",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "EQBwvi7lgv3",
+          "name": "CardHeader",
+          "displayName": "CardHeader",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "scL7Q80JctW",
+          "name": "CardMedia",
+          "displayName": "CardMedia",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "AeIJFGAuMAy",
+          "name": "Divider",
+          "displayName": "Divider",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "0RGcsRHnnR1",
+          "name": "Drawer",
+          "displayName": "Drawer",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "UeGdlGteOHe",
           "name": "FileCard",
+          "displayName": "FileCard",
           "componentImportPath": "@/components/FileCard"
         },
         {
-          "id": "4Bbu5mPezUL",
+          "id": "Gra9pEXb6QS",
           "name": "FileGrid",
+          "displayName": "FileGrid",
           "componentImportPath": "@/components/FileGrid"
         },
         {
-          "id": "Cyxgs4Gxbt5",
+          "id": "PfRqPumnyKZ",
           "name": "FileList",
+          "displayName": "FileList",
           "componentImportPath": "@/components/FileList"
         },
         {
-          "id": "P-tCFiyIt3t",
+          "id": "yYr66ja9ax_",
           "name": "FileListItem",
+          "displayName": "FileListItem",
           "componentImportPath": "@/components/FileListItem"
         },
         {
-          "id": "HXJ06guWrVI",
+          "id": "7cXRvZWynFD",
           "name": "FileUploader",
+          "displayName": "FileUploader",
           "componentImportPath": "@/components/FileUploader"
         },
         {
-          "id": "K-4mZ5X0Et2",
+          "id": "5ekxQj4ldyA",
           "name": "Icon",
+          "displayName": "Icon",
           "componentImportPath": "@/components/Icon"
         },
         {
-          "id": "qPyf2BvmO1n",
+          "id": "A-nNYdAJPIC",
+          "name": "IconButton",
+          "displayName": "IconButton",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "st-ZjMDdnTq",
+          "name": "InputBase",
+          "displayName": "InputBase",
+          "componentImportPath": "@mui/material",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@/components/InputBase"
+          }
+        },
+        {
+          "id": "n6ilN2SsxJJ",
           "name": "List",
+          "displayName": "List",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "aB9WZ1p1Dc5",
+          "id": "srFPrFEaEH2",
           "name": "ListItem",
+          "displayName": "ListItem",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "VJ3ifWPEcIJ",
+          "id": "DdeJzMy3Gkl",
           "name": "ListItemAvatar",
+          "displayName": "ListItemAvatar",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "iHy3Erb07Jt",
+          "id": "XZnkDNiLoM3",
           "name": "ListItemButton",
+          "displayName": "ListItemButton",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "JrtN49VL5v_",
+          "id": "QAbJZTHoaUO",
           "name": "ListItemIcon",
+          "displayName": "ListItemIcon",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "aj2_DNmPd3t",
+          "id": "xDfuDrWSXv6",
           "name": "ListItemText",
+          "displayName": "ListItemText",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "qyApz5kIcWD",
-          "name": "Typography",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "22UEph06hY",
-          "name": "Upload",
-          "componentImportPath": "@/components/Upload"
-        },
-        {
-          "id": "nhftCVhQNA",
-          "name": "WithToast",
-          "componentImportPath": "@/components/Toaster"
-        },
-        {
-          "id": "3Kt6jTcdD4",
+          "id": "H3AGdsm4mJZ",
           "name": "Scheduler",
+          "displayName": "Scheduler",
           "componentImportPath": "@/components/Scheduler"
         },
         {
-          "id": "WmgiXRoFGt",
-          "name": "Drawer",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "9lv9XtgKya",
-          "name": "ButtonGroup",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "f36r7srTwQ",
-          "name": "Card",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "-C5TMn73yZ",
-          "name": "CardActionArea",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "qO5068cFew",
-          "name": "CardActions",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "U6eSWEdR7R",
-          "name": "CardContent",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "YPUduUPbUH_",
-          "name": "CardHeader",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "sE47YhPB7IW",
-          "name": "CardMedia",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "QHQyk5MJgoR",
-          "name": "IconButton",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "bbcMKy53wsa",
+          "id": "uAsm7Dvkj0u",
           "name": "ToggleButton",
+          "displayName": "ToggleButton",
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "-Cbzz5nVJvn",
+          "id": "iCqy94SVOm5",
           "name": "ToggleButtonGroup",
+          "displayName": "ToggleButtonGroup",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "Bigyp_NHFbt",
+          "name": "Typography",
+          "displayName": "Typography",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "iv0KPVbe91I",
+          "name": "Upload",
+          "displayName": "Upload",
+          "componentImportPath": "@/components/Upload"
+        },
+        {
+          "id": "-XE5KdyUNZF",
+          "name": "WithToast",
+          "displayName": "WithToast",
+          "componentImportPath": "@/components/Toaster"
+        },
+        {
+          "id": "JQDu6zDN7M",
+          "name": "Checkbox",
+          "displayName": "Checkbox",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "TwXnxTRFow",
+          "name": "Box",
+          "displayName": "Box",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "aC5h8LHy8P",
+          "name": "Container",
+          "displayName": "Container",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "9BnVxgBf-G",
+          "name": "Grid",
+          "displayName": "Grid",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "a-7NYWLOqQ",
+          "name": "Paper",
+          "displayName": "Paper",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "d1ojXTCoC5",
+          "name": "Stack",
+          "displayName": "Stack",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "SdDPN9Nf99",
+          "name": "Badge",
+          "displayName": "Badge",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "n4kefDsgbZ",
+          "name": "InputAdornment",
+          "displayName": "InputAdornment",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "audgU3-uup",
+          "name": "OutlinedInput",
+          "displayName": "OutlinedInput",
+          "componentImportPath": "@mui/material",
+          "helper": {
+            "name": "inputHelpers",
+            "importPath": "@/components/InputBase"
+          }
+        },
+        {
+          "id": "e9CRcnxSKl",
+          "name": "Tooltip",
+          "displayName": "Tooltip",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "Bnd16ek3Mr",
+          "name": "AppBar",
+          "displayName": "AppBar",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "RIYKguxp0O",
+          "name": "Toolbar",
+          "displayName": "Toolbar",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "T86-BpienS",
+          "name": "LinearProgress",
+          "displayName": "LinearProgress",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "W_Unr1IEQD",
+          "name": "CircularProgress",
+          "displayName": "CircularProgress",
           "componentImportPath": "@mui/material"
         }
       ]
@@ -214,6 +406,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.270",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.270/dist/plasmic.schema.json"
+  "cliVersion": "0.1.286",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.286/dist/plasmic.schema.json"
 }
