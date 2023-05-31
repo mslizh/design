@@ -263,8 +263,12 @@ export function getTheme(mode?: "light" | "dark") {
             backgroundColor: theme.palette.background.paper,
             boxShadow: theme.shadows[6],
             color: theme.palette.text.secondary,
-            padding: theme.spacing(1, 1.5),
+            padding: theme.spacing(0.625, 1.5),
             border: `1px solid ${theme.palette.divider}`,
+            display: "flex",
+            alignItems: "center",
+            gap: theme.spacing(1),
+            minHeight: "32px",
             ...theme.typography.caption
           })
         },
