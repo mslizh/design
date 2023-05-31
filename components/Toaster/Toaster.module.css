@@ -5,7 +5,7 @@
 }
 
 .toast[data-sonner-toast][data-styled=true] [data-icon],
-.toast.sonner-loading-wrapper {
+.toast[data-sonner-toast] [data-icon]>* {
   margin: 0;
   width: 20px;
   height: 20px;
