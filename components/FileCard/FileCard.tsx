@@ -30,16 +30,3 @@ export function FileCard(props: FileCardProps) {
     </Card>
   );
 }
-
-export function registerFileCard() {
-  registerComponent(FileCard, {
-    name: "FileCard",
-    props: {
-      type: "string",
-      name: "string",
-      lastModified: "number",
-      webkitRelativePath: "string",
-    },
-    importPath: "@/components/FileCard",
-  });
-}

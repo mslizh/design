@@ -2,7 +2,7 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { EmptyImage } from "@/components/Empty";
 
-interface EmptyProps {
+export interface EmptyProps {
   img?: string;
   message: string;
 }

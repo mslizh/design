@@ -3,7 +3,7 @@ import { Empty } from "@/components/Empty";
 import { FileListItem } from "@/components/FileListItem";
 import { registerComponent } from "@plasmicapp/host";
 
-interface FileListProps {
+export interface FileListProps {
   files: File[] | undefined;
 }
 
@@ -18,12 +18,4 @@ export function FileList(props: FileListProps): JSX.Element {
       )}
     </List>
   );
-}
-
-export function registerFileList() {
-  registerComponent(FileList, {
-    name: "FileList",
-    props: {},
-    importPath: "@/components/FileList",
-  });
 }
