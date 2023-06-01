@@ -23,7 +23,7 @@ import * as ph from "@plasmicapp/react-web/lib/host";
 import {
   usePlasmicDataConfig,
   executePlasmicDataOp,
-  useDependencyAwareQuery
+  usePlasmicDataOp
 } from "@plasmicapp/react-web/lib/data-sources";
 
 import {
@@ -42,15 +42,7 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { List } from "@mui/material"; // plasmic-import: qPyf2BvmO1n/codeComponent
-import { WithToast } from "@/components/Toaster"; // plasmic-import: nhftCVhQNA/codeComponent
-import { ListItem } from "@mui/material"; // plasmic-import: aB9WZ1p1Dc5/codeComponent
-import { ListItemButton } from "@mui/material"; // plasmic-import: iHy3Erb07Jt/codeComponent
-import { ListItemIcon } from "@mui/material"; // plasmic-import: JrtN49VL5v_/codeComponent
-import { Icon } from "@/components/Icon"; // plasmic-import: K-4mZ5X0Et2/codeComponent
-import { ListItemText } from "@mui/material"; // plasmic-import: aj2_DNmPd3t/codeComponent
-import { Divider } from "@mui/material"; // plasmic-import: OHPtLicOEy/codeComponent
-import { Scheduler } from "@/components/Scheduler"; // plasmic-import: 3Kt6jTcdD4/codeComponent
+import { Typography } from "@mui/material"; // plasmic-import: Bigyp_NHFbt/codeComponent
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: mYGlLbIkFyE55/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -69,9 +61,7 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  withToast?: p.Flex<typeof WithToast>;
-  divider?: p.Flex<typeof Divider>;
-  scheduler?: p.Flex<typeof Scheduler>;
+  typography?: p.Flex<typeof Typography>;
 };
 
 export interface DefaultHomepageProps {}
@@ -102,7 +92,6 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
-
   const $props = {
     ...args,
     ...variants
@@ -111,21 +100,37 @@ function PlasmicHomepage__RenderFunc(props: {
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
+
   const [$queries, setDollarQueries] = React.useState({});
 
-  useDependencyAwareQuery({
-    name: "menuItems",
-    getDataOp: () => ({
-      sourceId: "wKVMb2JWd9S48BYLES4Hzd",
-      opId: "2074e256218920375950d10d8e61418bb4e939ea69a57a5748a376a8bf39411a4cd091d3d604d52f80bee232c7163eb96561423cbea4b115ad4cdb2b6bda9680fed3119d1a50675bb4008acad29561399f67cb",
-      userArgs: {},
-      cacheKey: "plasmic.$.fQ-KMpWHu.$.",
-      invalidatedKeys: ["plasmic_refresh_all"],
-      roleId: null
-    }),
-    $queries,
-    setDollarQueries
-  });
+  const new$Queries = {
+    issues: usePlasmicDataOp(
+      (() => {
+        try {
+          return {
+            sourceId: "wKVMb2JWd9S48BYLES4Hzd",
+            opId: "f0ead412-1f5c-4f4a-9c4e-006a96594c4d",
+            userArgs: {},
+            cacheKey: "plasmic.$.fQ-KMpWHu.$.",
+            invalidatedKeys: ["plasmic_refresh_all"],
+            roleId: null
+          };
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return undefined;
+          } else {
+            throw e;
+          }
+        }
+      })()
+    )
+  };
+  if (Object.keys(new$Queries).some(k => new$Queries[k] !== $queries[k])) {
+    setDollarQueries(new$Queries);
+  }
 
   return (
     <React.Fragment>
@@ -153,198 +158,27 @@ function PlasmicHomepage__RenderFunc(props: {
               sty.root
             )}
           >
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__rvk0H)}>
-                {true ? (
-                  <div
-                    className={classNames(projectcss.all, sty.freeBox__xd5Z)}
-                  >
-                    <List
-                      className={classNames("__wab_instance", sty.list__qJcU6)}
-                    >
-                      <WithToast
-                        data-plasmic-name={"withToast"}
-                        data-plasmic-override={overrides.withToast}
-                        className={classNames("__wab_instance", sty.withToast)}
-                        message={"Hello" as const}
-                      >
-                        {(
-                          (() => {
-                            try {
-                              return $queries.menuItems.data;
-                            } catch (e) {
-                              if (e instanceof TypeError) {
-                                return [];
-                              }
-                              throw e;
-                            }
-                          })() ?? []
-                        ).map((currentItem, currentIndex) => (
-                          <ListItem
-                            className={classNames(
-                              "__wab_instance",
-                              sty.listItem__xqeBw
-                            )}
-                            disablePadding={true}
-                            key={currentIndex}
-                          >
-                            <ListItemButton
-                              className={classNames(
-                                "__wab_instance",
-                                sty.listItemButton__kVfxb
-                              )}
-                              selected={(() => {
-                                try {
-                                  return currentIndex === 0;
-                                } catch (e) {
-                                  if (e instanceof TypeError) {
-                                    return undefined;
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            >
-                              <ListItemIcon
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.listItemIcon__dWwK
-                                )}
-                              >
-                                <Icon
-                                  className={classNames(
-                                    "__wab_instance",
-                                    sty.icon__yfqtw
-                                  )}
-                                  name={(() => {
-                                    try {
-                                      return `${currentItem.icon}20Regular`;
-                                    } catch (e) {
-                                      if (e instanceof TypeError) {
-                                        return "LocationRegular";
-                                      }
-                                      throw e;
-                                    }
-                                  })()}
-                                />
-                              </ListItemIcon>
-                              <ListItemText
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.listItemText__iuJzW
-                                )}
-                                primary={(() => {
-                                  try {
-                                    return currentItem.title;
-                                  } catch (e) {
-                                    if (e instanceof TypeError) {
-                                      return "Menu Item";
-                                    }
-                                    throw e;
-                                  }
-                                })()}
-                              />
-                            </ListItemButton>
-                          </ListItem>
-                        ))}
-                      </WithToast>
-                    </List>
-                    <List
-                      className={classNames("__wab_instance", sty.list__crUPf)}
-                    >
-                      {(
-                        (() => {
-                          try {
-                            return [
-                              {
-                                title: "Настройки",
-                                icon: "Settings20Regular"
-                              },
-                              {
-                                title: "Помощь",
-                                icon: "QuestionCircle20Regular"
-                              }
-                            ];
-                          } catch (e) {
-                            if (e instanceof TypeError) {
-                              return [];
-                            }
-                            throw e;
-                          }
-                        })() ?? []
-                      ).map((currentItem, currentIndex) => (
-                        <ListItem
-                          className={classNames(
-                            "__wab_instance",
-                            sty.listItem__aTyAc
-                          )}
-                          disablePadding={true}
-                          key={currentIndex}
-                        >
-                          <ListItemButton
-                            className={classNames(
-                              "__wab_instance",
-                              sty.listItemButton__chxVe
-                            )}
-                          >
-                            <ListItemIcon
-                              className={classNames(
-                                "__wab_instance",
-                                sty.listItemIcon__vylnb
-                              )}
-                            >
-                              <Icon
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.icon__amgrN
-                                )}
-                                name={(() => {
-                                  try {
-                                    return currentItem.icon;
-                                  } catch (e) {
-                                    if (e instanceof TypeError) {
-                                      return "LocationRegular";
-                                    }
-                                    throw e;
-                                  }
-                                })()}
-                              />
-                            </ListItemIcon>
-                            <ListItemText
-                              className={classNames(
-                                "__wab_instance",
-                                sty.listItemText__p8LKj
-                              )}
-                              primary={(() => {
-                                try {
-                                  return currentItem.title;
-                                } catch (e) {
-                                  if (e instanceof TypeError) {
-                                    return "Some text…";
-                                  }
-                                  throw e;
-                                }
-                              })()}
-                            />
-                          </ListItemButton>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </div>
-                ) : null}
-                <Divider
-                  data-plasmic-name={"divider"}
-                  data-plasmic-override={overrides.divider}
-                  className={classNames("__wab_instance", sty.divider)}
-                  orientation={"vertical" as const}
-                />
-
-                <Scheduler
-                  data-plasmic-name={"scheduler"}
-                  data-plasmic-override={overrides.scheduler}
-                  className={classNames("__wab_instance", sty.scheduler)}
-                />
-              </div>
-            ) : null}
+            {(
+              (() => {
+                try {
+                  return [2, 3, 4];
+                } catch (e) {
+                  if (e instanceof TypeError) {
+                    return [];
+                  }
+                  throw e;
+                }
+              })() ?? []
+            ).map((currentItem, currentIndex) => (
+              <Typography
+                data-plasmic-name={"typography"}
+                data-plasmic-override={overrides.typography}
+                children={"Some text" as const}
+                className={classNames("__wab_instance", sty.typography)}
+                key={currentIndex}
+                variant={"inherit" as const}
+              />
+            ))}
           </div>
         ) : null}
       </div>
@@ -353,19 +187,15 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "withToast", "divider", "scheduler"],
-  withToast: ["withToast"],
-  divider: ["divider"],
-  scheduler: ["scheduler"]
+  root: ["root", "typography"],
+  typography: ["typography"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  withToast: typeof WithToast;
-  divider: typeof Divider;
-  scheduler: typeof Scheduler;
+  typography: typeof Typography;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -428,9 +258,7 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    withToast: makeNodeComponent("withToast"),
-    divider: makeNodeComponent("divider"),
-    scheduler: makeNodeComponent("scheduler"),
+    typography: makeNodeComponent("typography"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

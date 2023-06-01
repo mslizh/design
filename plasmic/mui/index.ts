@@ -1,15 +1,27 @@
-export * from "./appBarMeta";
-export * from "./badgeMeta";
-export * from "./boxMeta";
-export * from "./buttonMeta";
-export * from "./buttonGroupMeta";
-export * from "./cardActionAreaMeta";
-export * from "./cardActionsMeta";
-export * from "./cardContentMeta";
-export * from "./cardHeaderMeta";
-export * from "./cardMediaMeta";
-export * from "./cardMeta";
-export * from "./checkboxMeta";
-export * from "./containerMeta";
-export * from "./dividerMeta";
-export * from "./drawerMeta";
+import {
+   AppBar,
+   Badge,
+   Box,
+   Button,
+   ButtonGroup,
+   LinearProgress,
+   CircularProgress,
+} from "@mui/material";
+import { registerComponent } from "@plasmicapp/host";
+import { appBarMeta } from "./appBarMeta";
+import { badgeMeta } from "./badgeMeta";
+import { boxMeta } from "./boxMeta";
+import { buttonMeta } from "./buttonMeta";
+import { buttonGroupMeta } from "./buttonGroupMeta";
+import { linearProgressMeta } from "./linearProgressMeta";
+import { circularProgressMeta } from "./circularProgressMeta";
+
+export function registerMuiComponents() {
+   registerComponent(AppBar, appBarMeta);
+   registerComponent(Badge, badgeMeta);
+   registerComponent(Box, boxMeta);
+   registerComponent(Button, buttonMeta);
+   registerComponent(ButtonGroup, buttonGroupMeta);
+   registerComponent(LinearProgress, linearProgressMeta);
+   registerComponent(CircularProgress, circularProgressMeta);
+}

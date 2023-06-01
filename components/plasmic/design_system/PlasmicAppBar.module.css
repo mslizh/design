@@ -1,0 +1,75 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--token-ZbLQHPqEo54R);
+  min-width: 0;
+  min-height: 0;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 0;
+  min-height: 0;
+  margin-top: calc(0px - 32px);
+  height: calc(100% + 32px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.root > :global(.__wab_flex-container) > picture > img,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > picture > img {
+  margin-top: 32px;
+}
+.appBar:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.toolbar:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.iconButton__hSlCc:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  font-size: 20px;
+}
+.icon__phsaf:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.typography:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+  white-space: pre;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.stack:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.tooltip:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+.iconButton__vmLxY:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+  font-size: 20px;
+}
+.icon___8OsA:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}
+.divider:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,20 @@
+.toast[data-sonner-toast][data-styled=true] {
+  align-items: start;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.toast[data-sonner-toast][data-styled=true] [data-icon],
+.toast[data-sonner-toast] [data-icon]>* {
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.toast[data-sonner-toast][data-styled=true][data-type=success] [data-icon] {
+  color: #22C55E;
+}
+
+.toast[data-sonner-toast][data-styled=true][data-type=error] [data-icon] {
+  color: #EF4444;
+}
