@@ -6,6 +6,7 @@ import {
    ButtonGroup,
    LinearProgress,
    CircularProgress,
+   Divider,
 } from "@mui/material";
 import { registerComponent } from "@plasmicapp/host";
 import { appBarMeta } from "./appBarMeta";
@@ -15,6 +16,7 @@ import { buttonMeta } from "./buttonMeta";
 import { buttonGroupMeta } from "./buttonGroupMeta";
 import { linearProgressMeta } from "./linearProgressMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
+import { dividerMeta } from "./dividerMeta";
 
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
@@ -22,6 +24,7 @@ export function registerMuiComponents() {
    registerComponent(Box, boxMeta);
    registerComponent(Button, buttonMeta);
    registerComponent(ButtonGroup, buttonGroupMeta);
-   registerComponent(LinearProgress, linearProgressMeta);
+   registerComponent(Divider, dividerMeta);
    registerComponent(CircularProgress, circularProgressMeta);
+   registerComponent(LinearProgress, linearProgressMeta);
 }
