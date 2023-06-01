@@ -8,6 +8,8 @@ export const boxMeta: CodeComponentMeta<BoxProps> = {
          type: "slot",
          hidePlaceholder: true,
       },
+      padding: "number",
+      margin: "number",
    },
    importPath: "@mui/material",
 };

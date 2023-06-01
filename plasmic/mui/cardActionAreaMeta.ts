@@ -5,6 +5,10 @@ export const cardActionAreaMeta: CodeComponentMeta<CardActionAreaProps> = {
    name: "CardActionArea",
    props: {
       children: "slot",
+      onClick: {
+         type: "eventHandler",
+         argTypes: [],
+      },
    },
    importPath: "@mui/material",
 };

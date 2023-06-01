@@ -14,7 +14,15 @@ import {
    CircularProgress,
    Container,
    Drawer,
+   Grid,
    LinearProgress,
+   List,
+   ListItem,
+   ListItemAvatar,
+   ListItemButton,
+   ListItemIcon,
+   ListItemText,
+   ListSubheader,
 } from "@mui/material";
 import { registerComponent } from "@plasmicapp/host";
 import { appBarMeta } from "./appBarMeta";
@@ -33,6 +41,14 @@ import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
 import { drawerMeta } from "./drawerMeta";
 import { linearProgressMeta } from "./linearProgressMeta";
+import { gridMeta } from "./gridMeta";
+import { listMeta } from "./listMeta";
+import { listItemMeta } from "./listItemMeta";
+import { listItemAvatarMeta } from "./listItemAvatarMeta";
+import { listItemButtonMeta } from "./listItemButtonMeta";
+import { listItemIconMeta } from "./listItemIconMeta";
+import { listItemTextMeta } from "./listItemTextMeta";
+import { listSubheaderMeta } from "./listSubheaderMeta";
 
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
@@ -50,5 +66,13 @@ export function registerMuiComponents() {
    registerComponent(CircularProgress, circularProgressMeta);
    registerComponent(Container, containerMeta);
    registerComponent(Drawer, drawerMeta);
+   registerComponent(Grid, gridMeta);
    registerComponent(LinearProgress, linearProgressMeta);
+   registerComponent(List, listMeta);
+   registerComponent(ListItem, listItemMeta);
+   registerComponent(ListItemAvatar, listItemAvatarMeta);
+   registerComponent(ListItemButton, listItemButtonMeta);
+   registerComponent(ListItemIcon, listItemIconMeta);
+   registerComponent(ListItemText, listItemTextMeta);
+   registerComponent(ListSubheader, listSubheaderMeta);
 }
