@@ -24,46 +24,6 @@ import { registerTooltip } from "@/components/Tooltip";
 import { registerToolbar } from "@/components/Toolbar";
 
 export function registerAll() {
-<<<<<<< HEAD
-  registerFileListItem();
-  registerFileUploader();
-  registerGrid(styleProps);
-  registerIcon();
-  registerInputAdornment();
-  registerIconButton();
-  registerInputBase();
-  registerList();
-  registerListItem();
-  registerListItemAvatar();
-  registerListItemButton();
-  registerListItemIcon();
-  registerListItemText();
-  registerOutlinedInput();
-  registerPaper(styleProps);
-  registerStack(styleProps);
-  registerToggleButton();
-  registerToggleButtonGroup();
-  registerToolbar(styleProps);
-  registerTooltip();
-  registerTypography(styleProps);
-  registerUpload();
-  registerWithToast();
-=======
-   registerButton();
-   registerButtonGroup();
-   registerCard();
-   registerCardActionArea();
-   registerCardActions();
-   registerCardContent();
-   registerCardHeader();
-   registerCardMedia();
-   registerCheckbox();
-   registerContainer(styleProps);
-   registerDivider();
-   registerDrawer();
-   registerFileCard();
-   registerFileGrid();
-   registerFileList();
    registerFileListItem();
    registerFileUploader();
    registerGrid(styleProps);
@@ -88,42 +48,41 @@ export function registerAll() {
    registerTypography(styleProps);
    registerUpload();
    registerToaster();
->>>>>>> 45eae66b4098e073b749cb7da6b7838a921e71b3
 }
 
 const styleNumberProp = {
-  type: "number",
-  advanced: true,
+   type: "number",
+   advanced: true,
 };
 
 export const styleProps = {
-  alignItems: {
-    type: "choice",
-    options: ["flex-start", "flex-end", "center", "baseline", "stretch"],
-  },
-  justifyContent: {
-    type: "choice",
-    options: [
-      "flex-start",
-      "flex-end",
-      "center",
-      "space-between",
-      "space-around",
-      "space-evenly",
-    ],
-  },
-  padding: styleNumberProp,
-  paddingX: styleNumberProp,
-  paddingY: styleNumberProp,
-  paddingTop: styleNumberProp,
-  paddingBottom: styleNumberProp,
-  paddingLeft: styleNumberProp,
-  paddingRight: styleNumberProp,
-  margin: styleNumberProp,
-  marginX: styleNumberProp,
-  marginY: styleNumberProp,
-  marginTop: styleNumberProp,
-  marginBottom: styleNumberProp,
-  marginLeft: styleNumberProp,
-  marginRight: styleNumberProp,
+   alignItems: {
+      type: "choice",
+      options: ["flex-start", "flex-end", "center", "baseline", "stretch"],
+   },
+   justifyContent: {
+      type: "choice",
+      options: [
+         "flex-start",
+         "flex-end",
+         "center",
+         "space-between",
+         "space-around",
+         "space-evenly",
+      ],
+   },
+   padding: styleNumberProp,
+   paddingX: styleNumberProp,
+   paddingY: styleNumberProp,
+   paddingTop: styleNumberProp,
+   paddingBottom: styleNumberProp,
+   paddingLeft: styleNumberProp,
+   paddingRight: styleNumberProp,
+   margin: styleNumberProp,
+   marginX: styleNumberProp,
+   marginY: styleNumberProp,
+   marginTop: styleNumberProp,
+   marginBottom: styleNumberProp,
+   marginLeft: styleNumberProp,
+   marginRight: styleNumberProp,
 };
