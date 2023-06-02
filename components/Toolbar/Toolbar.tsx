@@ -14,7 +14,8 @@ export function registerToolbar(styleProps: any) {
         type: "choice",
         options: ["dense", "regular"],
         defaultValue: "regular"
-      }
+      },
+      sx: "object",
     },
     importPath: "@mui/material"
   });
