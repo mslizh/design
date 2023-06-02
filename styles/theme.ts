@@ -179,7 +179,8 @@ export function getTheme(mode?: "light" | "dark") {
       MuiIconButton: {
         styleOverrides: {
           root: ({ theme }) => ({
-            borderRadius: theme.shape.borderRadius
+            borderRadius: theme.shape.borderRadius,
+            fontSize: "20px",
           }),
           sizeSmall: ({ theme }) => ({
             padding: theme.spacing(0.25),
