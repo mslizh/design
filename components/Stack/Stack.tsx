@@ -23,6 +23,7 @@ export function registerStack(styleProps: any) {
       borderColor: "string",
       borderRadius: "string",
       display: "string",
+      sx: "object",
       ...styleProps,
     },
     importPath: "@mui/material",
