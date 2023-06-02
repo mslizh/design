@@ -37,6 +37,7 @@ export function registerTypography(styleProps: any) {
         defaultValue: "inherit",
       },
       sx: "object",
+      color: "string",
       ...styleProps,
     },
     importPath: "@mui/material",

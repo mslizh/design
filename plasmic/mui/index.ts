@@ -53,7 +53,7 @@ import { listSubheaderMeta } from "./listSubheaderMeta";
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
    registerComponent(Badge, badgeMeta);
-   registerComponent(Box, boxMeta);
+   registerComponent(Box, boxMeta); 
    registerComponent(Button, buttonMeta);
    registerComponent(ButtonGroup, buttonGroupMeta);
    registerComponent(Divider, dividerMeta);
