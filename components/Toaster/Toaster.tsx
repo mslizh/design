@@ -10,7 +10,8 @@ interface Toast {
   loadingTitle?: string;
   successTitle?: string;
   errorTitle?: string;
-  promiseResult?: string;
+  result?: string;
+  persisent?: boolean;
 }
 
 export function Toaster(props: Toast) {
@@ -22,12 +23,14 @@ export function Toaster(props: Toast) {
     loadingTitle,
     successTitle,
     errorTitle,
-    promiseResult,
+    result,
+    persisent,
   } = props;
-  const promiseResolve = () =>
-    new Promise((resolve) => setTimeout(resolve, 3000));
-  const promiseReject = () =>
-    new Promise((resolve, reject) => setTimeout(reject, 3000));
+  const promiseSuccess = () =>
+    new Promise((resolve) => setTimeout(resolve, 4000));
+  const promiseError = () =>
+    new Promise((resolve, reject) => setTimeout(reject, 4000));
+  const duration = persisent ? Infinity : 4000;
 
   return (
     <div
@@ -35,30 +38,35 @@ export function Toaster(props: Toast) {
         if (variant === "default") {
           toast.message(title, {
             description: description,
+            duration: duration,
           });
         }
         if (variant === "success") {
           toast.success(title, {
             description: description,
+            duration: duration,
           });
         }
         if (variant === "error") {
           toast.error(title, {
             description: description,
+            duration: duration,
           });
         }
-        if (variant === "promise" && promiseResult === "resolve") {
-          toast.promise(promiseResolve, {
+        if (variant === "promise" && result === "success") {
+          toast.promise(promiseSuccess, {
             loading: loadingTitle,
             success: successTitle,
             error: errorTitle,
+            duration: duration,
           });
         }
-        if (variant === "promise" && promiseResult === "reject") {
-          toast.promise(promiseReject, {
+        if (variant === "promise" && result === "error") {
+          toast.promise(promiseError, {
             loading: loadingTitle,
             success: successTitle,
             error: errorTitle,
+            duration: duration,
           });
         }
       }}
@@ -80,6 +88,11 @@ export function registerToaster() {
         options: ["default", "success", "error", "promise"],
         defaultValue: "default",
       },
+      result: {
+        type: "choice",
+        options: ["success", "error"],
+        hidden: (props) => !(props.variant === "promise"),
+      },
       title: {
         type: "string",
         hidden: (props) => props.variant === "promise",
@@ -94,18 +107,13 @@ export function registerToaster() {
       },
       successTitle: {
         type: "string",
-        hidden: (props) => !(props.variant === "promise"),
+        hidden: (props) => !(props.result === "success"),
       },
       errorTitle: {
         type: "string",
-        hidden: (props) => !(props.variant === "promise"),
+        hidden: (props) => !(props.result === "error"),
       },
-      promiseResult: {
-        type: "choice",
-        options: ["resolve", "reject"],
-        defaultValue: "resolve",
-        hidden: (props) => !(props.variant === "promise"),
-      },
+      persisent: "boolean",
     },
     importPath: "@/components/Toaster",
   });
