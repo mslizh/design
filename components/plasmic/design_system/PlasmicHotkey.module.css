@@ -1,26 +1,10 @@
-.root {
-  display: inline-flex;
-  flex-direction: column;
+.root:global(.__wab_instance) {
+  max-width: 100%;
+  object-fit: cover;
   position: relative;
   width: auto;
-  height: auto;
-  justify-content: flex-start;
-  align-items: center;
   justify-self: flex-start;
 }
-.stack:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
-  background: var(--token-qIWmC_PFQGtB);
-  border-radius: 2px;
-}
 .typography:global(.__wab_instance) {
-  max-width: 100%;
   object-fit: cover;
-  position: relative;
-  color: var(--token-_jP1NcMBhlOl);
-  font-size: 10px;
-  line-height: 16px;
-  letter-spacing: -0.2px;
 }

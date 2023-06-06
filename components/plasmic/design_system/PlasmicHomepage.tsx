@@ -42,7 +42,6 @@ import {
   deriveRenderOpts,
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
-import { Typography } from "@mui/material"; // plasmic-import: Bigyp_NHFbt/codeComponent
 import { Fetcher } from "@plasmicapp/react-web/lib/data-sources"; // plasmic-import: mYGlLbIkFyE55/codeComponent
 
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -61,7 +60,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  typography?: p.Flex<typeof Typography>;
 };
 
 export interface DefaultHomepageProps {}
@@ -157,29 +155,7 @@ function PlasmicHomepage__RenderFunc(props: {
               projectcss.plasmic_tokens,
               sty.root
             )}
-          >
-            {(
-              (() => {
-                try {
-                  return [2, 3, 4];
-                } catch (e) {
-                  if (e instanceof TypeError) {
-                    return [];
-                  }
-                  throw e;
-                }
-              })() ?? []
-            ).map((currentItem, currentIndex) => (
-              <Typography
-                data-plasmic-name={"typography"}
-                data-plasmic-override={overrides.typography}
-                children={"Some text" as const}
-                className={classNames("__wab_instance", sty.typography)}
-                key={currentIndex}
-                variant={"inherit" as const}
-              />
-            ))}
-          </div>
+          />
         ) : null}
       </div>
     </React.Fragment>
@@ -187,15 +163,13 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "typography"],
-  typography: ["typography"]
+  root: ["root"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  typography: typeof Typography;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -258,7 +232,6 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    typography: makeNodeComponent("typography"),
 
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,

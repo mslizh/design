@@ -160,7 +160,7 @@ export function getTheme(mode?: "light" | "dark") {
         },
         styleOverrides: {
           root: {
-            borderWidth: "0px",
+            borderWidth: 0,
           }
         }
       },
@@ -180,7 +180,6 @@ export function getTheme(mode?: "light" | "dark") {
         styleOverrides: {
           root: ({ theme }) => ({
             borderRadius: theme.shape.borderRadius,
-            fontSize: "20px",
           }),
           sizeSmall: ({ theme }) => ({
             padding: theme.spacing(0.25),
@@ -209,8 +208,8 @@ export function getTheme(mode?: "light" | "dark") {
       MuiListItemIcon: {
         styleOverrides: {
           root: {
-            fontSize: "20px",
-            minWidth: "36px",
+            fontSize: 20,
+            minWidth: 36,
           }
         },
       },
@@ -236,6 +235,7 @@ export function getTheme(mode?: "light" | "dark") {
           }),
           sizeMedium: ({ theme }) => ({
             padding: theme.spacing(1.125),
+            gap: theme.spacing(1)
           }),
           sizeLarge: ({ theme }) => ({
             padding: theme.spacing(1.625),
@@ -269,11 +269,24 @@ export function getTheme(mode?: "light" | "dark") {
             display: "flex",
             alignItems: "center",
             gap: theme.spacing(1),
-            minHeight: "32px",
+            minHeight: 32,
             ...theme.typography.caption
           })
         },
       },
+      MuiSvgIcon: {
+        styleOverrides: {
+          fontSizeSmall: {
+            fontSize: 16,
+          },
+          fontSizeMedium: {
+            fontSize: 20,
+          },
+          fontSizeLarge: {
+            fontSize: 24,
+          },
+        }
+      }
     },
   });
 
