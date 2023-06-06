@@ -38,6 +38,7 @@ export function registerToggleButtonGroup() {
         type: "eventHandler",
         argTypes: [],
       },
+      sx: "object",
     },
     importPath: "@mui/material",
   });

@@ -10,6 +10,7 @@ export const boxMeta: CodeComponentMeta<BoxProps> = {
       },
       padding: "number",
       margin: "number",
+      sx: "object"
    },
    importPath: "@mui/material",
 };

@@ -25,6 +25,7 @@ export const appBarMeta: CodeComponentMeta<AppBarProps> = {
          type: "choice",
          options: ["elevation", "outlined"],
       },
+      sx: "object",
    },
    importPath: "@mui/material",
 };

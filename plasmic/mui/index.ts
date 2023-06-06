@@ -40,8 +40,10 @@ import { cardMediaMeta } from "./cardMediaMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
 import { drawerMeta } from "./drawerMeta";
-import { linearProgressMeta } from "./linearProgressMeta";
 import { gridMeta } from "./gridMeta";
+import { Icon } from "@/components/Icon";
+import { iconMeta } from "./iconMeta";
+import { linearProgressMeta } from "./linearProgressMeta";
 import { listMeta } from "./listMeta";
 import { listItemMeta } from "./listItemMeta";
 import { listItemAvatarMeta } from "./listItemAvatarMeta";
@@ -53,7 +55,7 @@ import { listSubheaderMeta } from "./listSubheaderMeta";
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
    registerComponent(Badge, badgeMeta);
-   registerComponent(Box, boxMeta);
+   registerComponent(Box, boxMeta); 
    registerComponent(Button, buttonMeta);
    registerComponent(ButtonGroup, buttonGroupMeta);
    registerComponent(Divider, dividerMeta);
@@ -75,4 +77,5 @@ export function registerMuiComponents() {
    registerComponent(ListItemIcon, listItemIconMeta);
    registerComponent(ListItemText, listItemTextMeta);
    registerComponent(ListSubheader, listSubheaderMeta);
+   registerComponent(Icon, iconMeta);
 }
