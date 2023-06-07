@@ -9,10 +9,16 @@ export const withToastMeta: CodeComponentMeta<WithToastProps> = {
       children: "slot",
       variant: {
          type: "choice",
-         options: ["default", "success", "error"],
+         options: ["default", "success", "error", "promise"],
       },
       message: {
          type: "string",
+         hidden: (props) => props.variant === "promise",
+      },
+      promise: {
+         type: "exprEditor",
+         data: [],
+         hidden: (props) => props.variant !== "promise",
       },
       data: {
          type: "object",
@@ -33,6 +39,18 @@ export const withToastMeta: CodeComponentMeta<WithToastProps> = {
                      argTypes: [],
                   },
                },
+            },
+            loading: {
+               type: "string",
+               hidden: (props) => props.variant !== "promise",
+            },
+            success: {
+               type: "string",
+               hidden: (props) => props.variant !== "promise",
+            },
+            error: {
+               type: "string",
+               hidden: (props) => props.variant !== "promise",
             },
          },
       },
