@@ -20,5 +20,19 @@
 }
 
 .toast[data-sonner-toast] [data-button] {
-  background: #F97316;
+  color: #6B7280;
+  background-color: transparent;
+  border: 1px solid #E5E7EB;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.toast[data-sonner-toast] [data-button]:hover,
+.toast[data-sonner-toast]:hover [data-close-button]:hover {
+  background-color: #EDEDEF;
+}
+
+.toast[data-sonner-toast] [data-close-button] {
+  color: #6B7280;
+  border-color: #E5E7EB;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
