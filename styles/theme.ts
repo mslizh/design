@@ -68,8 +68,8 @@ export function getTheme(mode?: "light" | "dark") {
       "0px 1px 2px 0px rgba(17, 24, 39,0.04), 0px 1px 1px 0px rgba(17, 24, 39,0.01), 0px 0.5px 0.5px 0px rgba(17, 24, 39,0.02)", // 1
       "0px -1px 2px 0px rgba(17, 24, 39,0.04), 0px -1px 1px 0px rgba(17, 24, 39,0.01), 0px -0.5px 0.5px 0px rgba(17, 24, 39,0.02)", // 2
       "0px 1px 3px 0px rgba(17, 24, 39,0.1), 0px 2px 1px 0px rgba(17, 24, 39,0.02), 0px 1px 1px 0px rgba(17, 24, 39,0.04)", // 3
-      "0px 1px 5px 0px rgba(17, 24, 39,0.1), 0px 3px 1px 0px rgba(17, 24, 39,0.02), 0px 2px 2px 0px rgba(17, 24, 39,0,04)", // 4
-      "0px 1px 8px 0px rgba(17, 24, 39,0.1), 0px 3px 3px 0px rgba(17, 24, 39,0.02), 0px 3px 4px 0px rgba(17, 24, 39,0,04)", // 5
+      "0px 1px 5px 0px rgba(17, 24, 39,0.1), 0px 3px 1px 0px rgba(17, 24, 39,0.02), 0px 2px 2px 0px rgba(17, 24, 39,0.04)", // 4
+      "0px 1px 8px 0px rgba(17, 24, 39,0.1), 0px 3px 3px 0px rgba(17, 24, 39,0.02), 0px 3px 4px 0px rgba(17, 24, 39,0.04)", // 5
       "0px 2px 4px 0px rgba(17, 24, 39,0.1), 0px 1px 10px 0px rgba(17, 24, 39,0.02), 0px 4px 5px 0px rgba(17, 24, 39,0.04)", // 6
       "0px 3px 5px 0px rgba(17, 24, 39,0.1), 0px 1px 18px 0px rgba(17, 24, 39,0.02),0px 6px 10px 0px rgba(17, 24, 39,0.04)", // 7
       "0px 5px 5px 0px rgba(17, 24, 39,0.1), 0px 3px 14px 0px rgba(17, 24, 39,0.02), 0px 8px 10px 0px rgba(17, 24, 39,0.04)", // 8
@@ -160,7 +160,7 @@ export function getTheme(mode?: "light" | "dark") {
         },
         styleOverrides: {
           root: {
-            borderWidth: "0px",
+            borderWidth: 0,
           }
         }
       },
@@ -179,7 +179,7 @@ export function getTheme(mode?: "light" | "dark") {
       MuiIconButton: {
         styleOverrides: {
           root: ({ theme }) => ({
-            borderRadius: theme.shape.borderRadius
+            borderRadius: theme.shape.borderRadius,
           }),
           sizeSmall: ({ theme }) => ({
             padding: theme.spacing(0.25),
@@ -208,8 +208,8 @@ export function getTheme(mode?: "light" | "dark") {
       MuiListItemIcon: {
         styleOverrides: {
           root: {
-            fontSize: "20px",
-            minWidth: "36px",
+            fontSize: 20,
+            minWidth: 36,
           }
         },
       },
@@ -235,6 +235,7 @@ export function getTheme(mode?: "light" | "dark") {
           }),
           sizeMedium: ({ theme }) => ({
             padding: theme.spacing(1.125),
+            gap: theme.spacing(1)
           }),
           sizeLarge: ({ theme }) => ({
             padding: theme.spacing(1.625),
@@ -263,16 +264,29 @@ export function getTheme(mode?: "light" | "dark") {
             backgroundColor: theme.palette.background.paper,
             boxShadow: theme.shadows[6],
             color: theme.palette.text.secondary,
-            padding: theme.spacing(0.625, 1.5),
+            padding: theme.spacing(0.75, 1.5),
             border: `1px solid ${theme.palette.divider}`,
             display: "flex",
             alignItems: "center",
             gap: theme.spacing(1),
-            minHeight: "32px",
+            minHeight: 32,
             ...theme.typography.caption
           })
         },
       },
+      MuiSvgIcon: {
+        styleOverrides: {
+          fontSizeSmall: {
+            fontSize: 16,
+          },
+          fontSizeMedium: {
+            fontSize: 20,
+          },
+          fontSizeLarge: {
+            fontSize: 24,
+          },
+        }
+      }
     },
   });
 

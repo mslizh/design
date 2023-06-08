@@ -25,23 +25,13 @@
     grid-column: 4;
   }
 }
-@media (max-width: 1280px) {
+@media (min-width: 0px) and (max-width: 1200px) {
   :where(.root > *) {
     grid-column: 4;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 900px) {
   :where(.root > *) {
     grid-column: 4;
   }
-}
-@media (min-width: 0px) and (max-width: 600px) {
-  :where(.root > *) {
-    grid-column: 4;
-  }
-}
-.typography:global(.__wab_instance) {
-  max-width: 100%;
-  object-fit: cover;
-  position: relative;
 }

@@ -18,3 +18,7 @@
 .toast[data-sonner-toast][data-styled=true][data-type=error] [data-icon] {
   color: #EF4444;
 }
+
+.toast[data-sonner-toast] [data-button] {
+  background: #F97316;
+}

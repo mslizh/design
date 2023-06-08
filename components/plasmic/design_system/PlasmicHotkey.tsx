@@ -51,18 +51,19 @@ export const PlasmicHotkey__VariantProps = new Array<VariantPropType>();
 
 export type PlasmicHotkey__ArgsType = {
   title?: string;
+  edge?: string;
 };
 type ArgPropType = keyof PlasmicHotkey__ArgsType;
-export const PlasmicHotkey__ArgProps = new Array<ArgPropType>("title");
+export const PlasmicHotkey__ArgProps = new Array<ArgPropType>("title", "edge");
 
 export type PlasmicHotkey__OverridesType = {
-  root?: p.Flex<"div">;
-  stack?: p.Flex<typeof Stack>;
+  root?: p.Flex<typeof Stack>;
   typography?: p.Flex<typeof Typography>;
 };
 
 export interface DefaultHotkeyProps {
   title?: string;
+  edge?: string;
   className?: string;
 }
 
@@ -113,59 +114,83 @@ function PlasmicHotkey__RenderFunc(props: {
   const [$queries, setDollarQueries] = React.useState({});
 
   return (
-    <div
+    <Stack
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      bgcolor={"grey.100" as const}
+      borderRadius={"4px" as const}
       className={classNames(
-        projectcss.all,
+        "__wab_instance",
         projectcss.root_reset,
         projectcss.plasmic_default_styles,
         projectcss.plasmic_mixins,
         projectcss.plasmic_tokens,
         sty.root
       )}
+      marginLeft={(() => {
+        try {
+          return $props.edge === "start" && -0.75;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return undefined;
+          }
+          throw e;
+        }
+      })()}
+      marginRight={(() => {
+        try {
+          return $props.edge === "end" && -0.75;
+        } catch (e) {
+          if (
+            e instanceof TypeError ||
+            e?.plasmicType === "PlasmicUndefinedDataError"
+          ) {
+            return undefined;
+          }
+          throw e;
+        }
+      })()}
+      paddingX={0.5 as const}
+      paddingY={0.25 as const}
     >
-      <Stack
-        data-plasmic-name={"stack"}
-        data-plasmic-override={overrides.stack}
-        className={classNames("__wab_instance", sty.stack)}
-        paddingX={0.5 as const}
-        paddingY={0.25 as const}
-      >
-        <Typography
-          data-plasmic-name={"typography"}
-          data-plasmic-override={overrides.typography}
-          children={(() => {
-            try {
-              return $props.title;
-            } catch (e) {
-              if (e instanceof TypeError) {
-                return ``;
-              }
-              throw e;
+      <Typography
+        data-plasmic-name={"typography"}
+        data-plasmic-override={overrides.typography}
+        children={(() => {
+          try {
+            return $props.title;
+          } catch (e) {
+            if (
+              e instanceof TypeError ||
+              e?.plasmicType === "PlasmicUndefinedDataError"
+            ) {
+              return ``;
             }
-          })()}
-          className={classNames("__wab_instance", sty.typography)}
-          variant={"inherit" as const}
-        />
-      </Stack>
-    </div>
+            throw e;
+          }
+        })()}
+        className={classNames("__wab_instance", sty.typography)}
+        color={"text.secondary" as const}
+        variant={"caption" as const}
+      />
+    </Stack>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "stack", "typography"],
-  stack: ["stack", "typography"],
+  root: ["root", "typography"],
   typography: ["typography"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
-  stack: typeof Stack;
+  root: typeof Stack;
   typography: typeof Typography;
 };
 
@@ -229,7 +254,6 @@ export const PlasmicHotkey = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    stack: makeNodeComponent("stack"),
     typography: makeNodeComponent("typography"),
 
     // Metadata about props expected for PlasmicHotkey

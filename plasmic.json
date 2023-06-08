@@ -42,32 +42,6 @@
           "componentType": "page"
         },
         {
-          "id": "QoAbXKeHub",
-          "name": "Drawing2D",
-          "type": "managed",
-          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
-          "renderModuleFilePath": "plasmic/design_system/PlasmicDrawing2D.tsx",
-          "importSpec": {
-            "modulePath": "../pages/drawing2d.tsx"
-          },
-          "cssFilePath": "plasmic/design_system/PlasmicDrawing2D.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
-          "id": "aeD2-GWVxm",
-          "name": "AppBar",
-          "type": "managed",
-          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
-          "renderModuleFilePath": "plasmic/design_system/PlasmicAppBar.tsx",
-          "importSpec": {
-            "modulePath": "../pages/app-bar.tsx"
-          },
-          "cssFilePath": "plasmic/design_system/PlasmicAppBar.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "S5KYVe8a0M",
           "name": "Hotkey",
           "type": "managed",
@@ -79,19 +53,6 @@
           "cssFilePath": "plasmic/design_system/PlasmicHotkey.module.css",
           "scheme": "blackbox",
           "componentType": "component"
-        },
-        {
-          "id": "aDgYNbjSiH",
-          "name": "Progress",
-          "type": "managed",
-          "projectId": "gfjAdNoHd7G3Pf1RsDsNSf",
-          "renderModuleFilePath": "plasmic/design_system/PlasmicProgress.tsx",
-          "importSpec": {
-            "modulePath": "../pages/progress.tsx"
-          },
-          "cssFilePath": "plasmic/design_system/PlasmicProgress.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
         }
       ],
       "icons": [],
@@ -130,70 +91,10 @@
           "componentImportPath": "@mui/material"
         },
         {
-          "id": "H1CjMwI03H",
-          "name": "Card",
-          "displayName": "Card",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "urFC_bfJHy",
-          "name": "CardActionArea",
-          "displayName": "CardActionArea",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "n5ir_LpRde",
-          "name": "CardActions",
-          "displayName": "CardActions",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "vxkuT-3xUaS",
-          "name": "CardContent",
-          "displayName": "CardContent",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "EQBwvi7lgv3",
-          "name": "CardHeader",
-          "displayName": "CardHeader",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "scL7Q80JctW",
-          "name": "CardMedia",
-          "displayName": "CardMedia",
-          "componentImportPath": "@mui/material"
-        },
-        {
           "id": "AeIJFGAuMAy",
           "name": "Divider",
           "displayName": "Divider",
           "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "0RGcsRHnnR1",
-          "name": "Drawer",
-          "displayName": "Drawer",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "UeGdlGteOHe",
-          "name": "FileCard",
-          "displayName": "FileCard",
-          "componentImportPath": "@/components/FileCard"
-        },
-        {
-          "id": "Gra9pEXb6QS",
-          "name": "FileGrid",
-          "displayName": "FileGrid",
-          "componentImportPath": "@/components/FileGrid"
-        },
-        {
-          "id": "PfRqPumnyKZ",
-          "name": "FileList",
-          "displayName": "FileList",
-          "componentImportPath": "@/components/FileList"
         },
         {
           "id": "yYr66ja9ax_",
@@ -296,27 +197,9 @@
           "componentImportPath": "@/components/Upload"
         },
         {
-          "id": "-XE5KdyUNZF",
-          "name": "WithToast",
-          "displayName": "WithToast",
-          "componentImportPath": "@/components/Toaster"
-        },
-        {
-          "id": "JQDu6zDN7M",
-          "name": "Checkbox",
-          "displayName": "Checkbox",
-          "componentImportPath": "@mui/material"
-        },
-        {
           "id": "TwXnxTRFow",
           "name": "Box",
           "displayName": "Box",
-          "componentImportPath": "@mui/material"
-        },
-        {
-          "id": "aC5h8LHy8P",
-          "name": "Container",
-          "displayName": "Container",
           "componentImportPath": "@mui/material"
         },
         {
@@ -388,6 +271,66 @@
           "name": "CircularProgress",
           "displayName": "CircularProgress",
           "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "FPr-gD9hOn",
+          "name": "Toaster",
+          "displayName": "Toaster",
+          "componentImportPath": "@/components/Toaster"
+        },
+        {
+          "id": "AaaBlE3xTy",
+          "name": "CardActionArea",
+          "displayName": "CardActionArea",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "882kA-uK45",
+          "name": "CardActions",
+          "displayName": "CardActions",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "AFEEuYt1dR",
+          "name": "CardContent",
+          "displayName": "CardContent",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "ONDgriHAFD",
+          "name": "CardHeader",
+          "displayName": "CardHeader",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "xmdFzYLfdk",
+          "name": "CardMedia",
+          "displayName": "CardMedia",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "5j3jGrlnZ3f",
+          "name": "Card",
+          "displayName": "Card",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "jfyq1-J4JKx",
+          "name": "Container",
+          "displayName": "Container",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "x8e4jiq-b_B",
+          "name": "Drawer",
+          "displayName": "Drawer",
+          "componentImportPath": "@mui/material"
+        },
+        {
+          "id": "rvAwe4P8ZW",
+          "name": "ListSubheader",
+          "displayName": "ListSubheader",
+          "componentImportPath": "@mui/material"
         }
       ]
     }
@@ -406,6 +349,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.286",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.286/dist/plasmic.schema.json"
+  "cliVersion": "0.1.291",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.291/dist/plasmic.schema.json"
 }
