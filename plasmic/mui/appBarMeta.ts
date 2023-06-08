@@ -18,7 +18,6 @@ export const appBarMeta: CodeComponentMeta<AppBarProps> = {
       elevation: {
          type: "number",
          helpText: "от 0 до 24",
-         defaultValue: 1,
       },
       square: "boolean",
       variant: {

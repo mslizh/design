@@ -1,5 +1,7 @@
 import {
    AppBar,
+   Avatar,
+   AvatarGroup,
    Badge,
    Box,
    Button,
@@ -11,6 +13,8 @@ import {
    CardContent,
    CardHeader,
    CardMedia,
+   Checkbox,
+   Chip,
    CircularProgress,
    Container,
    Drawer,
@@ -26,6 +30,8 @@ import {
 } from "@mui/material";
 import { registerComponent } from "@plasmicapp/host";
 import { appBarMeta } from "./appBarMeta";
+import { avatarMeta } from "./avatarMeta";
+import { avatarGroupMeta } from "./avatarGroupMeta";
 import { badgeMeta } from "./badgeMeta";
 import { boxMeta } from "./boxMeta";
 import { buttonMeta } from "./buttonMeta";
@@ -37,6 +43,8 @@ import { cardActionsMeta } from "./cardActionsMeta";
 import { cardContentMeta } from "./cardContentMeta";
 import { cardHeaderMeta } from "./cardHeaderMeta";
 import { cardMediaMeta } from "./cardMediaMeta";
+import { checkboxMeta } from "./checkboxMeta";
+import { chipMeta } from "./chipMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
 import { drawerMeta } from "./drawerMeta";
@@ -52,8 +60,11 @@ import { listItemIconMeta } from "./listItemIconMeta";
 import { listItemTextMeta } from "./listItemTextMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
 
+
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
+   registerComponent(Avatar, avatarMeta);
+   registerComponent(AvatarGroup, avatarGroupMeta);
    registerComponent(Badge, badgeMeta);
    registerComponent(Box, boxMeta); 
    registerComponent(Button, buttonMeta);
@@ -65,6 +76,8 @@ export function registerMuiComponents() {
    registerComponent(CardHeader, cardHeaderMeta);
    registerComponent(CardMedia, cardMediaMeta);
    registerComponent(Card, cardMeta);
+   registerComponent(Checkbox, checkboxMeta);
+   registerComponent(Chip, chipMeta);
    registerComponent(CircularProgress, circularProgressMeta);
    registerComponent(Container, containerMeta);
    registerComponent(Drawer, drawerMeta);

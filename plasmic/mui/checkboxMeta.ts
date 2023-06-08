@@ -16,6 +16,7 @@ export const checkboxMeta: CodeComponentMeta<CheckboxProps> = {
         },
         indeterminate: "boolean",
         disabled: "boolean",
+        disableRipple: "boolean",
         required: "boolean",
         color: {
             type: "choice",

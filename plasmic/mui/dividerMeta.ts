@@ -21,6 +21,7 @@ export const dividerMeta: CodeComponentMeta<DividerProps> = {
       type: "choice",
       options: ["fullWidth", "inset", "middle"],
     },
+    component: "string",
     sx: "object",
   },
   importPath: "@mui/material",
