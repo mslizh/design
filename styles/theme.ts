@@ -154,6 +154,9 @@ export const theme = createTheme({
          styleOverrides: {
             root: ({ theme }) => ({
                ...theme.typography.body1,
+               backgroundColor: theme.palette.background.default,
+               border: `1px solid ${theme.palette.divider}`,
+               color: theme.palette.text.secondary,
             }),
          },
       },
