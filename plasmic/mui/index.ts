@@ -19,6 +19,7 @@ import {
    Container,
    Drawer,
    Grid,
+   IconButton,
    LinearProgress,
    List,
    ListItem,
@@ -50,6 +51,7 @@ import { containerMeta } from "./containerMeta";
 import { drawerMeta } from "./drawerMeta";
 import { gridMeta } from "./gridMeta";
 import { Icon } from "@/components/Icon";
+import { iconButtonMeta } from "./iconButtonMeta";
 import { iconMeta } from "./iconMeta";
 import { linearProgressMeta } from "./linearProgressMeta";
 import { listMeta } from "./listMeta";
@@ -91,4 +93,5 @@ export function registerMuiComponents() {
    registerComponent(ListItemText, listItemTextMeta);
    registerComponent(ListSubheader, listSubheaderMeta);
    registerComponent(Icon, iconMeta);
+   registerComponent(IconButton, iconButtonMeta);
 }
