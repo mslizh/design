@@ -1,6 +1,5 @@
 import {
    AppBar,
-   Avatar,
    AvatarGroup,
    Badge,
    Box,
@@ -34,6 +33,7 @@ import {
    ListItemText,
    ListSubheader,
 } from "@mui/material";
+import { Avatar } from "@/components/Avatar";
 import { registerComponent } from "@plasmicapp/host";
 import { appBarMeta } from "./appBarMeta";
 import { avatarMeta } from "./avatarMeta";
@@ -71,7 +71,6 @@ import { listItemButtonMeta } from "./listItemButtonMeta";
 import { listItemIconMeta } from "./listItemIconMeta";
 import { listItemTextMeta } from "./listItemTextMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
-
 
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
