@@ -1,6 +1,5 @@
 import { registerFileUploader } from "@/components/FileUploader";
 import { registerFileListItem } from "@/components/FileListItem";
-import { registerIconButton } from "@/components/IconButton";
 import { registerInputAdornment } from "@/components/InputAdornment";
 import { registerInputBase } from "@/components/InputBase";
 import { registerOutlinedInput } from "@/components/OutlinedInput";
@@ -18,7 +17,6 @@ export function registerAll() {
    registerFileListItem();
    registerFileUploader();
    registerInputAdornment();
-   registerIconButton();
    registerInputBase();
    registerOutlinedInput();
    registerPaper(styleProps);

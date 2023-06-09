@@ -8,9 +8,8 @@ export default function useFileUploader(): [
   const [files, setFiles] = useState<File[] | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(false);
 
-  function uploadHander(event: React.ChangeEvent<HTMLInputElement>) {
+  function uploadHandler(event: React.ChangeEvent<HTMLInputElement>) {
     const selectedFiles = event.target.files;
-    selectedFiles && console.log(Array.from(selectedFiles));
 
     if (selectedFiles && selectedFiles.length > 0) {
       setLoading(true);
@@ -37,5 +36,5 @@ export default function useFileUploader(): [
     }
   }
 
-  return [files, loading, uploadHander];
+  return [files, loading, uploadHandler];
 }
