@@ -14,6 +14,11 @@ import {
    CircularProgress,
    Container,
    Drawer,
+   FormControl,
+   FormControlLabel,
+   FormGroup,
+   FormHelperText,
+   FormLabel,
    Grid,
    LinearProgress,
    List,
@@ -40,6 +45,11 @@ import { cardMediaMeta } from "./cardMediaMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
 import { drawerMeta } from "./drawerMeta";
+import { formControlMeta } from "./formControlMeta";
+import { formControlLabelMeta } from "./formControlLabelMeta";
+import { formGroupMeta } from "./formGroupMeta";
+import { formHelperTextMeta } from "./formHelperTextMeta";
+import { formLabelMeta } from "./formLabelMeta";
 import { gridMeta } from "./gridMeta";
 import { Icon } from "@/components/Icon";
 import { iconMeta } from "./iconMeta";
@@ -55,7 +65,7 @@ import { listSubheaderMeta } from "./listSubheaderMeta";
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
    registerComponent(Badge, badgeMeta);
-   registerComponent(Box, boxMeta); 
+   registerComponent(Box, boxMeta);
    registerComponent(Button, buttonMeta);
    registerComponent(ButtonGroup, buttonGroupMeta);
    registerComponent(Divider, dividerMeta);
@@ -68,6 +78,11 @@ export function registerMuiComponents() {
    registerComponent(CircularProgress, circularProgressMeta);
    registerComponent(Container, containerMeta);
    registerComponent(Drawer, drawerMeta);
+   registerComponent(FormControl, formControlMeta);
+   registerComponent(FormControlLabel, formControlLabelMeta);
+   registerComponent(FormGroup, formGroupMeta);
+   registerComponent(FormHelperText, formHelperTextMeta);
+   registerComponent(FormLabel, formLabelMeta);
    registerComponent(Grid, gridMeta);
    registerComponent(LinearProgress, linearProgressMeta);
    registerComponent(List, listMeta);
