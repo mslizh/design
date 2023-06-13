@@ -6,13 +6,12 @@ export const listItemMeta: CodeComponentMeta<ListItemProps> = {
    props: {
       children: "slot",
       disableGutters: "boolean",
+      disablePadding: "boolean",
+      divider: "boolean",
       secondaryAction: {
          type: "slot",
          hidePlaceholder: true,
       },
-      divider: "boolean",
-      disablePadding: "boolean",
-      disableGutters: "boolean",
       dense: "boolean",
       alignItems: {
          type: "choice",
