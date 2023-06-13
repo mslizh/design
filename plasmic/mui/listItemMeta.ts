@@ -5,6 +5,7 @@ export const listItemMeta: CodeComponentMeta<ListItemProps> = {
    name: "ListItem",
    props: {
       children: "slot",
+      disableGutters: "boolean",
       secondaryAction: {
          type: "slot",
          hidePlaceholder: true,

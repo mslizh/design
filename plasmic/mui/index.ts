@@ -12,7 +12,6 @@ import {
    CardContent,
    CardHeader,
    CardMedia,
-   Checkbox,
    Chip,
    CircularProgress,
    Container,
@@ -49,6 +48,7 @@ import { cardActionsMeta } from "./cardActionsMeta";
 import { cardContentMeta } from "./cardContentMeta";
 import { cardHeaderMeta } from "./cardHeaderMeta";
 import { cardMediaMeta } from "./cardMediaMeta";
+import { Checkbox } from "@/components/Checkbox";
 import { checkboxMeta } from "./checkboxMeta";
 import { chipMeta } from "./chipMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
