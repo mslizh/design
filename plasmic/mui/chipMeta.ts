@@ -18,7 +18,6 @@ export const chipMeta: CodeComponentMeta<ChipProps> = {
     },
     icon: "slot",
     label: "slot",
-    deleteIcon: "slot",
     onDelete: {
       type: "eventHandler",
       argTypes: [],
