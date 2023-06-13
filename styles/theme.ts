@@ -192,6 +192,13 @@ export const theme = createTheme({
             }),
          },
       },
+      MuiFormLabel: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               color: theme.palette.text.primary,
+            }),
+         },
+      },
       MuiIconButton: {
          styleOverrides: {
             root: ({ theme }) => ({
