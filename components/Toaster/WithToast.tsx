@@ -1,3 +1,6 @@
+// Only for Plasmic
+// Do not implement in code
+
 import React from "react";
 import { ExternalToast, toast } from "sonner";
 

@@ -1,11 +1,10 @@
-import IconButton from "@mui/material/IconButton";
-import { registerComponent } from "@plasmicapp/host";
+import { CodeComponentMeta } from "@plasmicapp/host";
+import { IconButtonProps } from "@mui/material";
 
-export function registerIconButton() {
-  registerComponent(IconButton, {
-    name: "IconButton",
-    props: {
-      children: "slot",
+export const iconButtonMeta: CodeComponentMeta<IconButtonProps> = {
+  name: "IconButton",
+  props: {
+    children: "slot",
       color: {
         type: "choice",
         options: [
@@ -32,7 +31,7 @@ export function registerIconButton() {
         type: "eventHandler",
         argTypes: [],
       },
-    },
-    importPath: "@mui/material",
-  });
+      sx: "object"
+  },
+  importPath: "@mui/material"
 }

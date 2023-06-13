@@ -1,5 +1,4 @@
 import { CodeComponentMeta } from "@plasmicapp/host";
-/*import { IconProps } from "@/components/Icon";*/
 import { SvgIconProps } from "@mui/material/SvgIcon";
 
 export const iconMeta: CodeComponentMeta<SvgIconProps> = {

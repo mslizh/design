@@ -13,7 +13,7 @@ export const listItemTextMeta: CodeComponentMeta<
          defaultValue: "Some text…",
       },
       secondary: "string",
-      // sx: "object",
+      sx: "object",
    },
    importPath: "@mui/material",
 };

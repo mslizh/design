@@ -5,9 +5,12 @@ export const listMeta: CodeComponentMeta<ListProps> = {
    name: "List",
    props: {
       children: "slot",
+      subheader: {
+         type: "slot",
+         hidePlaceholder: true,
+      },
       disablePadding: "boolean",
       dense: "boolean",
-      showSubheader: "boolean",
       sx: "object",
    },
    importPath: "@mui/material",

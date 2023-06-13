@@ -4,8 +4,11 @@ import { CodeComponentMeta } from "@plasmicapp/host";
 export const listSubheaderMeta: CodeComponentMeta<ListSubheaderProps> = {
    name: "ListSubheader",
    props: {
-      children: "string",
-      color: "string",
+      children: "slot",
+      color: {
+         type: "choice",
+         options: ["default", "inherit", "primary"],
+      },
       disableGutters: "boolean",
       disableSticky: "boolean",
       inset: "boolean",
