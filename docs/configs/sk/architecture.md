@@ -76,8 +76,8 @@ erDiagram
         string id PK
         string parentId
         string title
-        string file "ссылка на файл в хранилище"
-        boolean convert "нужно ли конвертировать для чертежей. Как определить, что конвертировать?"
+        object file 
+        boolean toConvert "нужно ли конвертировать для чертежей"
         string category FK 
         string projectId FK
     }
@@ -92,10 +92,9 @@ erDiagram
         object attachments
         string description
         date deadline
-        string violationSubject "предмет нарушения, например, мтр, работы"
+        string violationSubject "предмет нарушения, мтр, работы"
         string eliminationGuide "меру к устранению"
         object feed
-        object drawing2D
         radio issueStatus "статус замечания notIssued-не выдано, issued-выдано"
         radio workConfirmed "принять в работу? rejected-отклонить, confirmed-принять"
         string reasonForRejection "причина отклонения"
@@ -103,6 +102,7 @@ erDiagram
         radio eliminationConfirmation "подтверждение устранения notIssued-не подтверждено, issued-подтверждено"
         string closeIssue "закрыть замечание?"
         string objectId FK
+        object drawing2D FK "Отметка на РД"
         string workTypeId FK "для аналитики и классификации замечаний"
         string authorId FK
         string executorId FK
@@ -117,6 +117,7 @@ erDiagram
     ISSUES }o--|| CRITICALITY : ""
     ISSUES }o--|| ISSUE_STATUS : ""
     ISSUES }o--|| OBJECT : "" 
+    ISSUES }o--|| RD : "" 
     ISSUES }o--|| VIOLATION_SUBJECT : ""
 
 
@@ -135,6 +136,7 @@ erDiagram
         string reasonForCanceled "причина отмены"
         string closeRequest "закрыть приемку?"
         string workTypeId FK
+        object drawing2D FK "Отметка на РД"
         string authorId FK "производитель работ"
         string receivingId FK "принимающий"
         array watchers FK
@@ -146,6 +148,7 @@ erDiagram
     REQUESTS }o--|| REQUESTS_STATUS : ""
     REQUESTS }o--|| OBJECT : "" 
     REQUESTS }o--|| DURATION : ""
+    REQUESTS }o--|| RD : "" 
 
 
     APPARTMENT_TRANSFER {
@@ -262,6 +265,13 @@ erDiagram
 
     DURATION {
         string id PK
+        string title
+    }
+
+
+    RD {
+        string id PK
+        string parentId 
         string title
     }
 ```
