@@ -1,6 +1,5 @@
 import {
    AppBar,
-   AvatarGroup,
    Badge,
    Box,
    Button,
@@ -33,6 +32,7 @@ import {
    ListSubheader,
 } from "@mui/material";
 import { Avatar } from "@/components/Avatar";
+import { AvatarGroup } from "@/components/AvatarGroup";
 import { registerComponent } from "@plasmicapp/host";
 import { appBarMeta } from "./appBarMeta";
 import { avatarMeta } from "./avatarMeta";
