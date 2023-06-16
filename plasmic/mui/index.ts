@@ -1,3 +1,5 @@
+import { registerComponent } from "@plasmicapp/host";
+
 import {
    AppBar,
    AvatarGroup,
@@ -23,6 +25,7 @@ import {
    FormLabel,
    Grid,
    IconButton,
+   InputBase,
    LinearProgress,
    List,
    ListItem,
@@ -31,9 +34,13 @@ import {
    ListItemIcon,
    ListItemText,
    ListSubheader,
+   OutlinedInput,
+   TextField,
+   Typography,
 } from "@mui/material";
 import { Avatar } from "@/components/Avatar";
-import { registerComponent } from "@plasmicapp/host";
+import { Icon } from "@/components/Icon";
+
 import { appBarMeta } from "./appBarMeta";
 import { avatarMeta } from "./avatarMeta";
 import { avatarGroupMeta } from "./avatarGroupMeta";
@@ -60,9 +67,9 @@ import { formGroupMeta } from "./formGroupMeta";
 import { formHelperTextMeta } from "./formHelperTextMeta";
 import { formLabelMeta } from "./formLabelMeta";
 import { gridMeta } from "./gridMeta";
-import { Icon } from "@/components/Icon";
 import { iconButtonMeta } from "./iconButtonMeta";
 import { iconMeta } from "./iconMeta";
+import { inputBaseMeta } from "./inputBaseMeta";
 import { linearProgressMeta } from "./linearProgressMeta";
 import { listMeta } from "./listMeta";
 import { listItemMeta } from "./listItemMeta";
@@ -71,6 +78,9 @@ import { listItemButtonMeta } from "./listItemButtonMeta";
 import { listItemIconMeta } from "./listItemIconMeta";
 import { listItemTextMeta } from "./listItemTextMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
+import { outlinedInputMeta } from "./outlinedInputMeta";
+import { textFieldMeta } from "./textFieldMeta";
+import { typographyMeta } from "./typographyMeta";
 
 export function registerMuiComponents() {
    registerComponent(AppBar, appBarMeta);
@@ -98,6 +108,9 @@ export function registerMuiComponents() {
    registerComponent(FormHelperText, formHelperTextMeta);
    registerComponent(FormLabel, formLabelMeta);
    registerComponent(Grid, gridMeta);
+   registerComponent(Icon, iconMeta);
+   registerComponent(IconButton, iconButtonMeta);
+   registerComponent(InputBase, inputBaseMeta);
    registerComponent(LinearProgress, linearProgressMeta);
    registerComponent(List, listMeta);
    registerComponent(ListItem, listItemMeta);
@@ -106,6 +119,7 @@ export function registerMuiComponents() {
    registerComponent(ListItemIcon, listItemIconMeta);
    registerComponent(ListItemText, listItemTextMeta);
    registerComponent(ListSubheader, listSubheaderMeta);
-   registerComponent(Icon, iconMeta);
-   registerComponent(IconButton, iconButtonMeta);
+   registerComponent(OutlinedInput, outlinedInputMeta);
+   registerComponent(TextField, textFieldMeta);
+   registerComponent(Typography, typographyMeta);
 }

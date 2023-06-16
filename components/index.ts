@@ -1,12 +1,9 @@
 import { registerFileUploader } from "@/components/FileUploader";
 import { registerFileListItem } from "@/components/FileListItem";
 import { registerInputAdornment } from "@/components/InputAdornment";
-import { registerInputBase } from "@/components/InputBase";
-import { registerOutlinedInput } from "@/components/OutlinedInput";
 import { registerPaper } from "@/components/Paper";
 import { registerScheduler } from "@/components/Scheduler";
 import { registerStack } from "@/components/Stack";
-import { registerTypography } from "@/components/Typography";
 import { registerToggleButton } from "@/components/ToggleButton";
 import { registerToggleButtonGroup } from "@/components/ToggleButtonGroup";
 import { registerUpload } from "@/components/Upload";
@@ -17,8 +14,6 @@ export function registerAll() {
    registerFileListItem();
    registerFileUploader();
    registerInputAdornment();
-   registerInputBase();
-   registerOutlinedInput();
    registerPaper(styleProps);
    registerScheduler();
    registerStack(styleProps);
@@ -26,7 +21,6 @@ export function registerAll() {
    registerToggleButtonGroup();
    registerToolbar(styleProps);
    registerTooltip();
-   registerTypography(styleProps);
    registerUpload();
 }
 

@@ -1,4 +1,9 @@
-import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
+import {
+   PaletteOptions,
+   Theme,
+   alpha,
+   createTheme,
+} from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
 import { get } from "lodash";
 import { Icon } from "@/components/Icon";
@@ -8,51 +13,61 @@ export const theme = createTheme({
       common: {
          black: "rgba(17, 24, 39)",
       },
+
       primary: {
          main: "rgba(249, 115, 22)",
          light: "rgba(253, 186, 116)",
          dark: "rgba(234, 88, 12)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       secondary: {
          main: "rgba(107, 114, 128)",
          light: "rgba(209, 213, 219)",
          dark: "rgba(75, 85, 99)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       error: {
          main: "rgba(239, 68, 68)",
          light: "rgba(252, 165, 165)",
          dark: "rgba(220, 38, 38)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       success: {
          main: "rgba(34, 197, 94)",
          light: "rgba(134, 239, 172)",
          dark: "rgba(22, 163, 74)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       warning: {
          main: "rgba(255, 195, 0)",
          light: "rgba(255, 215, 67)",
          dark: "rgba(255, 181, 0)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       info: {
          main: "rgba(59, 130, 246)",
          light: "rgba(147, 197, 253)",
          dark: "rgba(37, 99, 235)",
          contrastText: "rgba(255, 255, 255)",
       },
+
       text: {
          primary: "rgba(17, 24, 39)",
          secondary: "rgba(107, 114, 128)",
          disabled: "rgba(209, 213, 219)",
       },
+
       divider: "rgba(229, 231, 235)",
+
       background: {
          default: "rgba(249, 250, 251)",
       },
+
       action: {
          active: "rgba(17, 24, 39, 0.54)",
          hover: "rgba(17, 24, 39, 0.04)",
@@ -62,6 +77,7 @@ export const theme = createTheme({
          focus: "rgba(17, 24, 39, 0.12)",
       },
    },
+
    shadows: [
       "none", // 0
       "0px 1px 2px 0px rgba(17, 24, 39,0.04), 0px 1px 1px 0px rgba(17, 24, 39,0.01), 0px 0.5px 0.5px 0px rgba(17, 24, 39,0.02)", // 1
@@ -89,68 +105,82 @@ export const theme = createTheme({
       "0px 11px 14px -7px rgba(17, 24, 39,0.2),0px 23px 36px 3px rgba(17, 24, 39,0.14),0px 9px 44px 8px rgba(17, 24, 39,0.12)", // 23
       "0px 11px 15px 0px rgba(17, 24, 39,0.1), 0px 9px 46px 0px rgba(17, 24, 39,0.02), 0px 24px 38px 0px rgba(17, 24, 39,0.04)", // 24
    ],
+
    typography: {
       fontFamily: "Inter",
+
       h1: {
          fontWeight: 700,
          lineHeight: "120px",
          letterSpacing: 0,
       },
+
       h2: {
          fontWeight: 700,
          lineHeight: "72px",
          letterSpacing: 0,
       },
+
       h3: {
          fontWeight: 700,
          lineHeight: "56px",
          letterSpacing: 0,
       },
+
       h4: {
          fontSize: "32px",
          fontWeight: 700,
          lineHeight: "40px",
          letterSpacing: 0,
       },
+
       h5: {
          fontWeight: 700,
          lineHeight: "32px",
          letterSpacing: 0,
       },
+
       h6: {
          fontWeight: 700,
          lineHeight: "32px",
          letterSpacing: 0,
       },
+
       subtitle1: {
          fontWeight: 600,
          fontSize: "0.875rem",
          lineHeight: "24px",
          letterSpacing: -0.2,
       },
+
       subtitle2: {
          fontWeight: 600,
          lineHeight: "20px",
          letterSpacing: -0.2,
       },
+
       body1: {
          fontSize: "0.875rem",
          lineHeight: "1.25rem",
          letterSpacing: -0.2,
       },
+
       body2: {
          fontSize: "0.875rem",
          lineHeight: "1.25rem",
          letterSpacing: -0.1,
       },
+
       button: {
          lineHeight: "24px",
          textTransform: "none",
       },
+
       caption: {
          lineHeight: "16px",
       },
    },
+
    components: {
       MuiAvatar: {
          styleOverrides: {
@@ -162,6 +192,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiAppBar: {
          defaultProps: {
             square: true,
@@ -174,24 +205,33 @@ export const theme = createTheme({
             },
          },
       },
+
       MuiButton: {
          styleOverrides: {
-            sizeSmall: ({ theme }) => ({
+            root: ({ theme }) => ({
                fontSize: theme.typography.button.fontSize,
+            }),
+            sizeSmall: ({ theme }) => ({
                paddingLeft: theme.spacing(1),
                paddingRight: theme.spacing(1),
             }),
             sizeMedium: ({ theme }) => ({
-               fontSize: theme.typography.button.fontSize,
                paddingTop: theme.spacing(1),
                paddingBottom: theme.spacing(1),
             }),
+            outlinedSizeMedium: ({ theme }) => ({
+               paddingTop: theme.spacing(1 - 0.125),
+               paddingBottom: theme.spacing(1 - 0.125),
+            }),
             sizeLarge: ({ theme }) => ({
-               fontSize: theme.typography.button.fontSize,
                paddingLeft: theme.spacing(2.5),
                paddingRight: theme.spacing(2.5),
                paddingTop: theme.spacing(1.5),
                paddingBottom: theme.spacing(1.5),
+            }),
+            outlinedSizeLarge: ({ theme }) => ({
+               paddingTop: theme.spacing(1.5 - 0.125),
+               paddingBottom: theme.spacing(1.5 - 0.125),
             }),
             startIcon: ({ ownerState }) => ({
                ...((ownerState.size === "small" ||
@@ -211,11 +251,13 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiCard: {
          defaultProps: {
             variant: "outlined" as const,
          },
       },
+
       MuiCheckbox: {
          defaultProps: {
             icon: <Icon name="CheckboxUncheckedRegular" />,
@@ -223,6 +265,7 @@ export const theme = createTheme({
             indeterminateIcon: <Icon name="CheckboxIndeterminateRegular" />,
          },
       },
+
       MuiChip: {
          defaultProps: {
             deleteIcon: <Icon name="DismissSquareFilled" />,
@@ -282,6 +325,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiDrawer: {
          styleOverrides: {
             paper: {
@@ -289,21 +333,48 @@ export const theme = createTheme({
             },
          },
       },
+
+      MuiFormControl: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               gap: theme.spacing(1),
+            }),
+         },
+         defaultProps: {
+            variant: "standard",
+         },
+      },
+
       MuiFormGroup: {
          styleOverrides: {
             root: ({ theme }) => ({
+               backgroundColor: theme.palette.background.paper,
                border: `1px solid ${theme.palette.divider}`,
                borderRadius: theme.shape.borderRadius,
             }),
          },
       },
+
+      MuiFormHelperText: {
+         styleOverrides: {
+            root: {
+               marginLeft: "unset",
+               marginRight: "unset",
+               marginTop: "unset",
+            },
+         },
+      },
+
       MuiFormLabel: {
          styleOverrides: {
             root: ({ theme }) => ({
                color: theme.palette.text.primary,
+               ...theme.typography.caption,
+               fontWeight: theme.typography.fontWeightMedium,
             }),
          },
       },
+
       MuiIconButton: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -342,6 +413,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiInputBase: {
          styleOverrides: {
             input: {
@@ -349,6 +421,20 @@ export const theme = createTheme({
             },
          },
       },
+
+      MuiInputLabel: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               ...theme.typography.caption,
+               fontWeight: theme.typography.fontWeightMedium,
+               position: "static",
+            }),
+            outlined: {
+               transform: "unset",
+            },
+         },
+      },
+
       MuiListItem: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -356,6 +442,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiListItemAvatar: {
          styleOverrides: {
             root: {
@@ -363,6 +450,7 @@ export const theme = createTheme({
             },
          },
       },
+
       MuiListItemButton: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -370,6 +458,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiListItemIcon: {
          styleOverrides: {
             root: {
@@ -378,6 +467,7 @@ export const theme = createTheme({
             },
          },
       },
+
       MuiListItemText: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -400,21 +490,46 @@ export const theme = createTheme({
             },
          },
       },
+
       MuiOutlinedInput: {
          styleOverrides: {
             root: ({ theme }) => ({
-               "&.MuiOutlinedInput-notchedOutline :hover": {
+               backgroundColor: theme.palette.background.paper,
+               "&:hover": {
+                  backgroundColor: theme.palette.action.hover,
+               },
+               "&:hover .MuiOutlinedInput-notchedOutline": {
                   borderColor: theme.palette.divider,
                },
+               "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: theme.palette.primary.main,
+               },
             }),
+            input: ({ theme }) => ({
+               padding: theme.spacing(1.25, 2),
+            }),
+            inputSizeSmall: ({ theme }) => ({
+               padding: theme.spacing(0.75, 2),
+            }),
+            multiline: {
+               padding: 0,
+            },
             notchedOutline: ({ theme }) => ({
                borderColor: theme.palette.divider,
             }),
          },
-         defaultProps: {
-            size: "small",
-         },
+         variants: [
+            {
+               props: { size: "large" },
+               style: ({ theme }) => ({
+                  input: {
+                     padding: theme.spacing(1.75, 2),
+                  },
+               }),
+            },
+         ],
       },
+
       MuiSvgIcon: {
          styleOverrides: {
             fontSizeSmall: {
@@ -428,6 +543,18 @@ export const theme = createTheme({
             },
          },
       },
+
+      MuiTextField: {
+         defaultProps: {
+            InputProps: {
+               notched: false,
+            },
+            InputLabelProps: {
+               shrink: true,
+            },
+         },
+      },
+
       MuiToggleButton: {
          styleOverrides: {
             sizeSmall: ({ theme }) => ({
@@ -442,6 +569,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiToolbar: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -458,6 +586,7 @@ export const theme = createTheme({
             }),
          },
       },
+
       MuiTooltip: {
          styleOverrides: {
             tooltip: ({ theme }) => ({
