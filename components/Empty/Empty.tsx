@@ -5,7 +5,7 @@ import { EmptyImage } from "@/components/Empty";
 export interface EmptyProps {
    img?: string;
    message: string;
-   className: string;
+   className?: string;
 }
 
 export function Empty(props: EmptyProps) {
