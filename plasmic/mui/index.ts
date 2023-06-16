@@ -2,7 +2,6 @@ import { registerComponent } from "@plasmicapp/host";
 
 import {
    AppBar,
-   AvatarGroup,
    Badge,
    Box,
    Button,
@@ -39,6 +38,7 @@ import {
    Typography,
 } from "@mui/material";
 import { Avatar } from "@/components/Avatar";
+import { AvatarGroup } from "@/components/AvatarGroup";
 import { Icon } from "@/components/Icon";
 
 import { appBarMeta } from "./appBarMeta";

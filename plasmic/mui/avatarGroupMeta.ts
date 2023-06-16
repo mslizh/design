@@ -1,4 +1,4 @@
-import { AvatarGroupProps } from "@mui/material";
+import { AvatarGroupProps } from "@/components/AvatarGroup";
 import { CodeComponentMeta } from "@plasmicapp/host";
 
 export const avatarGroupMeta: CodeComponentMeta<AvatarGroupProps> = {
@@ -6,6 +6,10 @@ export const avatarGroupMeta: CodeComponentMeta<AvatarGroupProps> = {
   props: {
     children: "slot",
     max: "number",
+    size: {
+      type: "choice",
+      options: ["small", "medium", "large"],
+   },
     spacing: "string",
     total: "number",
     variant: {
