@@ -165,10 +165,8 @@ export const theme = createTheme({
     MuiAvatarGroup: {
       styleOverrides: {
         avatar: ({ theme }) => ({
-          ...theme.typography.body1,
-          backgroundColor: theme.palette.background.default,
           border: `1px solid ${theme.palette.divider}`,
-          color: theme.palette.text.secondary,
+          boxSizing: "border-box"
         }),
       },
     },
