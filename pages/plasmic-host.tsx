@@ -5,6 +5,7 @@ import { registerAll } from "@/components";
 import { registerMuiComponents } from "@/plasmic/mui";
 import { registerSonnerComponents } from "@/plasmic/sonner";
 import { useTheme } from "@mui/material";
+import { registerCustomComponents } from "@/plasmic/custom";
 
 export default function PlasmicHost() {
    const theme = useTheme();
@@ -14,6 +15,7 @@ export default function PlasmicHost() {
       registerAll();
       registerMuiComponents();
       registerSonnerComponents();
+      registerCustomComponents();
    }, []);
 
    return <PlasmicCanvasHost />;
