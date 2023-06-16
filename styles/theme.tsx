@@ -311,6 +311,15 @@ export const theme = createTheme({
          },
       },
 
+      MuiDialogTitle: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               ...theme.typography.subtitle1,
+               padding: theme.spacing(1.5, 2),
+            }),
+         },
+      },
+
       MuiDrawer: {
          styleOverrides: {
             paper: {

@@ -5,10 +5,6 @@ export const buttonMeta: CodeComponentMeta<ButtonProps> = {
    name: "Button",
    props: {
       children: "slot",
-      variant: {
-         type: "choice",
-         options: ["contained", "outlined", "text"],
-      },
       color: {
          type: "choice",
          options: [
@@ -24,7 +20,15 @@ export const buttonMeta: CodeComponentMeta<ButtonProps> = {
       disabled: "boolean",
       disableElevation: "boolean",
       fullWidth: "boolean",
+      endIcon: {
+         type: "slot",
+         hidePlaceholder: true,
+      },
       href: "string",
+      onClick: {
+         type: "eventHandler",
+         argTypes: [],
+      },
       size: {
          type: "choice",
          options: ["small", "medium", "large"],
@@ -33,9 +37,9 @@ export const buttonMeta: CodeComponentMeta<ButtonProps> = {
          type: "slot",
          hidePlaceholder: true,
       },
-      endIcon: {
-         type: "slot",
-         hidePlaceholder: true,
+      variant: {
+         type: "choice",
+         options: ["contained", "outlined", "text"],
       },
    },
    importPath: "@mui/material",

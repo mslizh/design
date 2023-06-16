@@ -16,6 +16,11 @@ import {
    Chip,
    CircularProgress,
    Container,
+   Dialog,
+   DialogActions,
+   DialogContent,
+   DialogContentText,
+   DialogTitle,
    Drawer,
    FormControl,
    FormControlLabel,
@@ -60,6 +65,11 @@ import { checkboxMeta } from "./checkboxMeta";
 import { chipMeta } from "./chipMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
+import { dialogMeta } from "./dialogMeta";
+import { dialogActionsMeta } from "./dialogActionsMeta";
+import { dialogContentMeta } from "./dialogContentMeta";
+import { dialogContentTextMeta } from "./dialogContentTextMeta";
+import { dialogTitleMeta } from "./dialogTitleMeta";
 import { drawerMeta } from "./drawerMeta";
 import { formControlMeta } from "./formControlMeta";
 import { formControlLabelMeta } from "./formControlLabelMeta";
@@ -101,6 +111,11 @@ export function registerMuiComponents() {
    registerComponent(Chip, chipMeta);
    registerComponent(CircularProgress, circularProgressMeta);
    registerComponent(Container, containerMeta);
+   registerComponent(Dialog, dialogMeta);
+   registerComponent(DialogActions, dialogActionsMeta);
+   registerComponent(DialogContent, dialogContentMeta);
+   registerComponent(DialogContentText, dialogContentTextMeta);
+   registerComponent(DialogTitle, dialogTitleMeta);
    registerComponent(Drawer, drawerMeta);
    registerComponent(FormControl, formControlMeta);
    registerComponent(FormControlLabel, formControlLabelMeta);
