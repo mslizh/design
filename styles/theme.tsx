@@ -1,9 +1,4 @@
-import {
-   PaletteOptions,
-   Theme,
-   alpha,
-   createTheme,
-} from "@mui/material/styles";
+import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
 import { get } from "lodash";
 import { Icon } from "@/components/Icon";
@@ -311,6 +306,14 @@ export const theme = createTheme({
          },
       },
 
+      MuiDialogContent: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               padding: theme.spacing(2),
+            }),
+         },
+      },
+
       MuiDialogTitle: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -417,6 +420,9 @@ export const theme = createTheme({
       },
 
       MuiInputLabel: {
+         defaultProps: {
+            shrink: true,
+         },
          styleOverrides: {
             root: ({ theme }) => ({
                ...theme.typography.caption,
@@ -465,8 +471,8 @@ export const theme = createTheme({
       MuiListItemText: {
          styleOverrides: {
             root: ({ theme }) => ({
-               marginTop: theme.spacing(0.5),
-               marginBottom: theme.spacing(0.5),
+               marginTop: theme.spacing(0.75),
+               marginBottom: theme.spacing(0.75),
             }),
             multiline: ({ theme }) => ({
                marginTop: theme.spacing(-0.25),
@@ -485,7 +491,31 @@ export const theme = createTheme({
          },
       },
 
+      MuiMenuItem: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               gap: theme.spacing(2),
+               paddingBottom: theme.spacing(1),
+               paddingTop: theme.spacing(1),
+               "&.MuiButtonBase-root .MuiListItemText-root": {
+                  marginTop: theme.spacing(0.75),
+                  marginBottom: theme.spacing(0.75),
+               },
+               "&.MuiButtonBase-root .MuiListItemText-multiline": {
+                  marginTop: theme.spacing(-0.25),
+                  marginBottom: theme.spacing(-0.25),
+               },
+               "&.MuiButtonBase-root .MuiListItemIcon-root": {
+                  minWidth: "unset",
+               },
+            }),
+         },
+      },
+
       MuiOutlinedInput: {
+         defaultProps: {
+            notched: false,
+         },
          styleOverrides: {
             root: ({ theme }) => ({
                backgroundColor: theme.palette.background.paper,
@@ -534,17 +564,6 @@ export const theme = createTheme({
             },
             fontSizeLarge: {
                fontSize: 24,
-            },
-         },
-      },
-
-      MuiTextField: {
-         defaultProps: {
-            InputProps: {
-               notched: false,
-            },
-            InputLabelProps: {
-               shrink: true,
             },
          },
       },

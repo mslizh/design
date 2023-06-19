@@ -7,6 +7,7 @@ export const textFieldMeta: CodeComponentMeta<TextFieldProps> = {
    props: {
       autoComplete: "string",
       autoFocus: "boolean",
+      children: "slot",
       color: {
          type: "choice",
          options: [
@@ -60,6 +61,7 @@ export const textFieldMeta: CodeComponentMeta<TextFieldProps> = {
          type: "number",
          hidden: (props) => !props.multiline,
       },
+      select: "boolean",
       size: {
          type: "choice",
          options: ["small", "medium", "large"],

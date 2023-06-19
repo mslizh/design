@@ -1,12 +1,14 @@
 import { registerComponent } from "@plasmicapp/host";
 
+import { Avatar } from "@/components/Avatar";
+import { AvatarGroup } from "@/components/AvatarGroup";
+import { Icon } from "@/components/Icon";
 import {
    AppBar,
    Badge,
    Box,
    Button,
    ButtonGroup,
-   Divider,
    Card,
    CardActionArea,
    CardActions,
@@ -21,6 +23,7 @@ import {
    DialogContent,
    DialogContentText,
    DialogTitle,
+   Divider,
    Drawer,
    FormControl,
    FormControlLabel,
@@ -38,41 +41,39 @@ import {
    ListItemIcon,
    ListItemText,
    ListSubheader,
+   MenuItem,
    OutlinedInput,
    TextField,
    Typography,
 } from "@mui/material";
-import { Avatar } from "@/components/Avatar";
-import { AvatarGroup } from "@/components/AvatarGroup";
-import { Icon } from "@/components/Icon";
 
+import { Checkbox } from "@/components/Checkbox";
 import { appBarMeta } from "./appBarMeta";
-import { avatarMeta } from "./avatarMeta";
 import { avatarGroupMeta } from "./avatarGroupMeta";
+import { avatarMeta } from "./avatarMeta";
 import { badgeMeta } from "./badgeMeta";
 import { boxMeta } from "./boxMeta";
-import { buttonMeta } from "./buttonMeta";
 import { buttonGroupMeta } from "./buttonGroupMeta";
-import { dividerMeta } from "./dividerMeta";
-import { cardMeta } from "./cardMeta";
+import { buttonMeta } from "./buttonMeta";
 import { cardActionAreaMeta } from "./cardActionAreaMeta";
 import { cardActionsMeta } from "./cardActionsMeta";
 import { cardContentMeta } from "./cardContentMeta";
 import { cardHeaderMeta } from "./cardHeaderMeta";
 import { cardMediaMeta } from "./cardMediaMeta";
-import { Checkbox } from "@/components/Checkbox";
+import { cardMeta } from "./cardMeta";
 import { checkboxMeta } from "./checkboxMeta";
 import { chipMeta } from "./chipMeta";
 import { circularProgressMeta } from "./circularProgressMeta";
 import { containerMeta } from "./containerMeta";
-import { dialogMeta } from "./dialogMeta";
 import { dialogActionsMeta } from "./dialogActionsMeta";
 import { dialogContentMeta } from "./dialogContentMeta";
 import { dialogContentTextMeta } from "./dialogContentTextMeta";
+import { dialogMeta } from "./dialogMeta";
 import { dialogTitleMeta } from "./dialogTitleMeta";
+import { dividerMeta } from "./dividerMeta";
 import { drawerMeta } from "./drawerMeta";
-import { formControlMeta } from "./formControlMeta";
 import { formControlLabelMeta } from "./formControlLabelMeta";
+import { formControlMeta } from "./formControlMeta";
 import { formGroupMeta } from "./formGroupMeta";
 import { formHelperTextMeta } from "./formHelperTextMeta";
 import { formLabelMeta } from "./formLabelMeta";
@@ -81,13 +82,14 @@ import { iconButtonMeta } from "./iconButtonMeta";
 import { iconMeta } from "./iconMeta";
 import { inputBaseMeta } from "./inputBaseMeta";
 import { linearProgressMeta } from "./linearProgressMeta";
-import { listMeta } from "./listMeta";
-import { listItemMeta } from "./listItemMeta";
 import { listItemAvatarMeta } from "./listItemAvatarMeta";
 import { listItemButtonMeta } from "./listItemButtonMeta";
 import { listItemIconMeta } from "./listItemIconMeta";
+import { listItemMeta } from "./listItemMeta";
 import { listItemTextMeta } from "./listItemTextMeta";
+import { listMeta } from "./listMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
+import { menuItemMeta } from "./menuItem";
 import { outlinedInputMeta } from "./outlinedInputMeta";
 import { textFieldMeta } from "./textFieldMeta";
 import { typographyMeta } from "./typographyMeta";
@@ -134,6 +136,7 @@ export function registerMuiComponents() {
    registerComponent(ListItemIcon, listItemIconMeta);
    registerComponent(ListItemText, listItemTextMeta);
    registerComponent(ListSubheader, listSubheaderMeta);
+   registerComponent(MenuItem, menuItemMeta);
    registerComponent(OutlinedInput, outlinedInputMeta);
    registerComponent(TextField, textFieldMeta);
    registerComponent(Typography, typographyMeta);
