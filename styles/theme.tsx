@@ -312,8 +312,9 @@ export const theme = createTheme({
                padding: theme.spacing(2),
             }),
             spacing: ({ theme }) => ({
-               "& > *": {
-                  marginLeft: theme.spacing(1),
+               gap: theme.spacing(1),
+               "& > :not(:first-of-type)": {
+                  margin: 0,
                },
             }),
          },
