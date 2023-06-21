@@ -417,6 +417,16 @@ export const theme = createTheme({
                textAlign: "inherit",
             },
          },
+         variants: [
+            {
+               props: { size: "large" },
+               style: ({ theme }) => ({
+                  input: {
+                     padding: theme.spacing(1.75, 2),
+                  },
+               }),
+            },
+         ],
       },
 
       MuiInputLabel: {
@@ -495,19 +505,8 @@ export const theme = createTheme({
          styleOverrides: {
             root: ({ theme }) => ({
                gap: theme.spacing(2),
-               paddingBottom: theme.spacing(1),
-               paddingTop: theme.spacing(1),
-               "&.MuiButtonBase-root .MuiListItemText-root": {
-                  marginTop: theme.spacing(0.75),
-                  marginBottom: theme.spacing(0.75),
-               },
-               "&.MuiButtonBase-root .MuiListItemText-multiline": {
-                  marginTop: theme.spacing(-0.25),
-                  marginBottom: theme.spacing(-0.25),
-               },
-               "&.MuiButtonBase-root .MuiListItemIcon-root": {
-                  minWidth: "unset",
-               },
+               paddingBottom: theme.spacing(1.75),
+               paddingTop: theme.spacing(1.75),
             }),
          },
       },
@@ -542,16 +541,14 @@ export const theme = createTheme({
                borderColor: theme.palette.divider,
             }),
          },
-         variants: [
-            {
-               props: { size: "large" },
-               style: ({ theme }) => ({
-                  input: {
-                     padding: theme.spacing(1.75, 2),
-                  },
-               }),
-            },
-         ],
+      },
+
+      MuiSelect: {
+         defaultProps: {
+            IconComponent: (props) => (
+               <Icon name="ChevronDownRegular" {...props} />
+            ),
+         },
       },
 
       MuiSvgIcon: {
