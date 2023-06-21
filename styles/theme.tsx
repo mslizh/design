@@ -311,6 +311,11 @@ export const theme = createTheme({
             root: ({ theme }) => ({
                padding: theme.spacing(2),
             }),
+            spacing: ({ theme }) => ({
+               "& > *": {
+                  marginLeft: theme.spacing(1),
+               },
+            }),
          },
       },
 
