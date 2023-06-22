@@ -388,24 +388,30 @@ export const theme = createTheme({
             }),
             edgeStart: ({ ownerState, theme }) => ({
                ...(ownerState.size === "small" && {
+                  marginRight: theme.spacing(-0.75),
                   marginLeft: theme.spacing(-0.75),
                }),
                ...(ownerState.size === "medium" && {
+                  marginRight: theme.spacing(-1.25),
                   marginLeft: theme.spacing(-1.25),
                }),
                ...(ownerState.size === "large" && {
-                  marginLeft: theme.spacing(-1.75),
+                  marginRight: theme.spacing(-1.75),
+                  marginleft: theme.spacing(-1.75),
                }),
             }),
             edgeEnd: ({ ownerState, theme }) => ({
                ...(ownerState.size === "small" && {
                   marginRight: theme.spacing(-0.75),
+                  marginLeft: theme.spacing(-0.75),
                }),
                ...(ownerState.size === "medium" && {
                   marginRight: theme.spacing(-1.25),
+                  marginLeft: theme.spacing(-1.25),
                }),
                ...(ownerState.size === "large" && {
                   marginRight: theme.spacing(-1.75),
+                  marginleft: theme.spacing(-1.75),
                }),
             }),
          },
