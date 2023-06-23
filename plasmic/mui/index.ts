@@ -43,6 +43,7 @@ import {
    ListSubheader,
    MenuItem,
    OutlinedInput,
+   Skeleton,
    TextField,
    Typography,
 } from "@mui/material";
@@ -91,6 +92,7 @@ import { listMeta } from "./listMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
 import { menuItemMeta } from "./menuItem";
 import { outlinedInputMeta } from "./outlinedInputMeta";
+import { skeletonMeta } from "./skeletonMeta";
 import { textFieldMeta } from "./textFieldMeta";
 import { typographyMeta } from "./typographyMeta";
 
@@ -138,6 +140,7 @@ export function registerMuiComponents() {
    registerComponent(ListSubheader, listSubheaderMeta);
    registerComponent(MenuItem, menuItemMeta);
    registerComponent(OutlinedInput, outlinedInputMeta);
+   registerComponent(Skeleton, skeletonMeta);
    registerComponent(TextField, textFieldMeta);
    registerComponent(Typography, typographyMeta);
 }
