@@ -2,6 +2,7 @@ import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
 import { get } from "lodash";
 import { Icon } from "@/components/Icon";
+import { Paper } from "@mui/material";
 
 export const theme = createTheme({
    palette: {
