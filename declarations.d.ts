@@ -1,7 +1,14 @@
 import { InputBasePropsSizeOverrides } from "@mui/material/InputBase";
+import { TableCellPropsSizeOverrides } from "@mui/material/TableCell";
 
 declare module "@mui/material/InputBase" {
    interface InputBasePropsSizeOverrides {
+      large: true;
+   }
+}
+
+declare module "@mui/material/TableCell" {
+   interface TableCellPropsSizeOverrides {
       large: true;
    }
 }

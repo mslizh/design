@@ -1,4 +1,4 @@
-import { styled, useTheme } from "@mui/material";
+import { styled } from "@mui/material";
 import MuiAvatar, { AvatarProps as MuiAvatarProps } from "@mui/material/Avatar";
 
 export interface AvatarProps extends MuiAvatarProps {

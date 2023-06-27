@@ -15,7 +15,7 @@ export const tableCellMeta: CodeComponentMeta<TableCellProps> = {
       },
       size: {
          type: "choice",
-         options: ["medium", "small"],
+         options: ["small", "medium", "large"],
       },
       sortDirection: {
          type: "choice",

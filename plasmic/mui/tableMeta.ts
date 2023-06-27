@@ -11,7 +11,7 @@ export const tableMeta: CodeComponentMeta<TableProps> = {
       },
       size: {
          type: "choice",
-         options: ["medium", "small"],
+         options: ["small", "medium", "large"],
       },
       stickyHeader: "boolean",
       sx: "object",

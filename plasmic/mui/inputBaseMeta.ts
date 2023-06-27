@@ -33,7 +33,7 @@ export const inputBaseMeta: CodeComponentMeta<InputBaseProps> = {
       },
       size: {
          type: "choice",
-         options: ["medium", "small"],
+         options: ["small", "medium", "large"],
       },
       autoComplete: "string",
       autoFocus: "boolean",
