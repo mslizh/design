@@ -10,10 +10,10 @@ export function Checkbox(props: CheckboxProps) {
   const { edge } = props;
 
   if (edge === "start") {
-    return <MuiCheckbox sx={{ ml: -1 }} {...props} />;
+    return <MuiCheckbox sx={{ ml: -1, mr: -1 }} {...props} />;
   }
   if (edge === "end") {
-    return <MuiCheckbox sx={{ mr: -1 }} {...props} />;
+    return <MuiCheckbox sx={{ ml: -1, mr: -1 }} {...props} />;
   }
 
   return <MuiCheckbox {...props} />;

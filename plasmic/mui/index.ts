@@ -43,6 +43,7 @@ import {
    ListSubheader,
    MenuItem,
    OutlinedInput,
+   Skeleton,
    Table,
    TableBody,
    TableCell,
@@ -98,6 +99,7 @@ import { listMeta } from "./listMeta";
 import { listSubheaderMeta } from "./listSubheaderMeta";
 import { menuItemMeta } from "./menuItem";
 import { outlinedInputMeta } from "./outlinedInputMeta";
+import { skeletonMeta } from "./skeletonMeta";
 import { tableBodyMeta } from "./tableBodyMeta";
 import { tableCellMeta } from "./tableCellMeta";
 import { tableContainerMeta } from "./tableContainerMeta";
@@ -152,6 +154,7 @@ export function registerMuiComponents() {
    registerComponent(ListSubheader, listSubheaderMeta);
    registerComponent(MenuItem, menuItemMeta);
    registerComponent(OutlinedInput, outlinedInputMeta);
+   registerComponent(Skeleton, skeletonMeta);
    registerComponent(TableBody, tableBodyMeta);
    registerComponent(TableCell, tableCellMeta);
    registerComponent(TableContainer, tableContainerMeta);
