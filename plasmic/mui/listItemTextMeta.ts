@@ -12,9 +12,19 @@ export const listItemTextMeta: CodeComponentMeta<
          type: "string",
          defaultValue: "Some text…",
       },
-      primaryTypographyProps: "object",
+      primaryTypographyProps: {
+         type: "object",
+         fields: {
+            noWrap: "boolean"
+         }
+      },
       secondary: "string",
-      secondaryTypographyProps: "object",
+      secondaryTypographyProps: {
+         type: "object",
+         fields: {
+            noWrap: "boolean"
+         }
+      },
       sx: "object",
    },
    importPath: "@mui/material",

@@ -15,7 +15,7 @@ export const skeletonMeta: CodeComponentMeta<SkeletonProps> = {
       type: "choice",
       options: ["circular", "recetangular", "rounded", "text"]
     },
-    width: "number"
+    width: "object"
   },
   importPath: "@mui/material",
 };
