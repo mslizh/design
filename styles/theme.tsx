@@ -516,6 +516,11 @@ export const theme = createTheme({
                marginTop: theme.spacing(-0.25),
                marginBottom: theme.spacing(-0.25),
             }),
+            //задал явно размеры, т.к. при прокидывании свойства noWrap через secondaryTypographyProps размеры шрифта сбрасывались
+            secondary: ({ theme }) => ({
+               fontSize: theme.typography.caption.fontSize,
+               lineHeight: theme.typography.caption.lineHeight,
+            })
          },
          defaultProps: {
             primaryTypographyProps: {
