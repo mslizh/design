@@ -44,6 +44,13 @@ import {
    MenuItem,
    OutlinedInput,
    Skeleton,
+   Table,
+   TableBody,
+   TableCell,
+   TableContainer,
+   TableFooter,
+   TableHead,
+   TableRow,
    TextField,
    Typography,
 } from "@mui/material";
@@ -93,6 +100,13 @@ import { listSubheaderMeta } from "./listSubheaderMeta";
 import { menuItemMeta } from "./menuItem";
 import { outlinedInputMeta } from "./outlinedInputMeta";
 import { skeletonMeta } from "./skeletonMeta";
+import { tableBodyMeta } from "./tableBodyMeta";
+import { tableCellMeta } from "./tableCellMeta";
+import { tableContainerMeta } from "./tableContainerMeta";
+import { tableFooterMeta } from "./tableFooterMeta";
+import { tableHeadMeta } from "./tableHeadMeta";
+import { tableMeta } from "./tableMeta";
+import { tableRowMeta } from "./tableRowMeta";
 import { textFieldMeta } from "./textFieldMeta";
 import { typographyMeta } from "./typographyMeta";
 
@@ -141,6 +155,13 @@ export function registerMuiComponents() {
    registerComponent(MenuItem, menuItemMeta);
    registerComponent(OutlinedInput, outlinedInputMeta);
    registerComponent(Skeleton, skeletonMeta);
+   registerComponent(TableBody, tableBodyMeta);
+   registerComponent(TableCell, tableCellMeta);
+   registerComponent(TableContainer, tableContainerMeta);
+   registerComponent(TableFooter, tableFooterMeta);
+   registerComponent(TableHead, tableHeadMeta);
+   registerComponent(Table, tableMeta);
+   registerComponent(TableRow, tableRowMeta);
    registerComponent(TextField, textFieldMeta);
    registerComponent(Typography, typographyMeta);
 }
