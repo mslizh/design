@@ -422,6 +422,15 @@ export const theme = createTheme({
         }),
       },
     },
+    
+    MuiInputAdornment: {
+      styleOverrides: {
+        positionStart: ({ theme }) => ({
+          marginRight: 0,
+          marginLeft: theme.spacing(2),
+        })
+      }
+    },
 
     MuiInputBase: {
       styleOverrides: {
@@ -565,6 +574,12 @@ export const theme = createTheme({
       defaultProps: {
         IconComponent: (props) => <Icon name="ChevronDownRegular" {...props} />,
       },
+    },
+
+    MuiSkeleton: {
+      defaultProps: {
+        animation: "wave"
+      }
     },
 
     MuiSvgIcon: {
