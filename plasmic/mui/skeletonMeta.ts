@@ -9,7 +9,7 @@ export const skeletonMeta: CodeComponentMeta<SkeletonProps> = {
       options: ["pulse", "wave", "false"]
     },
     children: "slot",
-    height: "number",
+    height: "object",
     sx: "object",
     variant: {
       type: "choice",

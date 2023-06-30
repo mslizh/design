@@ -307,6 +307,13 @@ export const theme = createTheme({
          },
       },
 
+      MuiCircularProgress: {
+         defaultProps: {
+            color: "secondary",
+            size: 32
+         },
+      },
+
       MuiDialogActions: {
          styleOverrides: {
             root: ({ theme }) => ({
