@@ -36,7 +36,6 @@ export const FILE_GRID_META: CodeComponentMeta<FileGridProps> = {
 export const FILE_LIST_META: CodeComponentMeta<FileListProps> = {
    name: "FileList",
    props: {},
-   importPath: "@/components/FileList",
 };
 
 export const WITH_TOAST_META: CodeComponentMeta<WithToastProps> = {

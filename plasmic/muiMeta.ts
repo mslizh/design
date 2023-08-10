@@ -860,6 +860,7 @@ export const INPUT_BASE_META: CodeComponentMeta<InputBaseProps> = {
          variableType: "text",
          valueProp: "value",
          onChangeProp: "onChange",
+         onChangeArgsToValue: (event) => event.target.value,
       },
    },
 };
@@ -1069,6 +1070,7 @@ export const OUTLINED_INPUT_META: CodeComponentMeta<OutlinedInputProps> = {
          variableType: "text",
          valueProp: "value",
          onChangeProp: "onChange",
+         onChangeArgsToValue: (event) => event.target.value,
       },
    },
 };
@@ -1306,6 +1308,7 @@ export const TEXT_FIELD_META: CodeComponentMeta<TextFieldProps> = {
          variableType: "text",
          valueProp: "value",
          onChangeProp: "onChange",
+         onChangeArgsToValue: (event) => event.target.value,
       },
    },
 };
