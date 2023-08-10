@@ -1,4 +1,6 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
+// import { PaletteOptions, Theme } from "@mui/material/styles";
+// import { get } from "lodash";
 
 import {
    AppBar,
@@ -139,6 +141,7 @@ import {
    FILE_LIST_META,
    WITH_TOAST_META,
 } from "./customMeta";
+import { theme } from "@/styles/theme";
 
 export const PLASMIC = initPlasmicLoader({
    projects: [
@@ -219,3 +222,49 @@ PLASMIC.registerComponent(Empty, EMPTY_META);
 PLASMIC.registerComponent(FileCard, FILE_CARD_META);
 PLASMIC.registerComponent(FileGrid, FILE_GRID_META);
 PLASMIC.registerComponent(FileList, FILE_LIST_META);
+
+// function registerTokens(theme: Theme) {
+//    const palette = theme.palette;
+//    Object.keys(palette).map((key) => {
+//       registerTokenFromPalette(palette, key);
+//    });
+// }
+
+// function registerTokenFromPalette(palette: PaletteOptions, key: string) {
+//    const token = get(palette, key); // Object or string
+
+//    if (token !== undefined && key !== "mode") {
+//       if (typeof token === "string") {
+//          PLASMIC.registerToken({
+//             name: `${key}`,
+//             displayName: `${key}`,
+//             value: token,
+//             type: "color",
+//          });
+//       }
+
+//       if (typeof token === "object") {
+//          Object.keys(token).map((value) => {
+//             if (typeof token[value] === "string") {
+//                PLASMIC.registerToken({
+//                   name: `${key}.${value}`,
+//                   displayName: `${key}.${value}`,
+//                   value: token[value],
+//                   type: "color",
+//                });
+//             }
+
+//             if (typeof token[value] === "number") {
+//                PLASMIC.registerToken({
+//                   name: `${value}`,
+//                   displayName: `${value}`,
+//                   value: `${token[value] * 100}%`,
+//                   type: "opacity",
+//                });
+//             }
+//          });
+//       }
+//    }
+// }
+
+// registerTokens(theme);

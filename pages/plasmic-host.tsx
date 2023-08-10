@@ -1,25 +1,29 @@
 import React, { useEffect } from "react";
-// import { PlasmicCanvasHost } from "@plasmicapp/host";
 // import { registerTokens } from "@/styles/theme";
-// import { registerAll } from "@/components";
-// import { registerMuiComponents } from "@/plasmic/mui";
-// import { registerSonnerComponents } from "@/plasmic/sonner";
-// import { useTheme } from "@mui/material";
-// import { registerCustomComponents } from "@/plasmic/custom";
 
-import { PlasmicCanvasHost } from '@plasmicapp/loader-nextjs';
-import { PLASMIC } from '../plasmic/plasmic-init';
+import { PlasmicCanvasHost } from "@plasmicapp/loader-nextjs";
+import { PLASMIC } from "../plasmic/plasmic-init";
+import { ThemeProvider } from "@mui/material";
+import { useTheme } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Toaster } from "sonner";
+import styles from "../components/Toaster/Toaster.module.css";
+import { theme } from "@/styles/theme";
 
 export default function PlasmicHost() {
    // const theme = useTheme();
 
    // useEffect(() => {
    //    registerTokens(theme);
-   //    registerAll();
-   //    registerMuiComponents();
-   //    registerSonnerComponents();
-   //    registerCustomComponents();
    // }, []);
 
-   return PLASMIC && <PlasmicCanvasHost />;
+   return (
+      PLASMIC && (
+         <ThemeProvider theme={theme}>
+            <PlasmicCanvasHost />
+            <Toaster closeButton toastOptions={{ className: styles.toast }} />
+            <CssBaseline />
+         </ThemeProvider>
+      )
+   );
 }

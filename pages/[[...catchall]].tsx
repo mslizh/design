@@ -9,11 +9,6 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { PLASMIC } from "../plasmic/plasmic-init";
-import CssBaseline from "@mui/material/CssBaseline";
-import { ThemeProvider } from "@mui/material";
-import { Toaster } from "sonner";
-import styles from "../components/Toaster/Toaster.module.css";
-import { theme } from "@/styles/theme";
 
 /**
  * Use fetchPages() to fetch list of pages that have been created in Plasmic
@@ -88,21 +83,17 @@ export default function CatchallPage(props: {
    const pageMeta = plasmicData.entryCompMetas[0];
    return (
       // Pass in the data fetched in getStaticProps as prefetchedData
-      <ThemeProvider theme={theme}>
-         <PlasmicRootProvider
-            loader={PLASMIC}
-            prefetchedData={plasmicData}
-            prefetchedQueryData={queryCache}
-            pageParams={pageMeta.params}
-            pageQuery={router.query}
-         >
-            {
-               // pageMeta.displayName contains the name of the component you fetched.
-            }
-            <PlasmicComponent component={pageMeta.displayName} />
-            <Toaster closeButton toastOptions={{ className: styles.toast }} />
-            <CssBaseline />
-         </PlasmicRootProvider>
-      </ThemeProvider>
+      <PlasmicRootProvider
+         loader={PLASMIC}
+         prefetchedData={plasmicData}
+         prefetchedQueryData={queryCache}
+         pageParams={pageMeta.params}
+         pageQuery={router.query}
+      >
+         {
+            // pageMeta.displayName contains the name of the component you fetched.
+         }
+         <PlasmicComponent component={pageMeta.displayName} />
+      </PlasmicRootProvider>
    );
 }
