@@ -1,7 +1,45 @@
-import { WithToastProps } from "@/components/Toaster";
-import { CodeComponentMeta } from "@plasmicapp/host";
+import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
+import {
+   EmptyProps,
+   FileCardProps,
+   FileGridProps,
+   FileListProps,
+   WithToastProps,
+} from "@/components";
 
-export const withToastMeta: CodeComponentMeta<WithToastProps> = {
+export const EMPTY_META: CodeComponentMeta<EmptyProps> = {
+   name: "Empty",
+   props: {
+      img: "string",
+      message: {
+         type: "string",
+         defaultValue: "Нет данных",
+      },
+   },
+};
+
+export const FILE_CARD_META: CodeComponentMeta<FileCardProps> = {
+   name: "FileCard",
+   props: {
+      type: "string",
+      name: "string",
+      lastModified: "number",
+      webkitRelativePath: "string",
+   },
+};
+
+export const FILE_GRID_META: CodeComponentMeta<FileGridProps> = {
+   name: "FileGrid",
+   props: {},
+};
+
+export const FILE_LIST_META: CodeComponentMeta<FileListProps> = {
+   name: "FileList",
+   props: {},
+   importPath: "@/components/FileList",
+};
+
+export const WITH_TOAST_META: CodeComponentMeta<WithToastProps> = {
    name: "WithToast",
    isAttachment: true,
    styleSections: false,
@@ -55,5 +93,4 @@ export const withToastMeta: CodeComponentMeta<WithToastProps> = {
          },
       },
    },
-   importPath: "@/components/Toaster",
 };

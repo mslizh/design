@@ -1,62 +1,25 @@
-import { registerFileUploader } from "@/components/FileUploader";
-import { registerFileListItem } from "@/components/FileListItem";
-import { registerInputAdornment } from "@/components/InputAdornment";
-import { registerPaper } from "@/components/Paper";
-import { registerScheduler } from "@/components/Scheduler";
-import { registerStack } from "@/components/Stack";
-import { registerToggleButton } from "@/components/ToggleButton";
-import { registerToggleButtonGroup } from "@/components/ToggleButtonGroup";
-import { registerUpload } from "@/components/Upload";
-import { registerTooltip } from "@/components/Tooltip";
-import { registerToolbar } from "@/components/Toolbar";
-
-export function registerAll() {
-   registerFileListItem();
-   registerFileUploader();
-   registerInputAdornment();
-   registerPaper(styleProps);
-   registerScheduler();
-   registerStack(styleProps);
-   registerToggleButton();
-   registerToggleButtonGroup();
-   registerToolbar(styleProps);
-   registerTooltip();
-   registerUpload();
-}
-
-const styleNumberProp = {
-   type: "number",
-   advanced: true,
-};
-
-export const styleProps = {
-   alignItems: {
-      type: "choice",
-      options: ["flex-start", "flex-end", "center", "baseline", "stretch"],
-   },
-   justifyContent: {
-      type: "choice",
-      options: [
-         "flex-start",
-         "flex-end",
-         "center",
-         "space-between",
-         "space-around",
-         "space-evenly",
-      ],
-   },
-   padding: styleNumberProp,
-   paddingX: styleNumberProp,
-   paddingY: styleNumberProp,
-   paddingTop: styleNumberProp,
-   paddingBottom: styleNumberProp,
-   paddingLeft: styleNumberProp,
-   paddingRight: styleNumberProp,
-   margin: styleNumberProp,
-   marginX: styleNumberProp,
-   marginY: styleNumberProp,
-   marginTop: styleNumberProp,
-   marginBottom: styleNumberProp,
-   marginLeft: styleNumberProp,
-   marginRight: styleNumberProp,
-};
+export { Avatar } from "./Avatar";
+export type { AvatarProps } from "./Avatar";
+export { AvatarGroup } from "./AvatarGroup";
+export type { AvatarGroupProps } from "./AvatarGroup";
+export { Checkbox } from "./Checkbox";
+export type { CheckboxProps } from "./Checkbox";
+export { Empty } from "./Empty";
+export type { EmptyProps } from "./Empty";
+export { FileCard } from "./FileCard";
+export type { FileCardProps } from "./FileCard";
+export { FileGrid } from "./FileGrid";
+export type { FileGridProps } from "./FileGrid";
+export { FileList } from "./FileList";
+export type { FileListProps } from "./FileList";
+export { FileListItem } from "./FileListItem";
+export type { FileListItemProps } from "./FileListItem";
+export { FileUploader } from "./FileUploader";
+export type { FileUploaderProps } from "./FileUploader";
+export { Icon } from "./Icon";
+export { Thumbnail } from "./Thumbnail";
+export type { ThumbnailProps } from "./Thumbnail";
+export { WithToast } from "./Toaster";
+export type { WithToastProps } from "./Toaster";
+export { Upload } from "./Upload";
+export type { UploadProps } from "./Upload";

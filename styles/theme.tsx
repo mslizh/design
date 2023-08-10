@@ -2,7 +2,6 @@ import { PaletteOptions, Theme, createTheme } from "@mui/material/styles";
 import { registerToken } from "@plasmicapp/host";
 import { get } from "lodash";
 import { Icon } from "@/components/Icon";
-import { Paper } from "@mui/material";
 
 export const theme = createTheme({
    palette: {
@@ -120,7 +119,7 @@ export const theme = createTheme({
       },
       h6: {
          fontWeight: 700,
-         lineHeight: "32px",
+         lineHeight: "24px",
          letterSpacing: 0,
       },
       subtitle1: {
