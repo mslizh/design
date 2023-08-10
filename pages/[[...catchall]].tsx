@@ -9,6 +9,11 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Error from "next/error";
 import { useRouter } from "next/router";
 import { PLASMIC } from "../plasmic/plasmic-init";
+import { ThemeProvider } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
+import { Toaster } from "sonner";
+import styles from "../components/Toaster/Toaster.module.css";
+import { theme } from "@/styles/theme";
 
 /**
  * Use fetchPages() to fetch list of pages that have been created in Plasmic
@@ -90,10 +95,14 @@ export default function CatchallPage(props: {
          pageParams={pageMeta.params}
          pageQuery={router.query}
       >
-         {
-            // pageMeta.displayName contains the name of the component you fetched.
-         }
-         <PlasmicComponent component={pageMeta.displayName} />
+         <ThemeProvider theme={theme}>
+            {
+               // pageMeta.displayName contains the name of the component you fetched.
+            }
+            <PlasmicComponent component={pageMeta.displayName} />
+            <Toaster closeButton toastOptions={{ className: styles.toast }} />
+            <CssBaseline />
+         </ThemeProvider>
       </PlasmicRootProvider>
    );
 }
