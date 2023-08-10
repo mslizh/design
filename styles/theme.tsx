@@ -306,6 +306,13 @@ export const theme = createTheme({
          },
       },
 
+      MuiCircularProgress: {
+         defaultProps: {
+            color: "secondary",
+            size: 32,
+         },
+      },
+
       MuiDialogActions: {
          styleOverrides: {
             root: ({ theme }) => ({
@@ -425,6 +432,15 @@ export const theme = createTheme({
          },
       },
 
+      MuiInputAdornment: {
+         styleOverrides: {
+            positionStart: ({ theme }) => ({
+               marginRight: 0,
+               marginLeft: theme.spacing(2),
+            }),
+         },
+      },
+
       MuiInputBase: {
          styleOverrides: {
             input: {
@@ -506,6 +522,11 @@ export const theme = createTheme({
                marginTop: theme.spacing(-0.25),
                marginBottom: theme.spacing(-0.25),
             }),
+            //задал явно размеры, т.к. при прокидывании свойства noWrap через secondaryTypographyProps размеры шрифта сбрасывались
+            secondary: ({ theme }) => ({
+               fontSize: theme.typography.caption.fontSize,
+               lineHeight: theme.typography.caption.lineHeight,
+            }),
          },
          defaultProps: {
             primaryTypographyProps: {
@@ -566,6 +587,17 @@ export const theme = createTheme({
             IconComponent: (props) => (
                <Icon name="ChevronDownRegular" {...props} />
             ),
+         },
+      },
+
+      MuiSkeleton: {
+         defaultProps: {
+            animation: "wave",
+         },
+         styleOverrides: {
+            root: {
+               flexShrink: 0,
+            },
          },
       },
 
