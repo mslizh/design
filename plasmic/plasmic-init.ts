@@ -1,5 +1,6 @@
 import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 // import { PaletteOptions, Theme } from "@mui/material/styles";
+// import { theme } from "@/styles/theme";
 // import { get } from "lodash";
 
 import {
@@ -141,13 +142,16 @@ import {
    FILE_LIST_META,
    WITH_TOAST_META,
 } from "./customMeta";
-import { theme } from "@/styles/theme";
 
 export const PLASMIC = initPlasmicLoader({
    projects: [
       {
-         id: "iNbmMeuP7MrS8ZVPKD5qsS", // ID of a project you are using
-         token: "mwVtlqyExNnXNZqoTqYA1YmYDWLLGdkXflAvGsPWXAEbRVZF9PESWuw5e6NQ05T42x5LEqGKDv9AcEgg", // API token for that project
+         id: "iNbmMeuP7MrS8ZVPKD5qsS",
+         token: "mwVtlqyExNnXNZqoTqYA1YmYDWLLGdkXflAvGsPWXAEbRVZF9PESWuw5e6NQ05T42x5LEqGKDv9AcEgg",
+      },
+      {
+         id: "ot2HEJTxLo6XRXUb4cEaih",
+         token: "FMVljStPZEWN8EQwATO9SkedxkqsiWOdEKDmCezTTB1zfi9CV44SJwhXw5Sek6lAVbe1jvugVIGYh7LQxA",
       },
    ],
    // Fetches the latest revisions, whether or not they were unpublished!
