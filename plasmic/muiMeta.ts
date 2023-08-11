@@ -743,7 +743,7 @@ export const ICON_BUTTON_META: CodeComponentMeta<IconButtonProps> = {
 export const ICON_META: CodeComponentMeta<SvgIconProps> = {
    name: "Icon",
    props: {
-      name: {
+      title: {
          type: "string",
          defaultValue: "AddRegular",
          helpText:
