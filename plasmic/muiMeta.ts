@@ -488,7 +488,7 @@ export const DIALOG_TITLE_META: CodeComponentMeta<DialogTitleProps> = {
    name: "DialogTitle",
    props: {
       children: {
-         type: "string",
+         type: "slot",
          defaultValue: "Dialog title",
       },
       sx: "object",
