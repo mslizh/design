@@ -117,7 +117,8 @@ export const theme = createTheme({
       },
       h6: {
          fontWeight: 700,
-         lineHeight: "24px",
+         fontSize: "1.125rem",
+         lineHeight: "32px",
          letterSpacing: 0,
       },
       subtitle1: {
@@ -229,9 +230,9 @@ export const theme = createTheme({
 
       MuiCheckbox: {
          defaultProps: {
-            icon: <Icon name="CheckboxUncheckedRegular" />,
-            checkedIcon: <Icon name="CheckboxCheckedFilled" />,
-            indeterminateIcon: <Icon name="CheckboxIndeterminateRegular" />,
+            icon: <Icon title="CheckboxUncheckedRegular" />,
+            checkedIcon: <Icon title="CheckboxCheckedFilled" />,
+            indeterminateIcon: <Icon title="CheckboxIndeterminateRegular" />,
          },
          styleOverrides: {
             root: ({ ownerState, theme }) => ({
@@ -247,7 +248,7 @@ export const theme = createTheme({
 
       MuiChip: {
          defaultProps: {
-            deleteIcon: <Icon name="DismissSquareFilled" />,
+            deleteIcon: <Icon title="DismissSquareFilled" />,
          },
          styleOverrides: {
             root: ({ ownerState, theme }) => ({
@@ -313,9 +314,6 @@ export const theme = createTheme({
 
       MuiDialogActions: {
          styleOverrides: {
-            root: ({ theme }) => ({
-               padding: theme.spacing(2),
-            }),
             spacing: ({ theme }) => ({
                gap: theme.spacing(1),
                "& > :not(:first-of-type)": {
@@ -336,8 +334,8 @@ export const theme = createTheme({
       MuiDialogTitle: {
          styleOverrides: {
             root: ({ theme }) => ({
-               ...theme.typography.subtitle1,
-               padding: theme.spacing(1.5, 2),
+               minHeight: theme.spacing(6),
+               padding: theme.spacing(1, 2),
             }),
          },
       },
@@ -583,7 +581,7 @@ export const theme = createTheme({
       MuiSelect: {
          defaultProps: {
             IconComponent: (props) => (
-               <Icon name="ChevronDownRegular" {...props} />
+               <Icon title="ChevronDownRegular" {...props} />
             ),
          },
       },

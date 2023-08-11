@@ -1,4 +1,4 @@
-import { AvatarGroupProps, AvatarProps } from "@/components";
+import { AvatarGroupProps, AvatarProps, DialogTitleProps } from "@/components";
 import {
    AppBarProps,
    BadgeProps,
@@ -19,7 +19,6 @@ import {
    DialogContentProps,
    DialogContentTextProps,
    DialogProps,
-   DialogTitleProps,
    DividerProps,
    DrawerProps,
    FormControlLabelProps,
@@ -488,8 +487,12 @@ export const DIALOG_TITLE_META: CodeComponentMeta<DialogTitleProps> = {
    name: "DialogTitle",
    props: {
       children: {
-         type: "slot",
-         defaultValue: "Dialog title",
+         type: "string",
+         defaultValue: "Dialog Title",
+      },
+      onClose: {
+         type: "eventHandler",
+         argTypes: [],
       },
       sx: "object",
    },

@@ -30,7 +30,7 @@ export function Upload(props: UploadProps) {
             borderRadius={1}
             mr={2}
          >
-            <Icon name="AddRegular" />
+            <Icon title="AddRegular" />
          </Stack>
          <Box>
             <Typography variant="body2" color="text.primary" noWrap>
