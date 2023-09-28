@@ -539,6 +539,12 @@ export const DRAWER_META: CodeComponentMeta<DrawerProps> = {
          options: ["permanent", "persistent", "temporary"],
       },
       sx: "object",
+      PaperProps: {
+         type: "object",
+         fields: {
+            sx: "object",
+         },
+      },
    },
 };
 
