@@ -156,7 +156,6 @@ export const theme = createTheme({
             root: ({ theme }) => ({
                ...theme.typography.body1,
                backgroundColor: theme.palette.background.default,
-               border: `1px solid ${theme.palette.divider}`,
                color: theme.palette.text.secondary,
             }),
          },
@@ -165,8 +164,8 @@ export const theme = createTheme({
       MuiAvatarGroup: {
          styleOverrides: {
             avatar: ({ theme }) => ({
-               border: `1px solid ${theme.palette.divider}`,
                boxSizing: "border-box",
+               border: `2px solid ${theme.palette.background.paper}`,
             }),
          },
       },
