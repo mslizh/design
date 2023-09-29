@@ -583,7 +583,7 @@ export const theme = createTheme({
       MuiSelect: {
          defaultProps: {
             IconComponent: (props) => (
-               <Icon title="ChevronDownRegular" {...props} />
+               <Icon title="ChevronDown" variant="Regular" {...props} />
             ),
          },
       },
