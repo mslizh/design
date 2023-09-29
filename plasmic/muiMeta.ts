@@ -60,6 +60,8 @@ import {
 } from "@mui/material";
 import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
 
+const COMMON_META = { styleSections: false };
+
 export const APP_BAR_META: CodeComponentMeta<AppBarProps> = {
    name: "AppBar",
    props: {
@@ -85,6 +87,7 @@ export const APP_BAR_META: CodeComponentMeta<AppBarProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const AVATAR_GROUP_META: CodeComponentMeta<AvatarGroupProps> = {
@@ -103,6 +106,7 @@ export const AVATAR_GROUP_META: CodeComponentMeta<AvatarGroupProps> = {
          options: ["circular", "rounded", "square"],
       },
    },
+   ...COMMON_META,
 };
 
 export const AVATAR_META: CodeComponentMeta<AvatarProps> = {
@@ -121,6 +125,7 @@ export const AVATAR_META: CodeComponentMeta<AvatarProps> = {
       alt: "string",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const BADGE_META: CodeComponentMeta<BadgeProps> = {
@@ -163,6 +168,7 @@ export const BADGE_META: CodeComponentMeta<BadgeProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const BOX_META: CodeComponentMeta<BoxProps> = {
@@ -176,6 +182,7 @@ export const BOX_META: CodeComponentMeta<BoxProps> = {
       margin: "number",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const BUTTON_GROUP_META: CodeComponentMeta<ButtonGroupProps> = {
@@ -210,12 +217,17 @@ export const BUTTON_GROUP_META: CodeComponentMeta<ButtonGroupProps> = {
          options: ["small", "medium", "large"],
       },
    },
+   ...COMMON_META,
 };
 
 export const BUTTON_META: CodeComponentMeta<ButtonProps> = {
    name: "Button",
+   trapsFocus: true,
    props: {
-      children: "slot",
+      children: {
+         type: "slot",
+         // mergeWithParent: true
+      },
       color: {
          type: "choice",
          options: [
@@ -234,6 +246,7 @@ export const BUTTON_META: CodeComponentMeta<ButtonProps> = {
       endIcon: {
          type: "slot",
          hidePlaceholder: true,
+         // mergeWithParent: true,
       },
       href: "href",
       onClick: {
@@ -253,6 +266,43 @@ export const BUTTON_META: CodeComponentMeta<ButtonProps> = {
          options: ["contained", "outlined", "text"],
       },
    },
+   templates: {
+      ["Default"]: {
+         props: {
+            children: [
+               {
+                  type: "component",
+                  name: "Typography",
+               },
+            ],
+         },
+      },
+      ["With Start Icon"]: {
+         props: {
+            startIcon: {
+               type: "component",
+               name: "Icon",
+            },
+            children: {
+               type: "component",
+               name: "Typography",
+            },
+         },
+      },
+      ["With End Icon"]: {
+         props: {
+            endIcon: {
+               type: "component",
+               name: "Icon",
+            },
+            children: {
+               type: "component",
+               name: "Typography",
+            },
+         },
+      },
+   },
+   ...COMMON_META,
 };
 
 export const CARD_ACTION_AREA_META: CodeComponentMeta<CardActionAreaProps> = {
@@ -264,6 +314,7 @@ export const CARD_ACTION_AREA_META: CodeComponentMeta<CardActionAreaProps> = {
          argTypes: [],
       },
    },
+   ...COMMON_META,
 };
 
 export const CARD_ACTIONS_META: CodeComponentMeta<CardActionsProps> = {
@@ -272,6 +323,7 @@ export const CARD_ACTIONS_META: CodeComponentMeta<CardActionsProps> = {
       children: "slot",
       disableSpacing: "boolean",
    },
+   ...COMMON_META,
 };
 
 export const CARD_CONTENT_META: CodeComponentMeta<CardContentProps> = {
@@ -279,6 +331,7 @@ export const CARD_CONTENT_META: CodeComponentMeta<CardContentProps> = {
    props: {
       children: "slot",
    },
+   ...COMMON_META,
 };
 
 export const CARD_HEADER_META: CodeComponentMeta<CardHeaderProps> = {
@@ -295,6 +348,7 @@ export const CARD_HEADER_META: CodeComponentMeta<CardHeaderProps> = {
          hidePlaceholder: true,
       },
    },
+   ...COMMON_META,
 };
 
 export const CARD_MEDIA_META: CodeComponentMeta<CardMediaProps> = {
@@ -304,6 +358,7 @@ export const CARD_MEDIA_META: CodeComponentMeta<CardMediaProps> = {
       image: "string",
       src: "string",
    },
+   ...COMMON_META,
 };
 
 export const CARD_META: CodeComponentMeta<CardProps> = {
@@ -312,6 +367,7 @@ export const CARD_META: CodeComponentMeta<CardProps> = {
       children: "slot",
       raised: "boolean",
    },
+   ...COMMON_META,
 };
 
 export const CHECKBOX_META: CodeComponentMeta<CheckboxProps> = {
@@ -352,6 +408,7 @@ export const CHECKBOX_META: CodeComponentMeta<CheckboxProps> = {
          options: ["start", "end"],
       },
    },
+   ...COMMON_META,
 };
 
 export const CHIP_META: CodeComponentMeta<ChipProps> = {
@@ -390,6 +447,7 @@ export const CHIP_META: CodeComponentMeta<ChipProps> = {
       clickable: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const CIRCULAR_PROGRESS_META: CodeComponentMeta<CircularProgressProps> =
@@ -419,6 +477,7 @@ export const CIRCULAR_PROGRESS_META: CodeComponentMeta<CircularProgressProps> =
             defaultValue: "indeterminate",
          },
       },
+      ...COMMON_META,
    };
 
 export const CONTAINER_META: CodeComponentMeta<ContainerProps> = {
@@ -428,6 +487,7 @@ export const CONTAINER_META: CodeComponentMeta<ContainerProps> = {
       fixed: "boolean",
       disableGutters: "boolean",
    },
+   ...COMMON_META,
 };
 
 export const DIALOG_ACTIONS_META: CodeComponentMeta<DialogActionsProps> = {
@@ -437,6 +497,7 @@ export const DIALOG_ACTIONS_META: CodeComponentMeta<DialogActionsProps> = {
       disableSpacing: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const DIALOG_CONTENT_META: CodeComponentMeta<DialogContentProps> = {
@@ -446,6 +507,7 @@ export const DIALOG_CONTENT_META: CodeComponentMeta<DialogContentProps> = {
       dividers: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const DIALOG_CONTENT_TEXT_META: CodeComponentMeta<DialogContentTextProps> =
@@ -455,6 +517,7 @@ export const DIALOG_CONTENT_TEXT_META: CodeComponentMeta<DialogContentTextProps>
          children: "slot",
          sx: "object",
       },
+      ...COMMON_META,
    };
 
 export const DIALOG_META: CodeComponentMeta<DialogProps> = {
@@ -481,6 +544,7 @@ export const DIALOG_META: CodeComponentMeta<DialogProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const DIALOG_TITLE_META: CodeComponentMeta<DialogTitleProps> = {
@@ -496,6 +560,7 @@ export const DIALOG_TITLE_META: CodeComponentMeta<DialogTitleProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const DIVIDER_META: CodeComponentMeta<DividerProps> = {
@@ -521,6 +586,7 @@ export const DIVIDER_META: CodeComponentMeta<DividerProps> = {
       component: "string",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const DRAWER_META: CodeComponentMeta<DrawerProps> = {
@@ -546,6 +612,7 @@ export const DRAWER_META: CodeComponentMeta<DrawerProps> = {
          },
       },
    },
+   ...COMMON_META,
 };
 
 export const FORM_CONTROL_LABEL_META: CodeComponentMeta<FormControlLabelProps> =
@@ -569,6 +636,7 @@ export const FORM_CONTROL_LABEL_META: CodeComponentMeta<FormControlLabelProps> =
          },
          sx: "object",
       },
+      ...COMMON_META,
    };
 
 export const FORM_CONTROL_META: CodeComponentMeta<FormControlProps> = {
@@ -605,6 +673,7 @@ export const FORM_CONTROL_META: CodeComponentMeta<FormControlProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const FORM_GROUP: CodeComponentMeta<FormGroupProps> = {
@@ -614,6 +683,7 @@ export const FORM_GROUP: CodeComponentMeta<FormGroupProps> = {
       row: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const FORM_HELPER_TEXT_META: CodeComponentMeta<FormHelperTextProps> = {
@@ -635,6 +705,7 @@ export const FORM_HELPER_TEXT_META: CodeComponentMeta<FormHelperTextProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const FORM_LABEL_META: CodeComponentMeta<FormLabelProps> = {
@@ -659,6 +730,7 @@ export const FORM_LABEL_META: CodeComponentMeta<FormLabelProps> = {
       filled: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const GRID_META: CodeComponentMeta<GridProps> = {
@@ -710,6 +782,7 @@ export const GRID_META: CodeComponentMeta<GridProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const ICON_BUTTON_META: CodeComponentMeta<IconButtonProps> = {
@@ -744,6 +817,7 @@ export const ICON_BUTTON_META: CodeComponentMeta<IconButtonProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const ICON_META: CodeComponentMeta<SvgIconProps> = {
@@ -751,9 +825,14 @@ export const ICON_META: CodeComponentMeta<SvgIconProps> = {
    props: {
       title: {
          type: "string",
-         defaultValue: "AddRegular",
+         defaultValue: "Add",
          helpText:
             "Найти название иконки можно на https://github.com/microsoft/fluentui-system-icons/blob/main/icons_regular.md",
+      },
+      variant: {
+         type: "choice",
+         options: ["Regular", "Filled"],
+         defaultValue: "Regular",
       },
       color: {
          type: "choice",
@@ -773,6 +852,7 @@ export const ICON_META: CodeComponentMeta<SvgIconProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const INPUT_ADORNMENT_META: CodeComponentMeta<InputAdornmentProps> = {
@@ -792,6 +872,7 @@ export const INPUT_ADORNMENT_META: CodeComponentMeta<InputAdornmentProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const INPUT_BASE_META: CodeComponentMeta<InputBaseProps> = {
@@ -872,6 +953,7 @@ export const INPUT_BASE_META: CodeComponentMeta<InputBaseProps> = {
          onChangeArgsToValue: (event) => event.target.value,
       },
    },
+   ...COMMON_META,
 };
 
 export const LINEAR_PROGRESS_META: CodeComponentMeta<LinearProgressProps> = {
@@ -890,6 +972,7 @@ export const LINEAR_PROGRESS_META: CodeComponentMeta<LinearProgressProps> = {
          defaultValue: "indeterminate",
       },
    },
+   ...COMMON_META,
 };
 
 export const LIST_ITEM_AVATAR_META: CodeComponentMeta<ListItemAvatarProps> = {
@@ -898,6 +981,8 @@ export const LIST_ITEM_AVATAR_META: CodeComponentMeta<ListItemAvatarProps> = {
       children: "slot",
       sx: "object",
    },
+   parentComponentName: "ListItem",
+   ...COMMON_META,
 };
 
 export const LIST_ITEM_BUTTON_META: CodeComponentMeta<ListItemButtonProps> = {
@@ -920,6 +1005,8 @@ export const LIST_ITEM_BUTTON_META: CodeComponentMeta<ListItemButtonProps> = {
          argTypes: [],
       },
    },
+   parentComponentName: "ListItem",
+   ...COMMON_META,
 };
 
 export const LIST_ITEM_ICON_META: CodeComponentMeta<ListItemIconProps> = {
@@ -928,6 +1015,8 @@ export const LIST_ITEM_ICON_META: CodeComponentMeta<ListItemIconProps> = {
       children: "slot",
       sx: "object",
    },
+   parentComponentName: "ListItem",
+   ...COMMON_META,
 };
 
 export const LIST_ITEM_META: CodeComponentMeta<ListItemProps> = {
@@ -948,6 +1037,8 @@ export const LIST_ITEM_META: CodeComponentMeta<ListItemProps> = {
       },
       sx: "object",
    },
+   parentComponentName: "List",
+   ...COMMON_META,
 };
 
 export const LIST_ITEM_TEXT_META: CodeComponentMeta<ListItemTextProps> = {
@@ -961,6 +1052,8 @@ export const LIST_ITEM_TEXT_META: CodeComponentMeta<ListItemTextProps> = {
       secondary: "string",
       sx: "object",
    },
+   parentComponentName: "ListItem",
+   ...COMMON_META,
 };
 
 export const LIST_META: CodeComponentMeta<ListProps> = {
@@ -975,6 +1068,7 @@ export const LIST_META: CodeComponentMeta<ListProps> = {
       dense: "boolean",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const LIST_SUBHEADER_META: CodeComponentMeta<ListSubheaderProps> = {
@@ -990,6 +1084,8 @@ export const LIST_SUBHEADER_META: CodeComponentMeta<ListSubheaderProps> = {
       inset: "boolean",
       sx: "object",
    },
+   parentComponentName: "List",
+   ...COMMON_META,
 };
 
 export const MENU_ITEM_META: CodeComponentMeta<MenuItemProps> = {
@@ -1004,6 +1100,7 @@ export const MENU_ITEM_META: CodeComponentMeta<MenuItemProps> = {
       sx: "object",
       value: "string",
    },
+   ...COMMON_META,
 };
 
 export const OUTLINED_INPUT_META: CodeComponentMeta<OutlinedInputProps> = {
@@ -1082,6 +1179,7 @@ export const OUTLINED_INPUT_META: CodeComponentMeta<OutlinedInputProps> = {
          onChangeArgsToValue: (event) => event.target.value,
       },
    },
+   ...COMMON_META,
 };
 
 export const PAPER_META: CodeComponentMeta<PaperProps> = {
@@ -1099,6 +1197,7 @@ export const PAPER_META: CodeComponentMeta<PaperProps> = {
       },
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const SKELETON_META: CodeComponentMeta<SkeletonProps> = {
@@ -1117,6 +1216,7 @@ export const SKELETON_META: CodeComponentMeta<SkeletonProps> = {
       },
       width: "number",
    },
+   ...COMMON_META,
 };
 
 export const STACK_META: CodeComponentMeta<StackProps> = {
@@ -1142,6 +1242,7 @@ export const STACK_META: CodeComponentMeta<StackProps> = {
       display: "string",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const TABLE_BODY_META: CodeComponentMeta<TableBodyProps> = {
@@ -1150,6 +1251,8 @@ export const TABLE_BODY_META: CodeComponentMeta<TableBodyProps> = {
       children: "slot",
       sx: "object",
    },
+   parentComponentName: "Table",
+   ...COMMON_META,
 };
 
 export const TABLE_CELL_META: CodeComponentMeta<TableCellProps> = {
@@ -1178,6 +1281,8 @@ export const TABLE_CELL_META: CodeComponentMeta<TableCellProps> = {
          options: ["body", "footer", "head"],
       },
    },
+   parentComponentName: "TableRow",
+   ...COMMON_META,
 };
 
 export const TABLE_CONTAINER_META: CodeComponentMeta<TableContainerProps> = {
@@ -1186,6 +1291,7 @@ export const TABLE_CONTAINER_META: CodeComponentMeta<TableContainerProps> = {
       children: "slot",
       sx: "object",
    },
+   ...COMMON_META,
 };
 
 export const TABLE_FOOTER_META: CodeComponentMeta<TableFooterProps> = {
@@ -1194,6 +1300,8 @@ export const TABLE_FOOTER_META: CodeComponentMeta<TableFooterProps> = {
       children: "slot",
       sx: "object",
    },
+   parentComponentName: "Table",
+   ...COMMON_META,
 };
 
 export const TABLE_HEAD_META: CodeComponentMeta<TableHeadProps> = {
@@ -1202,6 +1310,8 @@ export const TABLE_HEAD_META: CodeComponentMeta<TableHeadProps> = {
       children: "slot",
       sx: "object",
    },
+   parentComponentName: "Table",
+   ...COMMON_META,
 };
 
 export const TABLE_META: CodeComponentMeta<TableProps> = {
@@ -1219,6 +1329,8 @@ export const TABLE_META: CodeComponentMeta<TableProps> = {
       stickyHeader: "boolean",
       sx: "object",
    },
+   parentComponentName: "TableContainer",
+   ...COMMON_META,
 };
 
 export const TABLE_ROW_META: CodeComponentMeta<TableRowProps> = {
@@ -1229,6 +1341,8 @@ export const TABLE_ROW_META: CodeComponentMeta<TableRowProps> = {
       selected: "boolean",
       sx: "object",
    },
+   parentComponentName: "Table",
+   ...COMMON_META,
 };
 
 export const TEXT_FIELD_META: CodeComponentMeta<TextFieldProps> = {
@@ -1320,6 +1434,7 @@ export const TEXT_FIELD_META: CodeComponentMeta<TextFieldProps> = {
          onChangeArgsToValue: (event) => event.target.value,
       },
    },
+   ...COMMON_META,
 };
 
 export const TOGGLE_BUTTON_META: CodeComponentMeta<ToggleButtonProps> = {
@@ -1355,6 +1470,7 @@ export const TOGGLE_BUTTON_META: CodeComponentMeta<ToggleButtonProps> = {
          argTypes: [],
       },
    },
+   ...COMMON_META,
 };
 
 export const TOGGLE_BUTTON_GROUP_META: CodeComponentMeta<ToggleButtonGroupProps> =
@@ -1396,6 +1512,7 @@ export const TOGGLE_BUTTON_GROUP_META: CodeComponentMeta<ToggleButtonGroupProps>
          },
          sx: "object",
       },
+      ...COMMON_META,
    };
 
 export const TOOLBAR_META: CodeComponentMeta<ToolbarProps> = {
@@ -1413,7 +1530,7 @@ export const TOOLBAR_META: CodeComponentMeta<ToolbarProps> = {
       },
       sx: "object",
    },
-   importPath: "@mui/material",
+   ...COMMON_META,
 };
 
 export const TOOLTIP_META: CodeComponentMeta<TooltipProps> = {
@@ -1442,7 +1559,7 @@ export const TOOLTIP_META: CodeComponentMeta<TooltipProps> = {
          ],
       },
    },
-   importPath: "@mui/material",
+   ...COMMON_META,
 };
 
 export const TYPOGRAPHY_META: CodeComponentMeta<TypographyProps> = {
@@ -1486,4 +1603,5 @@ export const TYPOGRAPHY_META: CodeComponentMeta<TypographyProps> = {
          defaultValue: "inherit",
       },
    },
+   ...COMMON_META,
 };

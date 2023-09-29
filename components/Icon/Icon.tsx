@@ -4,13 +4,14 @@ import React from "react";
 
 export interface IconProps extends SvgIconProps {
    title: string;
+   variant: "Regular" | "Filled";
 }
 
 export function Icon(props: IconProps) {
-   const { title = "AddRegular" } = props;
+   const { title = "Add", variant = "Regular" } = props;
 
    const IconRoot = FluentIcon[
-      title as keyof typeof FluentIcon
+      (title + variant) as keyof typeof FluentIcon
    ] as React.ElementType;
 
    return <SvgIcon component={IconRoot} {...props} />;

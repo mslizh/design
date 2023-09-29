@@ -174,6 +174,7 @@ export const theme = createTheme({
          defaultProps: {
             square: true,
             variant: "outlined" as const,
+            elevation: 0,
             color: "inherit",
          },
          styleOverrides: {
@@ -202,22 +203,22 @@ export const theme = createTheme({
                paddingTop: theme.spacing(1.5),
                paddingBottom: theme.spacing(1.5),
             }),
-            startIcon: ({ ownerState }) => ({
-               ...((ownerState.size === "small" ||
-                  ownerState.size === "large") && {
-                  "& > *:nth-of-type(1)": {
-                     fontSize: 20,
-                  },
-               }),
-            }),
-            endIcon: ({ ownerState }) => ({
-               ...((ownerState.size === "small" ||
-                  ownerState.size === "large") && {
-                  "& > *:nth-of-type(1)": {
-                     fontSize: 20,
-                  },
-               }),
-            }),
+            // startIcon: ({ ownerState }) => ({
+            //    ...((ownerState.size === "small" ||
+            //       ownerState.size === "large") && {
+            //       "& > *:nth-of-type(1)": {
+            //          fontSize: 20,
+            //       },
+            //    }),
+            // }),
+            // endIcon: ({ ownerState }) => ({
+            //    ...((ownerState.size === "small" ||
+            //       ownerState.size === "large") && {
+            //       "& > *:nth-of-type(1)": {
+            //          fontSize: 20,
+            //       },
+            //    }),
+            // }),
          },
       },
 
@@ -229,9 +230,11 @@ export const theme = createTheme({
 
       MuiCheckbox: {
          defaultProps: {
-            icon: <Icon title="CheckboxUncheckedRegular" />,
-            checkedIcon: <Icon title="CheckboxCheckedFilled" />,
-            indeterminateIcon: <Icon title="CheckboxIndeterminateRegular" />,
+            icon: <Icon title="CheckboxUnchecked" variant="Regular" />,
+            checkedIcon: <Icon title="CheckboxChecked" variant="Filled" />,
+            indeterminateIcon: (
+               <Icon title="CheckboxIndeterminate" variant="Regular" />
+            ),
          },
          styleOverrides: {
             root: ({ ownerState, theme }) => ({
@@ -247,7 +250,7 @@ export const theme = createTheme({
 
       MuiChip: {
          defaultProps: {
-            deleteIcon: <Icon title="DismissSquareFilled" />,
+            deleteIcon: <Icon title="DismissSquare" variant="Filled" />,
          },
          styleOverrides: {
             root: ({ ownerState, theme }) => ({
