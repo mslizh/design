@@ -8,7 +8,7 @@ import { Icon } from "@/components/Icon";
 export interface DialogTitleProps extends MuiDialogTitleProps {
    onClose?: () => void;
 }
-
+//this component was made for implementing close icon button
 export function DialogTitle(props: DialogTitleProps) {
    const { children, onClose } = props;
    const theme = useTheme();
@@ -26,7 +26,7 @@ export function DialogTitle(props: DialogTitleProps) {
                   right: theme.spacing(1),
                }}
             >
-               <Icon title="DismissRegular" />
+               <Icon title="Dismiss" variant="Regular" />
             </IconButton>
          )}
       </MuiDialogTitle>
