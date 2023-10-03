@@ -830,8 +830,6 @@ export const ICON_META: CodeComponentMeta<SvgIconProps> = {
       title: {
          type: "string",
          defaultValue: "Add",
-         helpText:
-            "Найти название иконки можно на https://github.com/microsoft/fluentui-system-icons/blob/main/icons_regular.md",
       },
       variant: {
          type: "choice",
