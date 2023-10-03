@@ -144,14 +144,8 @@ import {
 export const PLASMIC = initPlasmicLoader({
    projects: [
       {
-         // Platform
-         id: "ot2HEJTxLo6XRXUb4cEaih",
-         token: "FMVljStPZEWN8EQwATO9SkedxkqsiWOdEKDmCezTTB1zfi9CV44SJwhXw5Sek6lAVbe1jvugVIGYh7LQxA",
-      },
-      {
-         // Task Tracker
-         id: "oU4FyXJ8puUaBRrWABixD7",
-         token: "nhuJayO8IHB370V3RdQBEZcmatfhkp1pQbGYHPQMNIH3gqXoeE5Q7MO4oWwDMz6RSi4MXwlnMM9C0TkDBA",
+         id: process.env.PROJECT_ID as string,
+         token: process.env.PROJECT_TOKEN as string,
       },
    ],
    // Fetches the latest revisions, whether or not they were unpublished!
