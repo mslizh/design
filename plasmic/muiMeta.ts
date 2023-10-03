@@ -112,7 +112,7 @@ export const AVATAR_GROUP_META: CodeComponentMeta<AvatarGroupProps> = {
 export const AVATAR_META: CodeComponentMeta<AvatarProps> = {
    name: "Avatar",
    props: {
-      children: "slot",
+      children: { type: "slot", hidePlaceholder: true },
       variant: {
          type: "choice",
          options: ["circular", "rounded", "square"],
