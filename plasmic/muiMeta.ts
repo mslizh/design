@@ -613,18 +613,7 @@ export const DRAWER_META: CodeComponentMeta<DrawerProps> = {
       },
       onClose: {
          type: "eventHandler",
-         argTypes: [
-            // { name: "open", type: "boolean" }
-         ],
-      },
-   },
-   states: {
-      open: {
-         type: "writable",
-         variableType: "boolean",
-         valueProp: "open",
-         onChangeProp: "onClose",
-         onChangeArgsToValue: (props) => (props.open = false),
+         argTypes: [],
       },
    },
    ...COMMON_META,
