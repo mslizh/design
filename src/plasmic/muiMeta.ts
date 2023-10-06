@@ -830,6 +830,7 @@ export const ICON_META: CodeComponentMeta<SvgIconProps> = {
       title: {
          type: "string",
          defaultValue: "Add",
+         helpText: "Название иконки FluentUI в PascalCase",
       },
       variant: {
          type: "choice",

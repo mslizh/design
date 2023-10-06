@@ -1,6 +1,8 @@
+import React from "react";
 import { Metadata } from "next";
-import ThemeProvider from "@/styles/theme";
-import CssBaseline from "@mui/material/CssBaseline";
+import ThemeProvider from "@/styles/ThemeProvider";
+import { Toaster } from "sonner";
+import styles from "@/components/Toaster/Toaster.module.css";
 
 export const metadata: Metadata = {
    title: "Home",
@@ -19,7 +21,10 @@ export default function RootLayout({
          <body>
             <ThemeProvider>
                {children}
-               <CssBaseline />
+               <Toaster
+                  closeButton
+                  toastOptions={{ className: styles.toast }}
+               />
             </ThemeProvider>
          </body>
       </html>

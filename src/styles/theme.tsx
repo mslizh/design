@@ -1,15 +1,5 @@
-"use client";
 import { createTheme } from "@mui/material/styles";
 import { Icon } from "@/components/Icon";
-import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
-
-type ThemeProviderProps = {
-   children: React.ReactNode; // Используйте ReactNode для children
-};
-
-export default function ThemeProvider({ children }: ThemeProviderProps) {
-   return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
-}
 
 export const theme = createTheme({
    palette: {

@@ -33,7 +33,12 @@ export default async function PlasmicLoaderPage({
          pageQuery={searchParams}
       >
          <div style={{ display: "flex", flexDirection: "row" }}>
-            <PlasmicComponent component="Navigation" />
+            <PlasmicComponent
+               component="Navigation"
+               componentProps={{
+                  items: <PlasmicComponent component="NavigationItemList" />,
+               }}
+            />
             <PlasmicComponent component={pageMeta.displayName} />
          </div>
       </PlasmicClientRootProvider>
@@ -44,7 +49,8 @@ async function fetchPlasmicComponentData(catchall: string[] | undefined) {
    const plasmicPath = "/" + (catchall ? catchall.join("/") : "");
    const prefetchedData = await PLASMIC.maybeFetchComponentData(
       plasmicPath,
-      "Navigation"
+      "Navigation",
+      "NavigationItemList"
    );
    if (!prefetchedData) {
       notFound();
