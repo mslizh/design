@@ -1,4 +1,3 @@
-"use client";
 import { ThemeProvider as MuiThemeProvider } from "@mui/material/styles";
 import { theme } from "@/styles/theme";
 import CssBaseline from "@mui/material/CssBaseline";
