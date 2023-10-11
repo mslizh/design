@@ -4,12 +4,12 @@ import {
    ComponentRenderData,
    PlasmicRootProvider,
    extractPlasmicQueryData,
-   PageParamsProvider,
 } from "@plasmicapp/loader-nextjs";
+import { PLASMIC } from "@/plasmic/plasmic-init";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Error from "next/error";
 import { useRouter } from "next/router";
-import { PLASMIC } from "../plasmic/plasmic-init";
+import { Stack } from "@mui/material";
 
 /**
  * Use fetchPages() to fetch list of pages that have been created in Plasmic
@@ -59,6 +59,12 @@ export const getStaticProps: GetStaticProps = async (context) => {
          prefetchedData={plasmicData}
          pageParams={pageMeta.params}
       >
+         <PlasmicComponent
+            component="Navigation"
+            componentProps={{
+               items: <PlasmicComponent component="NavigationItemList" />,
+            }}
+         />
          <PlasmicComponent component={pageMeta.displayName} />
       </PlasmicRootProvider>
    );
@@ -83,7 +89,7 @@ export default function CatchallPage(props: {
    plasmicData?: ComponentRenderData;
    queryCache?: Record<string, any>;
 }) {
-   const { plasmicData } = props;
+   const { plasmicData, queryCache } = props;
    const router = useRouter();
    if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
       return <Error statusCode={404} />;
@@ -91,11 +97,23 @@ export default function CatchallPage(props: {
    const pageMeta = plasmicData.entryCompMetas[0];
    return (
       // Pass in the data fetched in getStaticProps as prefetchedData
-      <PageParamsProvider params={router.query} query={router.query}>
-         {
-            // pageMeta.displayName contains the name of the component you fetched.
-         }
-         <PlasmicComponent component={pageMeta.displayName} />
-      </PageParamsProvider>
+      <PlasmicRootProvider
+         loader={PLASMIC}
+         prefetchedData={plasmicData}
+         prefetchedQueryData={queryCache}
+         pageParams={pageMeta.params}
+         pageQuery={router.query}
+      >
+         <Stack direction={"row"}>
+            <PlasmicComponent
+               component="Navigation"
+               componentProps={{
+                  items: <PlasmicComponent component="NavigationItemList" />,
+               }}
+            />
+            {/* pageMeta.displayName contains the name of the component you fetched. */}
+            <PlasmicComponent component={pageMeta.displayName} />
+         </Stack>
+      </PlasmicRootProvider>
    );
 }
