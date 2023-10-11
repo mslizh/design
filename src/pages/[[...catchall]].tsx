@@ -91,6 +91,7 @@ export default function CatchallPage(props: {
 }) {
    const { plasmicData, queryCache } = props;
    const router = useRouter();
+   console.log(plasmicData);
    if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
       return <Error statusCode={404} />;
    }
