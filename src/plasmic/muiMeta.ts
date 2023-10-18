@@ -62,7 +62,7 @@ import {
 } from "@mui/material";
 import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
 
-const COMMON_META = { styleSections: false };
+const COMMON_META = {};
 
 export const APP_BAR_META: CodeComponentMeta<AppBarProps> = {
    name: "AppBar",
