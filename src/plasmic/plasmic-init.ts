@@ -2,6 +2,8 @@ import { initPlasmicLoader } from "@plasmicapp/loader-nextjs";
 import {
    AppBar,
    Badge,
+   BottomNavigation,
+   BottomNavigationAction,
    Box,
    Button,
    ButtonGroup,
@@ -62,6 +64,8 @@ import {
    AVATAR_GROUP_META,
    AVATAR_META,
    BADGE_META,
+   BOTTOM_NAVIGATION_ACTION_META,
+   BOTTOM_NAVIGATION_META,
    BOX_META,
    BUTTON_GROUP_META,
    BUTTON_META,
@@ -157,6 +161,11 @@ PLASMIC.registerComponent(AvatarGroup, AVATAR_GROUP_META);
 PLASMIC.registerComponent(Avatar, AVATAR_META);
 PLASMIC.registerComponent(Badge, BADGE_META);
 PLASMIC.registerComponent(Box, BOX_META);
+PLASMIC.registerComponent(BottomNavigation, BOTTOM_NAVIGATION_META);
+PLASMIC.registerComponent(
+   BottomNavigationAction,
+   BOTTOM_NAVIGATION_ACTION_META
+);
 PLASMIC.registerComponent(ButtonGroup, BUTTON_GROUP_META);
 PLASMIC.registerComponent(Button, BUTTON_META);
 PLASMIC.registerComponent(CardActionArea, CARD_ACTION_AREA_META);

@@ -222,6 +222,22 @@ export const theme = createTheme({
          },
       },
 
+      MuiBottomNavigation: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               height: theme.spacing(6),
+            }),
+         },
+      },
+
+      MuiBottomNavigationAction: {
+         styleOverrides: {
+            root: ({ theme }) => ({
+               gap: theme.spacing(0.25),
+            }),
+         },
+      },
+
       MuiCard: {
          defaultProps: {
             variant: "outlined" as const,

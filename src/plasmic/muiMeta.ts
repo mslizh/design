@@ -2,6 +2,8 @@ import { AvatarGroupProps, AvatarProps, DialogTitleProps } from "@/components";
 import {
    AppBarProps,
    BadgeProps,
+   BottomNavigationActionProps,
+   BottomNavigationProps,
    BoxProps,
    ButtonGroupProps,
    ButtonProps,
@@ -174,16 +176,42 @@ export const BADGE_META: CodeComponentMeta<BadgeProps> = {
 export const BOX_META: CodeComponentMeta<BoxProps> = {
    name: "Box",
    props: {
-      children: {
-         type: "slot",
-         hidePlaceholder: true,
-      },
+      children: "slot",
       padding: "number",
       margin: "number",
       sx: "object",
    },
    ...COMMON_META,
 };
+
+export const BOTTOM_NAVIGATION_META: CodeComponentMeta<BottomNavigationProps> =
+   {
+      name: "BottomNavigation",
+      props: {
+         children: "slot",
+         showLabels: "boolean",
+         sx: "object",
+         value: "string",
+      },
+      ...COMMON_META,
+   };
+
+export const BOTTOM_NAVIGATION_ACTION_META: CodeComponentMeta<BottomNavigationActionProps> =
+   {
+      name: "BottomNavigationAction",
+      props: {
+         icon: "slot",
+         label: "string",
+         showLabel: "boolean",
+         sx: "object",
+         value: "string",
+         onClick: {
+            type: "eventHandler",
+            argTypes: [],
+         },
+      },
+      ...COMMON_META,
+   };
 
 export const BUTTON_GROUP_META: CodeComponentMeta<ButtonGroupProps> = {
    name: "ButtonGroup",

@@ -7,9 +7,8 @@ import {
 } from "@plasmicapp/loader-nextjs";
 import { PLASMIC } from "@/plasmic/plasmic-init";
 import { GetStaticPaths, GetStaticProps } from "next";
-import Error from "next/error";
 import { useRouter } from "next/router";
-import { Stack } from "@mui/material";
+import Error from "next/error";
 
 /**
  * Use fetchPages() to fetch list of pages that have been created in Plasmic
@@ -37,11 +36,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
          : Array.isArray(catchall)
          ? `/${catchall.join("/")}`
          : "/";
-   const plasmicData = await PLASMIC.maybeFetchComponentData(
-      plasmicPath,
-      "Navigation",
-      "NavigationItemList"
-   );
+
+   const plasmicData = await PLASMIC.maybeFetchComponentData(plasmicPath);
+
    if (!plasmicData) {
       // This is some non-Plasmic catch-all page
       return {
@@ -59,12 +56,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
          prefetchedData={plasmicData}
          pageParams={pageMeta.params}
       >
-         <PlasmicComponent
-            component="Navigation"
-            componentProps={{
-               items: <PlasmicComponent component="NavigationItemList" />,
-            }}
-         />
          <PlasmicComponent component={pageMeta.displayName} />
       </PlasmicRootProvider>
    );
@@ -91,11 +82,13 @@ export default function CatchallPage(props: {
 }) {
    const { plasmicData, queryCache } = props;
    const router = useRouter();
-   console.log(plasmicData);
+
    if (!plasmicData || plasmicData.entryCompMetas.length === 0) {
       return <Error statusCode={404} />;
    }
+
    const pageMeta = plasmicData.entryCompMetas[0];
+
    return (
       // Pass in the data fetched in getStaticProps as prefetchedData
       <PlasmicRootProvider
@@ -105,16 +98,8 @@ export default function CatchallPage(props: {
          pageParams={pageMeta.params}
          pageQuery={router.query}
       >
-         <Stack direction={"row"}>
-            <PlasmicComponent
-               component="Navigation"
-               componentProps={{
-                  items: <PlasmicComponent component="NavigationItemList" />,
-               }}
-            />
-            {/* pageMeta.displayName contains the name of the component you fetched. */}
-            <PlasmicComponent component={pageMeta.displayName} />
-         </Stack>
+         {/* pageMeta.displayName contains the name of the component you fetched. */}
+         <PlasmicComponent component={pageMeta.displayName} />
       </PlasmicRootProvider>
    );
 }
