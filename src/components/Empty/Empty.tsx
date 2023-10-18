@@ -1,7 +1,7 @@
-import { theme } from "@/styles/theme";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
-import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
+import { theme } from '@/theme/theme';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import { CodeComponentMeta } from '@plasmicapp/loader-nextjs';
 
 export interface EmptyProps {
    img?: string;
@@ -13,13 +13,7 @@ export function Empty(props: EmptyProps) {
    const { message, className } = props;
 
    return (
-      <Stack
-         alignItems="center"
-         spacing={2}
-         p={4}
-         overflow="hidden"
-         className={className}
-      >
+      <Stack alignItems="center" spacing={2} p={4} overflow="hidden" className={className}>
          <EmptyImage />
          <Typography
             variant="body2"
@@ -52,14 +46,7 @@ export function EmptyImage() {
             rx="3.5"
             fill={theme.palette.background.paper}
          />
-         <rect
-            x="16.5"
-            y="12.5"
-            width="223"
-            height="55"
-            rx="3.5"
-            stroke={theme.palette.divider}
-         />
+         <rect x="16.5" y="12.5" width="223" height="55" rx="3.5" stroke={theme.palette.divider} />
          <rect
             x="8.5"
             y="6.5"
@@ -68,14 +55,7 @@ export function EmptyImage() {
             rx="3.5"
             fill={theme.palette.background.paper}
          />
-         <rect
-            x="8.5"
-            y="6.5"
-            width="239"
-            height="55"
-            rx="3.5"
-            stroke={theme.palette.divider}
-         />
+         <rect x="8.5" y="6.5" width="239" height="55" rx="3.5" stroke={theme.palette.divider} />
          <rect
             x="0.5"
             y="0.5"
@@ -84,49 +64,21 @@ export function EmptyImage() {
             rx="3.5"
             fill={theme.palette.background.paper}
          />
-         <rect
-            x="60"
-            y="16"
-            width="172"
-            height="8"
-            rx="4"
-            fill={theme.palette.divider}
-         />
-         <rect
-            x="60"
-            y="32"
-            width="130"
-            height="8"
-            rx="4"
-            fill={theme.palette.divider}
-         />
-         <rect
-            x="16"
-            y="14"
-            width="28"
-            height="28"
-            rx="14"
-            fill={theme.palette.divider}
-         />
-         <rect
-            x="0.5"
-            y="0.5"
-            width="255"
-            height="55"
-            rx="3.5"
-            stroke={theme.palette.divider}
-         />
+         <rect x="60" y="16" width="172" height="8" rx="4" fill={theme.palette.divider} />
+         <rect x="60" y="32" width="130" height="8" rx="4" fill={theme.palette.divider} />
+         <rect x="16" y="14" width="28" height="28" rx="14" fill={theme.palette.divider} />
+         <rect x="0.5" y="0.5" width="255" height="55" rx="3.5" stroke={theme.palette.divider} />
       </svg>
    );
 }
 
 export const EMPTY_META: CodeComponentMeta<EmptyProps> = {
-   name: "Empty",
+   name: 'Empty',
    props: {
-      img: "string",
+      img: 'string',
       message: {
-         type: "string",
-         defaultValue: "Нет данных",
+         type: 'string',
+         defaultValue: 'Нет данных',
       },
    },
 };
