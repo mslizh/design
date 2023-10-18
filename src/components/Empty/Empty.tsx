@@ -1,6 +1,7 @@
 import { theme } from "@/styles/theme";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
 
 export interface EmptyProps {
    img?: string;
@@ -118,3 +119,14 @@ export function EmptyImage() {
       </svg>
    );
 }
+
+export const EMPTY_META: CodeComponentMeta<EmptyProps> = {
+   name: "Empty",
+   props: {
+      img: "string",
+      message: {
+         type: "string",
+         defaultValue: "Нет данных",
+      },
+   },
+};

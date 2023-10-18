@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import MuiAvatarGroup, {
    AvatarGroupProps as MuiAvatarGroupProps,
 } from "@mui/material/AvatarGroup";
+import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
 
 export interface AvatarGroupProps extends MuiAvatarGroupProps {
    size?: "small" | "medium" | "large";
@@ -29,3 +30,22 @@ export const AvatarGroup = styled(MuiAvatarGroup, {
       },
    }),
 }));
+
+export const AVATAR_GROUP_META: CodeComponentMeta<AvatarGroupProps> = {
+   name: "AvatarGroup",
+   props: {
+      children: "slot",
+      max: "number",
+      size: {
+         type: "choice",
+         options: ["small", "medium", "large"],
+      },
+      spacing: "string",
+      total: "number",
+      variant: {
+         type: "choice",
+         options: ["circular", "rounded", "square"],
+      },
+   },
+   styleSections: ["visibility"],
+};

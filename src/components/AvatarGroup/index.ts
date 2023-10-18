@@ -1,1 +1,1 @@
-export { AvatarGroup, type AvatarGroupProps } from "./AvatarGroup";
+export * from "./AvatarGroup";

@@ -1,1 +1,1 @@
-export { WithToast, type WithToastProps } from "./WithToast";
+export * from "./Toaster";

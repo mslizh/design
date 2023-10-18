@@ -5,7 +5,7 @@ import {
    PlasmicRootProvider,
    extractPlasmicQueryData,
 } from "@plasmicapp/loader-nextjs";
-import { PLASMIC } from "@/plasmic/plasmic-init";
+import { PLASMIC } from "../../plasmic-init";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Error from "next/error";
