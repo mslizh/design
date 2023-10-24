@@ -59,15 +59,14 @@ export const DIALOG_CONTENT_META: CodeComponentMeta<DialogContentProps> = {
    styleSections: ["visibility"],
 };
 
-export const DIALOG_CONTENT_TEXT_META: CodeComponentMeta<DialogContentTextProps> =
-   {
-      name: "DialogContentText",
-      props: {
-         children: "slot",
-         sx: "object",
-      },
-      styleSections: ["visibility"],
-   };
+export const DIALOG_CONTENT_TEXT_META: CodeComponentMeta<DialogContentTextProps> = {
+   name: "DialogContentText",
+   props: {
+      children: "slot",
+      sx: "object",
+   },
+   styleSections: ["visibility"],
+};
 
 export const DIALOG_META: CodeComponentMeta<DialogProps> = {
    name: "Dialog",

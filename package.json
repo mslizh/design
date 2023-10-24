@@ -1,34 +1,54 @@
 {
-   "name": "tmp-cpa",
-   "version": "0.1.0",
-   "private": true,
-   "scripts": {
-      "dev": "next dev",
-      "build": "next build",
-      "start": "next start",
-      "lint": "next lint"
-   },
-   "dependencies": {
-      "@emotion/react": "^11.10.6",
-      "@emotion/styled": "^11.10.6",
-      "@fluentui/react-icons": "^2.0.200",
-      "@mui/material": "^5.9.1",
-      "@plasmicapp/loader-nextjs": "^1.0.305",
-      "@types/node": "18.15.12",
-      "@types/react": "18.0.37",
-      "@types/react-dom": "18.0.11",
-      "dhtmlx-scheduler": "^6.0.3",
-      "eslint": "8.38.0",
-      "lodash": "^4.17.21",
-      "mini-css-extract-plugin": "^2.7.6",
-      "next": "^13.5.4",
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0",
-      "sonner": "1.0.0",
-      "typescript": "5.0.4"
-   },
-   "devDependencies": {
-      "@types/lodash": "^4.14.194",
-      "eslint-config-next": "^13.5.4"
-   }
+  "name": "tmp-cpa",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_538726980edc0d1"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fluentui/react-icons": "^2.0.200",
+    "@mui/material": "^5.9.1",
+    "@plasmicapp/loader-nextjs": "^1.0.305",
+    "@storybook/addon-storysource": "^7.5.1",
+    "@storybook/addon-themes": "^7.5.1",
+    "@types/node": "18.15.12",
+    "@types/react": "18.0.37",
+    "@types/react-dom": "18.0.11",
+    "dhtmlx-scheduler": "^6.0.3",
+    "eslint": "8.38.0",
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^2.7.6",
+    "next": "^13.5.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sonner": "1.0.0",
+    "typescript": "5.0.4",
+    "usehooks-ts": "^2.9.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.1",
+    "@storybook/addon-interactions": "^7.5.1",
+    "@storybook/addon-links": "^7.5.1",
+    "@storybook/addon-mdx-gfm": "^7.5.1",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.1",
+    "@storybook/nextjs": "^7.5.1",
+    "@storybook/react": "^7.5.1",
+    "@storybook/testing-library": "^0.2.2",
+    "@types/lodash": "^4.14.194",
+    "chromatic": "^7.4.0",
+    "eslint-config-next": "^13.5.4",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.5.1"
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "tmp-cpa@0.1.0"
 }

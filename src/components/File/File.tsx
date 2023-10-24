@@ -38,11 +38,7 @@ export function FileUploader(props: FileUploaderProps) {
       >
          <Upload onChange={uploadHandler} />
          <Divider />
-         {mode === "list" ? (
-            <FileList files={files} />
-         ) : (
-            <FileGrid files={files} />
-         )}
+         {mode === "list" ? <FileList files={files} /> : <FileGrid files={files} />}
       </Box>
    );
 }

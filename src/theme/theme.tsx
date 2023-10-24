@@ -155,7 +155,7 @@ export const theme = createTheme({
          styleOverrides: {
             root: ({ theme }) => ({
                ...theme.typography.body1,
-               backgroundColor: theme.palette.background.default,
+               backgroundColor: theme.palette.grey[100],
                color: theme.palette.text.secondary,
             }),
          },
@@ -190,8 +190,8 @@ export const theme = createTheme({
                fontSize: theme.typography.button.fontSize,
             }),
             sizeSmall: ({ theme }) => ({
-               paddingLeft: theme.spacing(1),
-               paddingRight: theme.spacing(1),
+               paddingLeft: theme.spacing(1.25),
+               paddingRight: theme.spacing(1.25),
             }),
             sizeMedium: ({ theme }) => ({
                paddingTop: theme.spacing(1),
@@ -248,9 +248,7 @@ export const theme = createTheme({
          defaultProps: {
             icon: <Icon title="CheckboxUnchecked" variant="Regular" />,
             checkedIcon: <Icon title="CheckboxChecked" variant="Filled" />,
-            indeterminateIcon: (
-               <Icon title="CheckboxIndeterminate" variant="Regular" />
-            ),
+            indeterminateIcon: <Icon title="CheckboxIndeterminate" variant="Regular" />,
          },
          styleOverrides: {
             root: ({ ownerState, theme }) => ({
@@ -598,9 +596,7 @@ export const theme = createTheme({
 
       MuiSelect: {
          defaultProps: {
-            IconComponent: (props) => (
-               <Icon title="ChevronDown" variant="Regular" {...props} />
-            ),
+            IconComponent: (props) => <Icon title="ChevronDown" variant="Regular" {...props} />,
          },
       },
 

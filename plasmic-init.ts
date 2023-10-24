@@ -61,8 +61,7 @@ import {
 } from "@mui/material";
 
 import { APP_BAR_META } from "@/components/AppBar";
-import { AVATAR_META, Avatar } from "@/components/Avatar";
-import { AVATAR_GROUP_META, AvatarGroup } from "@/components/AvatarGroup";
+import { AVATAR_GROUP_META, AVATAR_META, Avatar, AvatarGroup } from "@/components/Avatar";
 import { BADGE_META } from "@/components/Badge";
 import {
    BOTTOM_NAVIGATION_ACTION_META,
@@ -141,6 +140,7 @@ import { TOGGLE_BUTTON_GROUP_META, TOGGLE_BUTTON_META } from "@/components/Toggl
 import { TOOLBAR_META } from "@/components/Toolbar";
 import { TOOLTIP_META } from "@/components/Tooltip";
 import { TYPOGRAPHY_META } from "@/components/Typography";
+import { VIEW_LIST_ITEM_META, ViewListItem } from "@/views/list";
 
 export const PLASMIC = initPlasmicLoader({
    projects: [
@@ -220,4 +220,5 @@ PLASMIC.registerComponent(ToggleButtonGroup, TOGGLE_BUTTON_GROUP_META);
 PLASMIC.registerComponent(Toolbar, TOOLBAR_META);
 PLASMIC.registerComponent(Tooltip, TOOLTIP_META);
 PLASMIC.registerComponent(Typography, TYPOGRAPHY_META);
+PLASMIC.registerComponent(ViewListItem, VIEW_LIST_ITEM_META);
 PLASMIC.registerComponent(WithToast, WITH_TOAST_META);

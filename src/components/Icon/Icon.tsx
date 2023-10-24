@@ -1,15 +1,15 @@
-import * as FluentIcon from '@fluentui/react-icons';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
-import { CodeComponentMeta } from '@plasmicapp/loader-nextjs';
-import React from 'react';
+import * as FluentIcon from "@fluentui/react-icons";
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
+import { CodeComponentMeta } from "@plasmicapp/loader-nextjs";
+import React from "react";
 
 export interface IconProps extends SvgIconProps {
    title: string;
-   variant: 'Regular' | 'Filled';
+   variant: "Regular" | "Filled";
 }
 
 export function Icon(props: IconProps) {
-   const { title = 'Add', variant = 'Regular' } = props;
+   const { title = "Add", variant = "Regular" } = props;
 
    const IconRoot = FluentIcon[(title + variant) as keyof typeof FluentIcon] as React.ElementType;
 
@@ -17,27 +17,27 @@ export function Icon(props: IconProps) {
 }
 
 export const ICON_META: CodeComponentMeta<IconProps> = {
-   name: 'Icon',
+   name: "Icon",
    props: {
       title: {
-         type: 'string',
-         defaultValue: 'Add',
-         helpText: 'Название иконки FluentUI в PascalCase',
+         type: "string",
+         defaultValue: "Add",
+         helpText: "Название иконки FluentUI в PascalCase",
       },
       variant: {
-         type: 'choice',
-         options: ['Regular', 'Filled'],
-         defaultValue: 'Regular',
+         type: "choice",
+         options: ["Regular", "Filled"],
+         defaultValue: "Regular",
       },
       color: {
-         type: 'choice',
-         options: ['action', 'disabled', 'primary', 'error', 'info', 'success', 'warning'],
+         type: "choice",
+         options: ["action", "disabled", "primary", "error", "info", "success", "warning"],
       },
       fontSize: {
-         type: 'choice',
-         options: ['inherit', 'large', 'medium', 'small'],
+         type: "choice",
+         options: ["inherit", "large", "medium", "small"],
       },
-      sx: 'object',
+      sx: "object",
    },
-   styleSections: ['visibility'],
+   styleSections: ["visibility"],
 };
